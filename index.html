@@ -354,7 +354,7 @@ function frame(t){const dt=Math.min(.1,(t-last)/1000);last=t;
   F.forEach(f=>{f.y-=28*dt;f.a-=dt*.6});F=F.filter(f=>f.a>0)}
  zupd(dt);draw2(t);requestAnimationFrame(frame)}
 let kb='',tp=0;
-function cheat(c){if(c.toLowerCase().trim().endsWith('givememoney')){G.money=999999;G.goal=Math.max(G.goal||40000,2e6);log('💸 Cheat ativado: $999.999');beep(1200,.3);fl('+$999.999',450,180,'#fbbf24');save();ui();return 1}}
+function cheat(c){if(c.toLowerCase().trim().endsWith('givememoney')){G.money=99999999;G.goal=Math.max(G.goal||40000,2e6);log('💸 Cheat ativado: $99999.999');beep(1200,.3);fl('+$999.999',450,180,'#fbbf24');save();ui();return 1}}
 addEventListener('keydown',e=>{if(e.target.tagName==='INPUT')return;kb=(kb+e.key).slice(-11);if(cheat(kb))kb=''});
 document.querySelector('h1 span').addEventListener('click',()=>{if(++tp>=5){tp=0;const i=document.createElement('input');i.placeholder='código...';i.style.cssText='position:fixed;bottom:12px;left:12px;right:12px;padding:10px;z-index:8;border-radius:8px;border:1px solid var(--bd);background:var(--card);color:var(--fg)';i.onkeydown=e=>{if(e.key==='Enter'){cheat(i.value);i.remove()}};document.body.appendChild(i);i.focus()}});
 init();pk('desk');ui();zupd(99);if(!G.tut)welcome();requestAnimationFrame(frame);
