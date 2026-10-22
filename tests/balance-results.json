@@ -1,0 +1,2606 @@
+{
+  "seed": 20027,
+  "first": {
+    "day": 11,
+    "done": 1,
+    "money": 6270,
+    "anaSeated": true,
+    "knowledge": 2,
+    "log": [
+      "Dia 11: 🔬 +2 conhecimentos por 1 contrato(s) entregue(s).",
+      "Dia 11: 🏅 Conquista: 💰 Primeiro contrato",
+      "Dia 11: ⏳ Resolução segura: Semana de tecnologia · Divulgação orgânica · reputação +0,1",
+      "Dia 11: ✅ Entregue: 🛍️ Site da Padaria"
+    ]
+  },
+  "final": {
+    "day": 80,
+    "money": 6180,
+    "done": 7,
+    "staff": 4,
+    "level": 1,
+    "rep": 5.52,
+    "mood": 100,
+    "research": 5,
+    "chapter": 3,
+    "showcase": {
+      "bairro": {
+        "status": "complete",
+        "attempts": 1,
+        "started": 22,
+        "completed": 43
+      }
+    },
+    "active": [
+      {
+        "name": "🚀 Startup Dashboard BI",
+        "dl": 41,
+        "eta": null,
+        "remaining": {
+          "back": 87.612074442,
+          "infra": 92.826072
+        }
+      }
+    ],
+    "recent": [
+      "Dia 78: 🔬 Pesquisa concluída: Aprendizado compartilhado.",
+      "Dia 78: 🔬 +2 conhecimentos por 1 contrato(s) entregue(s).",
+      "Dia 78: ✅ Entregue: 🏥 Saúde Migração p/ Nuvem",
+      "Dia 77: 📊 Semana 11: +$2.225 no caixa, 0 entrega(s)"
+    ]
+  },
+  "errors": [],
+  "rows": [
+    {
+      "day": 11,
+      "money": 4318,
+      "done": 1,
+      "staff": 2,
+      "level": 0,
+      "rep": 1.5,
+      "mood": 90,
+      "research": 1,
+      "chapter": 1,
+      "showcase": {},
+      "active": [
+        {
+          "name": "🚀 Startup Portal Escolar",
+          "dl": 23,
+          "eta": 8,
+          "remaining": {
+            "back": 37
+          }
+        }
+      ],
+      "recent": [
+        "Dia 11: ✦ Capítulo concluído: Primeiro commit",
+        "Dia 11: 🔬 Pesquisa concluída: Código sustentável.",
+        "Dia 11: Iara entrou na equipe!",
+        "Dia 11: 🔬 +2 conhecimentos por 1 contrato(s) entregue(s)."
+      ]
+    },
+    {
+      "day": 13,
+      "money": 4209,
+      "done": 1,
+      "staff": 2,
+      "level": 0,
+      "rep": 1.5,
+      "mood": 99,
+      "research": 1,
+      "chapter": 1,
+      "showcase": {},
+      "active": [
+        {
+          "name": "🚀 Startup Portal Escolar",
+          "dl": 22,
+          "eta": 7,
+          "remaining": {
+            "back": 31.834
+          }
+        }
+      ],
+      "recent": [
+        "Dia 11: ✦ Capítulo concluído: Primeiro commit",
+        "Dia 11: 🔬 Pesquisa concluída: Código sustentável.",
+        "Dia 11: Iara entrou na equipe!",
+        "Dia 11: 🔬 +2 conhecimentos por 1 contrato(s) entregue(s)."
+      ]
+    },
+    {
+      "day": 14,
+      "money": 4209,
+      "done": 1,
+      "staff": 2,
+      "level": 0,
+      "rep": 1.5,
+      "mood": 100,
+      "research": 1,
+      "chapter": 1,
+      "showcase": {},
+      "active": [
+        {
+          "name": "🚀 Startup Portal Escolar",
+          "dl": 22,
+          "eta": 7,
+          "remaining": {
+            "back": 31.834
+          }
+        }
+      ],
+      "recent": [
+        "Dia 14: 📊 Semana 2: -$1.551 no caixa, 1 entrega(s)",
+        "Dia 11: ✦ Capítulo concluído: Primeiro commit",
+        "Dia 11: 🔬 Pesquisa concluída: Código sustentável.",
+        "Dia 11: Iara entrou na equipe!"
+      ]
+    },
+    {
+      "day": 15,
+      "money": 5346,
+      "done": 1,
+      "staff": 3,
+      "level": 0,
+      "rep": 1.8,
+      "mood": 93,
+      "research": 1,
+      "chapter": 1,
+      "showcase": {},
+      "active": [
+        {
+          "name": "🚀 Startup Portal Escolar",
+          "dl": 21,
+          "eta": 6,
+          "remaining": {
+            "back": 26.668
+          }
+        }
+      ],
+      "recent": [
+        "Dia 15: 📜 Missão cumprida: +$1.850",
+        "Dia 15: Fábio entrou na equipe!",
+        "Dia 14: 📊 Semana 2: -$1.551 no caixa, 1 entrega(s)",
+        "Dia 11: ✦ Capítulo concluído: Primeiro commit"
+      ]
+    },
+    {
+      "day": 16,
+      "money": 5193,
+      "done": 1,
+      "staff": 3,
+      "level": 0,
+      "rep": 1.8,
+      "mood": 96,
+      "research": 1,
+      "chapter": 1,
+      "showcase": {},
+      "active": [
+        {
+          "name": "🚀 Startup Portal Escolar",
+          "dl": 20,
+          "eta": 5,
+          "remaining": {
+            "back": 21.502
+          }
+        }
+      ],
+      "recent": [
+        "Dia 15: 📜 Missão cumprida: +$1.850",
+        "Dia 15: Fábio entrou na equipe!",
+        "Dia 14: 📊 Semana 2: -$1.551 no caixa, 1 entrega(s)",
+        "Dia 11: ✦ Capítulo concluído: Primeiro commit"
+      ]
+    },
+    {
+      "day": 17,
+      "money": 5035,
+      "done": 1,
+      "staff": 3,
+      "level": 0,
+      "rep": 1.8,
+      "mood": 100,
+      "research": 1,
+      "chapter": 1,
+      "showcase": {},
+      "active": [
+        {
+          "name": "🚀 Startup Portal Escolar",
+          "dl": 19,
+          "eta": 3,
+          "remaining": {
+            "back": 16.336
+          }
+        }
+      ],
+      "recent": [
+        "Dia 17: ⬆️ Ana subiu p/ nível 2!",
+        "Dia 15: 📜 Missão cumprida: +$1.850",
+        "Dia 15: Fábio entrou na equipe!",
+        "Dia 14: 📊 Semana 2: -$1.551 no caixa, 1 entrega(s)"
+      ]
+    },
+    {
+      "day": 18,
+      "money": 4877,
+      "done": 1,
+      "staff": 3,
+      "level": 0,
+      "rep": 1.8,
+      "mood": 100,
+      "research": 1,
+      "chapter": 1,
+      "showcase": {},
+      "active": [
+        {
+          "name": "🚀 Startup Portal Escolar",
+          "dl": 18,
+          "eta": 2,
+          "remaining": {
+            "back": 10.136799999999997
+          }
+        }
+      ],
+      "recent": [
+        "Dia 17: ⬆️ Ana subiu p/ nível 2!",
+        "Dia 15: 📜 Missão cumprida: +$1.850",
+        "Dia 15: Fábio entrou na equipe!",
+        "Dia 14: 📊 Semana 2: -$1.551 no caixa, 1 entrega(s)"
+      ]
+    },
+    {
+      "day": 19,
+      "money": 4719,
+      "done": 1,
+      "staff": 3,
+      "level": 0,
+      "rep": 1.8,
+      "mood": 100,
+      "research": 1,
+      "chapter": 1,
+      "showcase": {},
+      "active": [
+        {
+          "name": "🚀 Startup Portal Escolar",
+          "dl": 17,
+          "eta": 1,
+          "remaining": {
+            "back": 3.937599999999997
+          }
+        }
+      ],
+      "recent": [
+        "Dia 19: ✅ Teste de conexão dedicada · Amostra gratuita · produção +5% por 1 dia",
+        "Dia 19: 📨 Evento: Teste de conexão dedicada",
+        "Dia 17: ⬆️ Ana subiu p/ nível 2!",
+        "Dia 15: 📜 Missão cumprida: +$1.850"
+      ]
+    },
+    {
+      "day": 20,
+      "money": 3428,
+      "done": 1,
+      "staff": 4,
+      "level": 0,
+      "rep": 1.8,
+      "mood": 95,
+      "research": 1,
+      "chapter": 1,
+      "showcase": {},
+      "active": [
+        {
+          "name": "🚀 Startup Portal Escolar",
+          "dl": 17,
+          "eta": 1,
+          "remaining": {
+            "back": 3.937599999999997
+          }
+        }
+      ],
+      "recent": [
+        "Dia 20: Diego entrou na equipe!",
+        "Dia 19: ✅ Teste de conexão dedicada · Amostra gratuita · produção +5% por 1 dia",
+        "Dia 19: 📨 Evento: Teste de conexão dedicada",
+        "Dia 17: ⬆️ Ana subiu p/ nível 2!"
+      ]
+    },
+    {
+      "day": 21,
+      "money": 3428,
+      "done": 1,
+      "staff": 4,
+      "level": 0,
+      "rep": 1.8,
+      "mood": 98,
+      "research": 1,
+      "chapter": 1,
+      "showcase": {},
+      "active": [
+        {
+          "name": "🚀 Startup Portal Escolar",
+          "dl": 17,
+          "eta": 1,
+          "remaining": {
+            "back": 3.937599999999997
+          }
+        }
+      ],
+      "recent": [
+        "Dia 21: 📊 Semana 3: -$781 no caixa, 0 entrega(s)",
+        "Dia 20: Diego entrou na equipe!",
+        "Dia 19: ✅ Teste de conexão dedicada · Amostra gratuita · produção +5% por 1 dia",
+        "Dia 19: 📨 Evento: Teste de conexão dedicada"
+      ]
+    },
+    {
+      "day": 22,
+      "money": 3945,
+      "done": 2,
+      "staff": 4,
+      "level": 0,
+      "rep": 2.2,
+      "mood": 99,
+      "research": 2,
+      "chapter": 1,
+      "showcase": {
+        "bairro": {
+          "status": "active",
+          "attempts": 1,
+          "started": 22
+        }
+      },
+      "active": [
+        {
+          "name": "O bairro conectado",
+          "dl": 24,
+          "eta": 16,
+          "remaining": {
+            "back": 48,
+            "front": 32
+          }
+        },
+        {
+          "name": "🛍️ Varejo Chatbot",
+          "dl": 17,
+          "eta": 7,
+          "remaining": {
+            "back": 19,
+            "front": 19
+          }
+        }
+      ],
+      "recent": [
+        "Dia 22: 🔬 Pesquisa concluída: Cultura de cuidado.",
+        "Dia 22: 🔬 +2 conhecimentos por 1 contrato(s) entregue(s).",
+        "Dia 22: ✅ Entregue: 🚀 Startup Portal Escolar",
+        "Dia 21: 📊 Semana 3: -$781 no caixa, 0 entrega(s)"
+      ]
+    },
+    {
+      "day": 23,
+      "money": 3732,
+      "done": 2,
+      "staff": 4,
+      "level": 0,
+      "rep": 2.2,
+      "mood": 100,
+      "research": 2,
+      "chapter": 1,
+      "showcase": {
+        "bairro": {
+          "status": "active",
+          "attempts": 1,
+          "started": 22
+        }
+      },
+      "active": [
+        {
+          "name": "O bairro conectado",
+          "dl": 23,
+          "eta": null,
+          "remaining": {
+            "back": 48,
+            "front": 28.9004
+          }
+        },
+        {
+          "name": "🛍️ Varejo Chatbot",
+          "dl": 16,
+          "eta": null,
+          "remaining": {
+            "back": 19,
+            "front": 15.9004
+          }
+        }
+      ],
+      "recent": [
+        "Dia 22: 🔬 Pesquisa concluída: Cultura de cuidado.",
+        "Dia 22: 🔬 +2 conhecimentos por 1 contrato(s) entregue(s).",
+        "Dia 22: ✅ Entregue: 🚀 Startup Portal Escolar",
+        "Dia 21: 📊 Semana 3: -$781 no caixa, 0 entrega(s)"
+      ]
+    },
+    {
+      "day": 24,
+      "money": 3514,
+      "done": 2,
+      "staff": 4,
+      "level": 0,
+      "rep": 2.2,
+      "mood": 100,
+      "research": 2,
+      "chapter": 1,
+      "showcase": {
+        "bairro": {
+          "status": "active",
+          "attempts": 1,
+          "started": 22
+        }
+      },
+      "active": [
+        {
+          "name": "O bairro conectado",
+          "dl": 22,
+          "eta": 16,
+          "remaining": {
+            "back": 48,
+            "front": 25.800800000000002
+          }
+        },
+        {
+          "name": "🛍️ Varejo Chatbot",
+          "dl": 15,
+          "eta": 7,
+          "remaining": {
+            "back": 19,
+            "front": 12.800799999999999
+          }
+        }
+      ],
+      "recent": [
+        "Dia 24: ⬆️ Iara subiu p/ nível 2!",
+        "Dia 22: 🔬 Pesquisa concluída: Cultura de cuidado.",
+        "Dia 22: 🔬 +2 conhecimentos por 1 contrato(s) entregue(s).",
+        "Dia 22: ✅ Entregue: 🚀 Startup Portal Escolar"
+      ]
+    },
+    {
+      "day": 25,
+      "money": 3296,
+      "done": 2,
+      "staff": 4,
+      "level": 0,
+      "rep": 2.2,
+      "mood": 100,
+      "research": 2,
+      "chapter": 1,
+      "showcase": {
+        "bairro": {
+          "status": "active",
+          "attempts": 1,
+          "started": 22
+        }
+      },
+      "active": [
+        {
+          "name": "O bairro conectado",
+          "dl": 21,
+          "eta": 15,
+          "remaining": {
+            "back": 44.9004,
+            "front": 22.184600000000003
+          }
+        },
+        {
+          "name": "🛍️ Varejo Chatbot",
+          "dl": 14,
+          "eta": 6,
+          "remaining": {
+            "back": 15.9004,
+            "front": 9.1846
+          }
+        }
+      ],
+      "recent": [
+        "Dia 24: ⬆️ Iara subiu p/ nível 2!",
+        "Dia 22: 🔬 Pesquisa concluída: Cultura de cuidado.",
+        "Dia 22: 🔬 +2 conhecimentos por 1 contrato(s) entregue(s).",
+        "Dia 22: ✅ Entregue: 🚀 Startup Portal Escolar"
+      ]
+    },
+    {
+      "day": 26,
+      "money": 5073,
+      "done": 2,
+      "staff": 4,
+      "level": 0,
+      "rep": 2.5,
+      "mood": 100,
+      "research": 2,
+      "chapter": 1,
+      "showcase": {
+        "bairro": {
+          "status": "active",
+          "attempts": 1,
+          "started": 22
+        }
+      },
+      "active": [
+        {
+          "name": "O bairro conectado",
+          "dl": 20,
+          "eta": 14,
+          "remaining": {
+            "back": 41.800799999999995,
+            "front": 18.568400000000004
+          }
+        },
+        {
+          "name": "🛍️ Varejo Chatbot",
+          "dl": 13,
+          "eta": 5,
+          "remaining": {
+            "back": 12.800799999999999,
+            "front": 5.5684
+          }
+        }
+      ],
+      "recent": [
+        "Dia 26: 📜 Missão cumprida: +$2.000",
+        "Dia 26: ⬆️ Fábio subiu p/ nível 2!",
+        "Dia 24: ⬆️ Iara subiu p/ nível 2!",
+        "Dia 22: 🔬 Pesquisa concluída: Cultura de cuidado."
+      ]
+    },
+    {
+      "day": 27,
+      "money": 5073,
+      "done": 2,
+      "staff": 4,
+      "level": 0,
+      "rep": 2.5,
+      "mood": 100,
+      "research": 2,
+      "chapter": 1,
+      "showcase": {
+        "bairro": {
+          "status": "active",
+          "attempts": 1,
+          "started": 22
+        }
+      },
+      "active": [
+        {
+          "name": "O bairro conectado",
+          "dl": 20,
+          "eta": 14,
+          "remaining": {
+            "back": 41.800799999999995,
+            "front": 18.568400000000004
+          }
+        },
+        {
+          "name": "🛍️ Varejo Chatbot",
+          "dl": 13,
+          "eta": 5,
+          "remaining": {
+            "back": 12.800799999999999,
+            "front": 5.5684
+          }
+        }
+      ],
+      "recent": [
+        "Dia 26: 📜 Missão cumprida: +$2.000",
+        "Dia 26: ⬆️ Fábio subiu p/ nível 2!",
+        "Dia 24: ⬆️ Iara subiu p/ nível 2!",
+        "Dia 22: 🔬 Pesquisa concluída: Cultura de cuidado."
+      ]
+    },
+    {
+      "day": 28,
+      "money": 5073,
+      "done": 2,
+      "staff": 4,
+      "level": 0,
+      "rep": 2.5,
+      "mood": 100,
+      "research": 2,
+      "chapter": 1,
+      "showcase": {
+        "bairro": {
+          "status": "active",
+          "attempts": 1,
+          "started": 22
+        }
+      },
+      "active": [
+        {
+          "name": "O bairro conectado",
+          "dl": 20,
+          "eta": 14,
+          "remaining": {
+            "back": 41.800799999999995,
+            "front": 18.568400000000004
+          }
+        },
+        {
+          "name": "🛍️ Varejo Chatbot",
+          "dl": 13,
+          "eta": 5,
+          "remaining": {
+            "back": 12.800799999999999,
+            "front": 5.5684
+          }
+        }
+      ],
+      "recent": [
+        "Dia 28: 📊 Semana 4: +$1.645 no caixa, 1 entrega(s)",
+        "Dia 26: 📜 Missão cumprida: +$2.000",
+        "Dia 26: ⬆️ Fábio subiu p/ nível 2!",
+        "Dia 24: ⬆️ Iara subiu p/ nível 2!"
+      ]
+    },
+    {
+      "day": 29,
+      "money": 4850,
+      "done": 2,
+      "staff": 4,
+      "level": 0,
+      "rep": 2.5,
+      "mood": 100,
+      "research": 2,
+      "chapter": 1,
+      "showcase": {
+        "bairro": {
+          "status": "active",
+          "attempts": 1,
+          "started": 22
+        }
+      },
+      "active": [
+        {
+          "name": "O bairro conectado",
+          "dl": 21,
+          "eta": 15,
+          "remaining": {
+            "back": 44.70119999999999,
+            "front": 17.952200000000005
+          }
+        },
+        {
+          "name": "🛍️ Varejo Chatbot",
+          "dl": 12,
+          "eta": 4,
+          "remaining": {
+            "back": 9.701199999999998,
+            "front": 1.9521999999999995
+          }
+        }
+      ],
+      "recent": [
+        "Dia 29: ✅ Cliente pediu um extra · Aceitar · trabalho restante +15% · recompensa +20% · prazo +2 dias",
+        "Dia 29: 📨 Evento: Cliente pediu um extra",
+        "Dia 28: 📊 Semana 4: +$1.645 no caixa, 1 entrega(s)",
+        "Dia 26: 📜 Missão cumprida: +$2.000"
+      ]
+    },
+    {
+      "day": 30,
+      "money": 4627,
+      "done": 2,
+      "staff": 4,
+      "level": 0,
+      "rep": 2.5,
+      "mood": 100,
+      "research": 2,
+      "chapter": 1,
+      "showcase": {
+        "bairro": {
+          "status": "active",
+          "attempts": 1,
+          "started": 22
+        }
+      },
+      "active": [
+        {
+          "name": "O bairro conectado",
+          "dl": 20,
+          "eta": null,
+          "remaining": {
+            "back": 41.60159999999999,
+            "front": 17.952200000000005
+          }
+        },
+        {
+          "name": "🛍️ Varejo Chatbot",
+          "dl": 11,
+          "eta": null,
+          "remaining": {
+            "back": 6.601599999999998,
+            "front": 1.9521999999999995
+          }
+        }
+      ],
+      "recent": [
+        "Dia 29: ✅ Cliente pediu um extra · Aceitar · trabalho restante +15% · recompensa +20% · prazo +2 dias",
+        "Dia 29: 📨 Evento: Cliente pediu um extra",
+        "Dia 28: 📊 Semana 4: +$1.645 no caixa, 1 entrega(s)",
+        "Dia 26: 📜 Missão cumprida: +$2.000"
+      ]
+    },
+    {
+      "day": 31,
+      "money": 4399,
+      "done": 2,
+      "staff": 4,
+      "level": 0,
+      "rep": 2.5,
+      "mood": 100,
+      "research": 2,
+      "chapter": 1,
+      "showcase": {
+        "bairro": {
+          "status": "active",
+          "attempts": 1,
+          "started": 22
+        }
+      },
+      "active": [
+        {
+          "name": "O bairro conectado",
+          "dl": 19,
+          "eta": 13,
+          "remaining": {
+            "back": 38.50199999999999,
+            "front": 17.952200000000005
+          }
+        },
+        {
+          "name": "🛍️ Varejo Chatbot",
+          "dl": 10,
+          "eta": 2,
+          "remaining": {
+            "back": 3.5019999999999976,
+            "front": 1.9521999999999995
+          }
+        }
+      ],
+      "recent": [
+        "Dia 31: ⬆️ Diego subiu p/ nível 2!",
+        "Dia 29: ✅ Cliente pediu um extra · Aceitar · trabalho restante +15% · recompensa +20% · prazo +2 dias",
+        "Dia 29: 📨 Evento: Cliente pediu um extra",
+        "Dia 28: 📊 Semana 4: +$1.645 no caixa, 1 entrega(s)"
+      ]
+    },
+    {
+      "day": 32,
+      "money": 4171,
+      "done": 2,
+      "staff": 4,
+      "level": 0,
+      "rep": 2.5,
+      "mood": 100,
+      "research": 2,
+      "chapter": 1,
+      "showcase": {
+        "bairro": {
+          "status": "active",
+          "attempts": 1,
+          "started": 22
+        }
+      },
+      "active": [
+        {
+          "name": "O bairro conectado",
+          "dl": 18,
+          "eta": 12,
+          "remaining": {
+            "back": 35.402399999999986,
+            "front": 14.336000000000006
+          }
+        },
+        {
+          "name": "🛍️ Varejo Chatbot",
+          "dl": 9,
+          "eta": 1,
+          "remaining": {
+            "back": 0.4023999999999974,
+            "front": 0
+          }
+        }
+      ],
+      "recent": [
+        "Dia 31: ⬆️ Diego subiu p/ nível 2!",
+        "Dia 29: ✅ Cliente pediu um extra · Aceitar · trabalho restante +15% · recompensa +20% · prazo +2 dias",
+        "Dia 29: 📨 Evento: Cliente pediu um extra",
+        "Dia 28: 📊 Semana 4: +$1.645 no caixa, 1 entrega(s)"
+      ]
+    },
+    {
+      "day": 33,
+      "money": 4873,
+      "done": 3,
+      "staff": 4,
+      "level": 0,
+      "rep": 2.9,
+      "mood": 100,
+      "research": 3,
+      "chapter": 1,
+      "showcase": {
+        "bairro": {
+          "status": "active",
+          "attempts": 1,
+          "started": 22
+        }
+      },
+      "active": [
+        {
+          "name": "O bairro conectado",
+          "dl": 17,
+          "eta": 6,
+          "remaining": {
+            "back": 32.30279999999998,
+            "front": 7.1036000000000055
+          }
+        },
+        {
+          "name": "🎮 Games App de Delivery",
+          "dl": 36,
+          "eta": 23,
+          "remaining": {
+            "front": 83
+          }
+        }
+      ],
+      "recent": [
+        "Dia 33: 🔬 Pesquisa concluída: Descoberta de valor.",
+        "Dia 33: 🔬 +2 conhecimentos por 1 contrato(s) entregue(s).",
+        "Dia 33: ✅ Entregue: 🛍️ Varejo Chatbot",
+        "Dia 31: ⬆️ Diego subiu p/ nível 2!"
+      ]
+    },
+    {
+      "day": 34,
+      "money": 4873,
+      "done": 3,
+      "staff": 4,
+      "level": 0,
+      "rep": 2.9,
+      "mood": 100,
+      "research": 3,
+      "chapter": 1,
+      "showcase": {
+        "bairro": {
+          "status": "active",
+          "attempts": 1,
+          "started": 22
+        }
+      },
+      "active": [
+        {
+          "name": "O bairro conectado",
+          "dl": 17,
+          "eta": null,
+          "remaining": {
+            "back": 32.30279999999998,
+            "front": 7.1036000000000055
+          }
+        },
+        {
+          "name": "🎮 Games App de Delivery",
+          "dl": 36,
+          "eta": 23,
+          "remaining": {
+            "front": 83
+          }
+        }
+      ],
+      "recent": [
+        "Dia 33: 🔬 Pesquisa concluída: Descoberta de valor.",
+        "Dia 33: 🔬 +2 conhecimentos por 1 contrato(s) entregue(s).",
+        "Dia 33: ✅ Entregue: 🛍️ Varejo Chatbot",
+        "Dia 31: ⬆️ Diego subiu p/ nível 2!"
+      ]
+    },
+    {
+      "day": 35,
+      "money": 4873,
+      "done": 3,
+      "staff": 4,
+      "level": 0,
+      "rep": 2.9,
+      "mood": 100,
+      "research": 3,
+      "chapter": 1,
+      "showcase": {
+        "bairro": {
+          "status": "active",
+          "attempts": 1,
+          "started": 22
+        }
+      },
+      "active": [
+        {
+          "name": "O bairro conectado",
+          "dl": 17,
+          "eta": null,
+          "remaining": {
+            "back": 32.30279999999998,
+            "front": 7.1036000000000055
+          }
+        },
+        {
+          "name": "🎮 Games App de Delivery",
+          "dl": 36,
+          "eta": 23,
+          "remaining": {
+            "front": 83
+          }
+        }
+      ],
+      "recent": [
+        "Dia 35: 📊 Semana 5: -$200 no caixa, 1 entrega(s)",
+        "Dia 33: 🔬 Pesquisa concluída: Descoberta de valor.",
+        "Dia 33: 🔬 +2 conhecimentos por 1 contrato(s) entregue(s).",
+        "Dia 33: ✅ Entregue: 🛍️ Varejo Chatbot"
+      ]
+    },
+    {
+      "day": 36,
+      "money": 4645,
+      "done": 3,
+      "staff": 4,
+      "level": 0,
+      "rep": 2.9,
+      "mood": 100,
+      "research": 3,
+      "chapter": 1,
+      "showcase": {
+        "bairro": {
+          "status": "active",
+          "attempts": 1,
+          "started": 22
+        }
+      },
+      "active": [
+        {
+          "name": "O bairro conectado",
+          "dl": 16,
+          "eta": 5,
+          "remaining": {
+            "back": 26.103599999999982,
+            "front": 3.4874000000000054
+          }
+        },
+        {
+          "name": "🎮 Games App de Delivery",
+          "dl": 35,
+          "eta": 22,
+          "remaining": {
+            "front": 79.3838
+          }
+        }
+      ],
+      "recent": [
+        "Dia 35: 📊 Semana 5: -$200 no caixa, 1 entrega(s)",
+        "Dia 33: 🔬 Pesquisa concluída: Descoberta de valor.",
+        "Dia 33: 🔬 +2 conhecimentos por 1 contrato(s) entregue(s).",
+        "Dia 33: ✅ Entregue: 🛍️ Varejo Chatbot"
+      ]
+    },
+    {
+      "day": 37,
+      "money": 4417,
+      "done": 3,
+      "staff": 4,
+      "level": 0,
+      "rep": 2.9,
+      "mood": 100,
+      "research": 3,
+      "chapter": 1,
+      "showcase": {
+        "bairro": {
+          "status": "active",
+          "attempts": 1,
+          "started": 22
+        }
+      },
+      "active": [
+        {
+          "name": "O bairro conectado",
+          "dl": 15,
+          "eta": null,
+          "remaining": {
+            "back": 19.90439999999998,
+            "front": 3.4874000000000054
+          }
+        },
+        {
+          "name": "🎮 Games App de Delivery",
+          "dl": 34,
+          "eta": null,
+          "remaining": {
+            "front": 79.3838
+          }
+        }
+      ],
+      "recent": [
+        "Dia 35: 📊 Semana 5: -$200 no caixa, 1 entrega(s)",
+        "Dia 33: 🔬 Pesquisa concluída: Descoberta de valor.",
+        "Dia 33: 🔬 +2 conhecimentos por 1 contrato(s) entregue(s).",
+        "Dia 33: ✅ Entregue: 🛍️ Varejo Chatbot"
+      ]
+    },
+    {
+      "day": 38,
+      "money": 4189,
+      "done": 3,
+      "staff": 4,
+      "level": 0,
+      "rep": 2.9,
+      "mood": 100,
+      "research": 3,
+      "chapter": 1,
+      "showcase": {
+        "bairro": {
+          "status": "active",
+          "attempts": 1,
+          "started": 22
+        }
+      },
+      "active": [
+        {
+          "name": "O bairro conectado",
+          "dl": 14,
+          "eta": 3,
+          "remaining": {
+            "back": 13.70519999999998,
+            "front": 3.4874000000000054
+          }
+        },
+        {
+          "name": "🎮 Games App de Delivery",
+          "dl": 33,
+          "eta": 22,
+          "remaining": {
+            "front": 79.3838
+          }
+        }
+      ],
+      "recent": [
+        "Dia 38: ✅ Oficina da comunidade · Compartilhar o material gratuito · +12 XP para a equipe",
+        "Dia 38: 📨 Evento: Oficina da comunidade",
+        "Dia 35: 📊 Semana 5: -$200 no caixa, 1 entrega(s)",
+        "Dia 33: 🔬 Pesquisa concluída: Descoberta de valor."
+      ]
+    },
+    {
+      "day": 39,
+      "money": 3956,
+      "done": 3,
+      "staff": 4,
+      "level": 0,
+      "rep": 2.9,
+      "mood": 100,
+      "research": 3,
+      "chapter": 1,
+      "showcase": {
+        "bairro": {
+          "status": "active",
+          "attempts": 1,
+          "started": 22
+        }
+      },
+      "active": [
+        {
+          "name": "O bairro conectado",
+          "dl": 13,
+          "eta": 2,
+          "remaining": {
+            "back": 7.50599999999998,
+            "front": 0
+          }
+        },
+        {
+          "name": "🎮 Games App de Delivery",
+          "dl": 32,
+          "eta": 11,
+          "remaining": {
+            "front": 75.76759999999999
+          }
+        }
+      ],
+      "recent": [
+        "Dia 39: ⬆️ Ana subiu p/ nível 3!",
+        "Dia 38: ✅ Oficina da comunidade · Compartilhar o material gratuito · +12 XP para a equipe",
+        "Dia 38: 📨 Evento: Oficina da comunidade",
+        "Dia 35: 📊 Semana 5: -$200 no caixa, 1 entrega(s)"
+      ]
+    },
+    {
+      "day": 40,
+      "money": 3723,
+      "done": 3,
+      "staff": 4,
+      "level": 0,
+      "rep": 2.9,
+      "mood": 100,
+      "research": 3,
+      "chapter": 1,
+      "showcase": {
+        "bairro": {
+          "status": "active",
+          "attempts": 1,
+          "started": 22
+        }
+      },
+      "active": [
+        {
+          "name": "O bairro conectado",
+          "dl": 12,
+          "eta": 1,
+          "remaining": {
+            "back": 0.27359999999997964,
+            "front": 0
+          }
+        },
+        {
+          "name": "🎮 Games App de Delivery",
+          "dl": 31,
+          "eta": 10,
+          "remaining": {
+            "front": 68.53519999999999
+          }
+        }
+      ],
+      "recent": [
+        "Dia 39: ⬆️ Ana subiu p/ nível 3!",
+        "Dia 38: ✅ Oficina da comunidade · Compartilhar o material gratuito · +12 XP para a equipe",
+        "Dia 38: 📨 Evento: Oficina da comunidade",
+        "Dia 35: 📊 Semana 5: -$200 no caixa, 1 entrega(s)"
+      ]
+    },
+    {
+      "day": 41,
+      "money": 3723,
+      "done": 3,
+      "staff": 4,
+      "level": 0,
+      "rep": 2.9,
+      "mood": 100,
+      "research": 3,
+      "chapter": 1,
+      "showcase": {
+        "bairro": {
+          "status": "active",
+          "attempts": 1,
+          "started": 22
+        }
+      },
+      "active": [
+        {
+          "name": "O bairro conectado",
+          "dl": 12,
+          "eta": null,
+          "remaining": {
+            "back": 0.27359999999997964,
+            "front": 0
+          }
+        },
+        {
+          "name": "🎮 Games App de Delivery",
+          "dl": 31,
+          "eta": 10,
+          "remaining": {
+            "front": 68.53519999999999
+          }
+        }
+      ],
+      "recent": [
+        "Dia 39: ⬆️ Ana subiu p/ nível 3!",
+        "Dia 38: ✅ Oficina da comunidade · Compartilhar o material gratuito · +12 XP para a equipe",
+        "Dia 38: 📨 Evento: Oficina da comunidade",
+        "Dia 35: 📊 Semana 5: -$200 no caixa, 1 entrega(s)"
+      ]
+    },
+    {
+      "day": 42,
+      "money": 3723,
+      "done": 3,
+      "staff": 4,
+      "level": 0,
+      "rep": 2.9,
+      "mood": 100,
+      "research": 3,
+      "chapter": 1,
+      "showcase": {
+        "bairro": {
+          "status": "active",
+          "attempts": 1,
+          "started": 22
+        }
+      },
+      "active": [
+        {
+          "name": "O bairro conectado",
+          "dl": 12,
+          "eta": null,
+          "remaining": {
+            "back": 0.27359999999997964,
+            "front": 0
+          }
+        },
+        {
+          "name": "🎮 Games App de Delivery",
+          "dl": 31,
+          "eta": 10,
+          "remaining": {
+            "front": 68.53519999999999
+          }
+        }
+      ],
+      "recent": [
+        "Dia 42: 📊 Semana 6: -$1.150 no caixa, 0 entrega(s)",
+        "Dia 39: ⬆️ Ana subiu p/ nível 3!",
+        "Dia 38: ✅ Oficina da comunidade · Compartilhar o material gratuito · +12 XP para a equipe",
+        "Dia 38: 📨 Evento: Oficina da comunidade"
+      ]
+    },
+    {
+      "day": 43,
+      "money": 5650,
+      "done": 4,
+      "staff": 4,
+      "level": 0,
+      "rep": 3.62,
+      "mood": 100,
+      "research": 3,
+      "chapter": 1,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🎮 Games App de Delivery",
+          "dl": 30,
+          "eta": null,
+          "remaining": {
+            "front": 68.53519999999999
+          }
+        }
+      ],
+      "recent": [
+        "Dia 43: 🔬 +2 conhecimentos por 1 contrato(s) entregue(s).",
+        "Dia 43: ✅ Entregue: O bairro conectado",
+        "Dia 42: 📊 Semana 6: -$1.150 no caixa, 0 entrega(s)",
+        "Dia 39: ⬆️ Ana subiu p/ nível 3!"
+      ]
+    },
+    {
+      "day": 44,
+      "money": 5417,
+      "done": 4,
+      "staff": 4,
+      "level": 0,
+      "rep": 3.62,
+      "mood": 100,
+      "research": 3,
+      "chapter": 1,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🎮 Games App de Delivery",
+          "dl": 29,
+          "eta": 9,
+          "remaining": {
+            "front": 61.30279999999999
+          }
+        }
+      ],
+      "recent": [
+        "Dia 43: 🔬 +2 conhecimentos por 1 contrato(s) entregue(s).",
+        "Dia 43: ✅ Entregue: O bairro conectado",
+        "Dia 42: 📊 Semana 6: -$1.150 no caixa, 0 entrega(s)",
+        "Dia 39: ⬆️ Ana subiu p/ nível 3!"
+      ]
+    },
+    {
+      "day": 45,
+      "money": 5179,
+      "done": 4,
+      "staff": 4,
+      "level": 0,
+      "rep": 3.72,
+      "mood": 100,
+      "research": 3,
+      "chapter": 1,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🎮 Games App de Delivery",
+          "dl": 28,
+          "eta": 8,
+          "remaining": {
+            "front": 54.07039999999999
+          }
+        }
+      ],
+      "recent": [
+        "Dia 45: ✅ Semana de tecnologia · Divulgação orgânica · reputação +0,1",
+        "Dia 45: 📨 Evento: Semana de tecnologia",
+        "Dia 45: ⬆️ Diego subiu p/ nível 3!",
+        "Dia 43: 🔬 +2 conhecimentos por 1 contrato(s) entregue(s)."
+      ]
+    },
+    {
+      "day": 46,
+      "money": 4936,
+      "done": 4,
+      "staff": 4,
+      "level": 0,
+      "rep": 3.72,
+      "mood": 100,
+      "research": 3,
+      "chapter": 1,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🎮 Games App de Delivery",
+          "dl": 27,
+          "eta": 6,
+          "remaining": {
+            "front": 46.837999999999994
+          }
+        }
+      ],
+      "recent": [
+        "Dia 46: ⬆️ Iara subiu p/ nível 3!",
+        "Dia 45: ✅ Semana de tecnologia · Divulgação orgânica · reputação +0,1",
+        "Dia 45: 📨 Evento: Semana de tecnologia",
+        "Dia 45: ⬆️ Diego subiu p/ nível 3!"
+      ]
+    },
+    {
+      "day": 47,
+      "money": 4688,
+      "done": 4,
+      "staff": 4,
+      "level": 0,
+      "rep": 3.72,
+      "mood": 100,
+      "research": 3,
+      "chapter": 1,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🎮 Games App de Delivery",
+          "dl": 26,
+          "eta": 5,
+          "remaining": {
+            "front": 38.572399999999995
+          }
+        }
+      ],
+      "recent": [
+        "Dia 47: ⬆️ Fábio subiu p/ nível 3!",
+        "Dia 46: ⬆️ Iara subiu p/ nível 3!",
+        "Dia 45: ✅ Semana de tecnologia · Divulgação orgânica · reputação +0,1",
+        "Dia 45: 📨 Evento: Semana de tecnologia"
+      ]
+    },
+    {
+      "day": 48,
+      "money": 4688,
+      "done": 4,
+      "staff": 4,
+      "level": 0,
+      "rep": 3.72,
+      "mood": 100,
+      "research": 3,
+      "chapter": 1,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🎮 Games App de Delivery",
+          "dl": 26,
+          "eta": null,
+          "remaining": {
+            "front": 38.572399999999995
+          }
+        }
+      ],
+      "recent": [
+        "Dia 47: ⬆️ Fábio subiu p/ nível 3!",
+        "Dia 46: ⬆️ Iara subiu p/ nível 3!",
+        "Dia 45: ✅ Semana de tecnologia · Divulgação orgânica · reputação +0,1",
+        "Dia 45: 📨 Evento: Semana de tecnologia"
+      ]
+    },
+    {
+      "day": 49,
+      "money": 4688,
+      "done": 4,
+      "staff": 4,
+      "level": 0,
+      "rep": 3.72,
+      "mood": 100,
+      "research": 3,
+      "chapter": 1,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🎮 Games App de Delivery",
+          "dl": 26,
+          "eta": 5,
+          "remaining": {
+            "front": 38.572399999999995
+          }
+        }
+      ],
+      "recent": [
+        "Dia 49: 📊 Semana 7: +$965 no caixa, 1 entrega(s)",
+        "Dia 47: ⬆️ Fábio subiu p/ nível 3!",
+        "Dia 46: ⬆️ Iara subiu p/ nível 3!",
+        "Dia 45: ✅ Semana de tecnologia · Divulgação orgânica · reputação +0,1"
+      ]
+    },
+    {
+      "day": 50,
+      "money": 6740,
+      "done": 4,
+      "staff": 4,
+      "level": 0,
+      "rep": 4.02,
+      "mood": 100,
+      "research": 3,
+      "chapter": 1,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🎮 Games App de Delivery",
+          "dl": 25,
+          "eta": 4,
+          "remaining": {
+            "front": 30.306799999999996
+          }
+        }
+      ],
+      "recent": [
+        "Dia 50: 📜 Missão cumprida: +$2.300",
+        "Dia 49: 📊 Semana 7: +$965 no caixa, 1 entrega(s)",
+        "Dia 47: ⬆️ Fábio subiu p/ nível 3!",
+        "Dia 46: ⬆️ Iara subiu p/ nível 3!"
+      ]
+    },
+    {
+      "day": 51,
+      "money": 4692,
+      "done": 4,
+      "staff": 4,
+      "level": 0,
+      "rep": 4.02,
+      "mood": 100,
+      "research": 3,
+      "chapter": 1,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🎮 Games App de Delivery",
+          "dl": 24,
+          "eta": 3,
+          "remaining": {
+            "front": 22.041199999999996
+          }
+        }
+      ],
+      "recent": [
+        "Dia 50: 📜 Missão cumprida: +$2.300",
+        "Dia 49: 📊 Semana 7: +$965 no caixa, 1 entrega(s)",
+        "Dia 47: ⬆️ Fábio subiu p/ nível 3!",
+        "Dia 46: ⬆️ Iara subiu p/ nível 3!"
+      ]
+    },
+    {
+      "day": 52,
+      "money": 4444,
+      "done": 4,
+      "staff": 4,
+      "level": 0,
+      "rep": 4.02,
+      "mood": 100,
+      "research": 3,
+      "chapter": 1,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🎮 Games App de Delivery",
+          "dl": 23,
+          "eta": 2,
+          "remaining": {
+            "front": 12.903579199999996
+          }
+        }
+      ],
+      "recent": [
+        "Dia 50: 📜 Missão cumprida: +$2.300",
+        "Dia 49: 📊 Semana 7: +$965 no caixa, 1 entrega(s)",
+        "Dia 47: ⬆️ Fábio subiu p/ nível 3!",
+        "Dia 46: ⬆️ Iara subiu p/ nível 3!"
+      ]
+    },
+    {
+      "day": 53,
+      "money": 4196,
+      "done": 4,
+      "staff": 4,
+      "level": 0,
+      "rep": 4.02,
+      "mood": 100,
+      "research": 3,
+      "chapter": 1,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🎮 Games App de Delivery",
+          "dl": 22,
+          "eta": 1,
+          "remaining": {
+            "front": 3.8114191999999942
+          }
+        }
+      ],
+      "recent": [
+        "Dia 50: 📜 Missão cumprida: +$2.300",
+        "Dia 49: 📊 Semana 7: +$965 no caixa, 1 entrega(s)",
+        "Dia 47: ⬆️ Fábio subiu p/ nível 3!",
+        "Dia 46: ⬆️ Iara subiu p/ nível 3!"
+      ]
+    },
+    {
+      "day": 54,
+      "money": 3519,
+      "done": 5,
+      "staff": 4,
+      "level": 1,
+      "rep": 4.42,
+      "mood": 100,
+      "research": 4,
+      "chapter": 2,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🏥 Saúde Migração p/ Nuvem",
+          "dl": 23,
+          "eta": 5,
+          "remaining": {
+            "infra": 38,
+            "ux": 38
+          }
+        }
+      ],
+      "recent": [
+        "Dia 54: 🏡 Minha Sala cresceu para 7×7.",
+        "Dia 54: 🏢 Sala comercial: 2 andares disponíveis.",
+        "Dia 54: ✦ Capítulo concluído: Gente que faz acontecer",
+        "Dia 54: 🔬 Pesquisa concluída: Qualidade contínua."
+      ]
+    },
+    {
+      "day": 55,
+      "money": 5370,
+      "done": 5,
+      "staff": 4,
+      "level": 1,
+      "rep": 4.42,
+      "mood": 100,
+      "research": 4,
+      "chapter": 3,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🏥 Saúde Migração p/ Nuvem",
+          "dl": 23,
+          "eta": 5,
+          "remaining": {
+            "infra": 38,
+            "ux": 38
+          }
+        }
+      ],
+      "recent": [
+        "Dia 55: ✦ Capítulo concluído: O próximo endereço",
+        "Dia 55: 💼 Ana: salário defasado, humor -2/dia. Reveja na Equipe.",
+        "Dia 54: 🏡 Minha Sala cresceu para 7×7.",
+        "Dia 54: 🏢 Sala comercial: 2 andares disponíveis."
+      ]
+    },
+    {
+      "day": 56,
+      "money": 5521,
+      "done": 5,
+      "staff": 4,
+      "level": 1,
+      "rep": 4.42,
+      "mood": 100,
+      "research": 4,
+      "chapter": 3,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🏥 Saúde Migração p/ Nuvem",
+          "dl": 23,
+          "eta": null,
+          "remaining": {
+            "infra": 38,
+            "ux": 38
+          }
+        }
+      ],
+      "recent": [
+        "Dia 56: 📊 Semana 8: +$833 no caixa, 1 entrega(s)",
+        "Dia 55: ✦ Capítulo concluído: O próximo endereço",
+        "Dia 55: 💼 Ana: salário defasado, humor -2/dia. Reveja na Equipe.",
+        "Dia 54: 🏡 Minha Sala cresceu para 7×7."
+      ]
+    },
+    {
+      "day": 57,
+      "money": 5377,
+      "done": 5,
+      "staff": 4,
+      "level": 1,
+      "rep": 4.42,
+      "mood": 100,
+      "research": 4,
+      "chapter": 3,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🏥 Saúde Migração p/ Nuvem",
+          "dl": 22,
+          "eta": 6,
+          "remaining": {
+            "infra": 25.725583999999998,
+            "ux": 38
+          }
+        }
+      ],
+      "recent": [
+        "Dia 57: 🌟 Fábio realizou uma ambição!",
+        "Dia 57: 🌟 Ana realizou uma ambição!",
+        "Dia 56: 📊 Semana 8: +$833 no caixa, 1 entrega(s)",
+        "Dia 55: ✦ Capítulo concluído: O próximo endereço"
+      ]
+    },
+    {
+      "day": 58,
+      "money": 5233,
+      "done": 5,
+      "staff": 4,
+      "level": 1,
+      "rep": 4.42,
+      "mood": 100,
+      "research": 4,
+      "chapter": 3,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🏥 Saúde Migração p/ Nuvem",
+          "dl": 21,
+          "eta": 4,
+          "remaining": {
+            "infra": 13.451167999999996,
+            "ux": 28.400724775999997
+          }
+        }
+      ],
+      "recent": [
+        "Dia 57: 🌟 Fábio realizou uma ambição!",
+        "Dia 57: 🌟 Ana realizou uma ambição!",
+        "Dia 56: 📊 Semana 8: +$833 no caixa, 1 entrega(s)",
+        "Dia 55: ✦ Capítulo concluído: O próximo endereço"
+      ]
+    },
+    {
+      "day": 59,
+      "money": 5089,
+      "done": 5,
+      "staff": 4,
+      "level": 1,
+      "rep": 4.42,
+      "mood": 100,
+      "research": 4,
+      "chapter": 3,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🏥 Saúde Migração p/ Nuvem",
+          "dl": 20,
+          "eta": 3,
+          "remaining": {
+            "infra": 1.1767519999999934,
+            "ux": 18.853956775999997
+          }
+        }
+      ],
+      "recent": [
+        "Dia 57: 🌟 Fábio realizou uma ambição!",
+        "Dia 57: 🌟 Ana realizou uma ambição!",
+        "Dia 56: 📊 Semana 8: +$833 no caixa, 1 entrega(s)",
+        "Dia 55: ✦ Capítulo concluído: O próximo endereço"
+      ]
+    },
+    {
+      "day": 60,
+      "money": 4632,
+      "done": 5,
+      "staff": 4,
+      "level": 1,
+      "rep": 4.42,
+      "mood": 100,
+      "research": 4,
+      "chapter": 3,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🏥 Saúde Migração p/ Nuvem",
+          "dl": 19,
+          "eta": 2,
+          "remaining": {
+            "infra": 0,
+            "ux": 9.254681551999996
+          }
+        }
+      ],
+      "recent": [
+        "Dia 60: ✅ Oficina da comunidade · Compartilhar o material gratuito · +12 XP para a equipe",
+        "Dia 60: 📨 Evento: Oficina da comunidade",
+        "Dia 60: 🧾 Impostos do mês: -$313",
+        "Dia 57: 🌟 Fábio realizou uma ambição!"
+      ]
+    },
+    {
+      "day": 61,
+      "money": 4908,
+      "done": 6,
+      "staff": 4,
+      "level": 1,
+      "rep": 4.82,
+      "mood": 100,
+      "research": 4,
+      "chapter": 3,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🏥 Saúde Migração p/ Nuvem",
+          "dl": 32,
+          "eta": 9,
+          "remaining": {
+            "front": 70,
+            "infra": 70
+          }
+        }
+      ],
+      "recent": [
+        "Dia 61: 🔬 +2 conhecimentos por 1 contrato(s) entregue(s).",
+        "Dia 61: ✅ Entregue: 🏥 Saúde Migração p/ Nuvem",
+        "Dia 60: ✅ Oficina da comunidade · Compartilhar o material gratuito · +12 XP para a equipe",
+        "Dia 60: 📨 Evento: Oficina da comunidade"
+      ]
+    },
+    {
+      "day": 62,
+      "money": 5059,
+      "done": 6,
+      "staff": 4,
+      "level": 1,
+      "rep": 4.82,
+      "mood": 100,
+      "research": 4,
+      "chapter": 3,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🏥 Saúde Migração p/ Nuvem",
+          "dl": 32,
+          "eta": 9,
+          "remaining": {
+            "front": 70,
+            "infra": 70
+          }
+        }
+      ],
+      "recent": [
+        "Dia 61: 🔬 +2 conhecimentos por 1 contrato(s) entregue(s).",
+        "Dia 61: ✅ Entregue: 🏥 Saúde Migração p/ Nuvem",
+        "Dia 60: ✅ Oficina da comunidade · Compartilhar o material gratuito · +12 XP para a equipe",
+        "Dia 60: 📨 Evento: Oficina da comunidade"
+      ]
+    },
+    {
+      "day": 63,
+      "money": 5210,
+      "done": 6,
+      "staff": 4,
+      "level": 1,
+      "rep": 4.82,
+      "mood": 100,
+      "research": 4,
+      "chapter": 3,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🏥 Saúde Migração p/ Nuvem",
+          "dl": 32,
+          "eta": 9,
+          "remaining": {
+            "front": 70,
+            "infra": 70
+          }
+        }
+      ],
+      "recent": [
+        "Dia 63: 📊 Semana 9: -$311 no caixa, 1 entrega(s)",
+        "Dia 61: 🔬 +2 conhecimentos por 1 contrato(s) entregue(s).",
+        "Dia 61: ✅ Entregue: 🏥 Saúde Migração p/ Nuvem",
+        "Dia 60: ✅ Oficina da comunidade · Compartilhar o material gratuito · +12 XP para a equipe"
+      ]
+    },
+    {
+      "day": 64,
+      "money": 5066,
+      "done": 6,
+      "staff": 4,
+      "level": 1,
+      "rep": 4.82,
+      "mood": 100,
+      "research": 4,
+      "chapter": 3,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🏥 Saúde Migração p/ Nuvem",
+          "dl": 31,
+          "eta": null,
+          "remaining": {
+            "front": 59.652316192,
+            "infra": 70
+          }
+        }
+      ],
+      "recent": [
+        "Dia 63: 📊 Semana 9: -$311 no caixa, 1 entrega(s)",
+        "Dia 61: 🔬 +2 conhecimentos por 1 contrato(s) entregue(s).",
+        "Dia 61: ✅ Entregue: 🏥 Saúde Migração p/ Nuvem",
+        "Dia 60: ✅ Oficina da comunidade · Compartilhar o material gratuito · +12 XP para a equipe"
+      ]
+    },
+    {
+      "day": 65,
+      "money": 4917,
+      "done": 6,
+      "staff": 4,
+      "level": 1,
+      "rep": 4.82,
+      "mood": 100,
+      "research": 4,
+      "chapter": 3,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🏥 Saúde Migração p/ Nuvem",
+          "dl": 30,
+          "eta": null,
+          "remaining": {
+            "front": 49.2994894,
+            "infra": 70
+          }
+        }
+      ],
+      "recent": [
+        "Dia 65: ⬆️ Ana subiu p/ nível 4!",
+        "Dia 63: 📊 Semana 9: -$311 no caixa, 1 entrega(s)",
+        "Dia 61: 🔬 +2 conhecimentos por 1 contrato(s) entregue(s).",
+        "Dia 61: ✅ Entregue: 🏥 Saúde Migração p/ Nuvem"
+      ]
+    },
+    {
+      "day": 66,
+      "money": 4768,
+      "done": 6,
+      "staff": 4,
+      "level": 1,
+      "rep": 4.82,
+      "mood": 100,
+      "research": 4,
+      "chapter": 3,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🏥 Saúde Migração p/ Nuvem",
+          "dl": 29,
+          "eta": null,
+          "remaining": {
+            "front": 38.946662608,
+            "infra": 70
+          }
+        }
+      ],
+      "recent": [
+        "Dia 65: ⬆️ Ana subiu p/ nível 4!",
+        "Dia 63: 📊 Semana 9: -$311 no caixa, 1 entrega(s)",
+        "Dia 61: 🔬 +2 conhecimentos por 1 contrato(s) entregue(s).",
+        "Dia 61: ✅ Entregue: 🏥 Saúde Migração p/ Nuvem"
+      ]
+    },
+    {
+      "day": 67,
+      "money": 4009,
+      "done": 6,
+      "staff": 4,
+      "level": 1,
+      "rep": 4.82,
+      "mood": 100,
+      "research": 4,
+      "chapter": 3,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🏥 Saúde Migração p/ Nuvem",
+          "dl": 28,
+          "eta": 8,
+          "remaining": {
+            "front": 28.598978799999998,
+            "infra": 70
+          }
+        }
+      ],
+      "recent": [
+        "Dia 67: ✅ Manutenção preventiva · Reiniciar com segurança · este servidor para por 1 dia",
+        "Dia 67: 📨 Evento: Manutenção preventiva",
+        "Dia 67: ⬆️ Fábio subiu p/ nível 4!",
+        "Dia 67: ⬆️ Iara subiu p/ nível 4!"
+      ]
+    },
+    {
+      "day": 68,
+      "money": 3850,
+      "done": 6,
+      "staff": 4,
+      "level": 1,
+      "rep": 4.82,
+      "mood": 100,
+      "research": 4,
+      "chapter": 3,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🏥 Saúde Migração p/ Nuvem",
+          "dl": 27,
+          "eta": null,
+          "remaining": {
+            "front": 28.598978799999998,
+            "infra": 56.044512916
+          }
+        }
+      ],
+      "recent": [
+        "Dia 67: ✅ Manutenção preventiva · Reiniciar com segurança · este servidor para por 1 dia",
+        "Dia 67: 📨 Evento: Manutenção preventiva",
+        "Dia 67: ⬆️ Fábio subiu p/ nível 4!",
+        "Dia 67: ⬆️ Iara subiu p/ nível 4!"
+      ]
+    },
+    {
+      "day": 69,
+      "money": 3850,
+      "done": 6,
+      "staff": 4,
+      "level": 1,
+      "rep": 4.82,
+      "mood": 100,
+      "research": 4,
+      "chapter": 3,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🏥 Saúde Migração p/ Nuvem",
+          "dl": 27,
+          "eta": 6,
+          "remaining": {
+            "front": 28.598978799999998,
+            "infra": 56.044512916
+          }
+        }
+      ],
+      "recent": [
+        "Dia 67: ✅ Manutenção preventiva · Reiniciar com segurança · este servidor para por 1 dia",
+        "Dia 67: 📨 Evento: Manutenção preventiva",
+        "Dia 67: ⬆️ Fábio subiu p/ nível 4!",
+        "Dia 67: ⬆️ Iara subiu p/ nível 4!"
+      ]
+    },
+    {
+      "day": 70,
+      "money": 3850,
+      "done": 6,
+      "staff": 4,
+      "level": 1,
+      "rep": 4.82,
+      "mood": 100,
+      "research": 4,
+      "chapter": 3,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🏥 Saúde Migração p/ Nuvem",
+          "dl": 27,
+          "eta": 6,
+          "remaining": {
+            "front": 28.598978799999998,
+            "infra": 56.044512916
+          }
+        }
+      ],
+      "recent": [
+        "Dia 70: 📊 Semana 10: -$1.360 no caixa, 0 entrega(s)",
+        "Dia 67: ✅ Manutenção preventiva · Reiniciar com segurança · este servidor para por 1 dia",
+        "Dia 67: 📨 Evento: Manutenção preventiva",
+        "Dia 67: ⬆️ Fábio subiu p/ nível 4!"
+      ]
+    },
+    {
+      "day": 71,
+      "money": 3535,
+      "done": 6,
+      "staff": 4,
+      "level": 1,
+      "rep": 4.82,
+      "mood": 100,
+      "research": 4,
+      "chapter": 3,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🏥 Saúde Migração p/ Nuvem",
+          "dl": 26,
+          "eta": 4,
+          "remaining": {
+            "front": 16.946262802,
+            "infra": 42.089025832000004
+          }
+        }
+      ],
+      "recent": [
+        "Dia 71: ⬆️ Diego subiu p/ nível 4!",
+        "Dia 70: 📊 Semana 10: -$1.360 no caixa, 0 entrega(s)",
+        "Dia 67: ✅ Manutenção preventiva · Reiniciar com segurança · este servidor para por 1 dia",
+        "Dia 67: 📨 Evento: Manutenção preventiva"
+      ]
+    },
+    {
+      "day": 72,
+      "money": 3220,
+      "done": 6,
+      "staff": 4,
+      "level": 1,
+      "rep": 4.82,
+      "mood": 100,
+      "research": 4,
+      "chapter": 3,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🏥 Saúde Migração p/ Nuvem",
+          "dl": 25,
+          "eta": null,
+          "remaining": {
+            "front": 16.946262802,
+            "infra": 26.582929072000006
+          }
+        }
+      ],
+      "recent": [
+        "Dia 71: ⬆️ Diego subiu p/ nível 4!",
+        "Dia 70: 📊 Semana 10: -$1.360 no caixa, 0 entrega(s)",
+        "Dia 67: ✅ Manutenção preventiva · Reiniciar com segurança · este servidor para por 1 dia",
+        "Dia 67: 📨 Evento: Manutenção preventiva"
+      ]
+    },
+    {
+      "day": 73,
+      "money": 2905,
+      "done": 6,
+      "staff": 4,
+      "level": 1,
+      "rep": 4.82,
+      "mood": 100,
+      "research": 4,
+      "chapter": 3,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🏥 Saúde Migração p/ Nuvem",
+          "dl": 24,
+          "eta": null,
+          "remaining": {
+            "front": 16.946262802,
+            "infra": 11.076832312000006
+          }
+        }
+      ],
+      "recent": [
+        "Dia 73: ✅ Teste de conexão dedicada · Amostra gratuita · produção +5% por 1 dia",
+        "Dia 73: 📨 Evento: Teste de conexão dedicada",
+        "Dia 71: ⬆️ Diego subiu p/ nível 4!",
+        "Dia 70: 📊 Semana 10: -$1.360 no caixa, 0 entrega(s)"
+      ]
+    },
+    {
+      "day": 74,
+      "money": 6390,
+      "done": 6,
+      "staff": 4,
+      "level": 1,
+      "rep": 5.12,
+      "mood": 100,
+      "research": 4,
+      "chapter": 3,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🏥 Saúde Migração p/ Nuvem",
+          "dl": 23,
+          "eta": null,
+          "remaining": {
+            "front": 4.710911004099998,
+            "infra": 11.076832312000006
+          }
+        }
+      ],
+      "recent": [
+        "Dia 74: 📜 Missão cumprida: +$3.800",
+        "Dia 73: ✅ Teste de conexão dedicada · Amostra gratuita · produção +5% por 1 dia",
+        "Dia 73: 📨 Evento: Teste de conexão dedicada",
+        "Dia 71: ⬆️ Diego subiu p/ nível 4!"
+      ]
+    },
+    {
+      "day": 75,
+      "money": 6075,
+      "done": 6,
+      "staff": 4,
+      "level": 1,
+      "rep": 5.12,
+      "mood": 100,
+      "research": 4,
+      "chapter": 3,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🏥 Saúde Migração p/ Nuvem",
+          "dl": 22,
+          "eta": null,
+          "remaining": {
+            "front": 0,
+            "infra": 11.076832312000006
+          }
+        }
+      ],
+      "recent": [
+        "Dia 74: 📜 Missão cumprida: +$3.800",
+        "Dia 73: ✅ Teste de conexão dedicada · Amostra gratuita · produção +5% por 1 dia",
+        "Dia 73: 📨 Evento: Teste de conexão dedicada",
+        "Dia 71: ⬆️ Diego subiu p/ nível 4!"
+      ]
+    },
+    {
+      "day": 76,
+      "money": 6075,
+      "done": 6,
+      "staff": 4,
+      "level": 1,
+      "rep": 5.12,
+      "mood": 100,
+      "research": 4,
+      "chapter": 3,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🏥 Saúde Migração p/ Nuvem",
+          "dl": 22,
+          "eta": 2,
+          "remaining": {
+            "front": 0,
+            "infra": 11.076832312000006
+          }
+        }
+      ],
+      "recent": [
+        "Dia 74: 📜 Missão cumprida: +$3.800",
+        "Dia 73: ✅ Teste de conexão dedicada · Amostra gratuita · produção +5% por 1 dia",
+        "Dia 73: 📨 Evento: Teste de conexão dedicada",
+        "Dia 71: ⬆️ Diego subiu p/ nível 4!"
+      ]
+    },
+    {
+      "day": 77,
+      "money": 6075,
+      "done": 6,
+      "staff": 4,
+      "level": 1,
+      "rep": 5.12,
+      "mood": 100,
+      "research": 4,
+      "chapter": 3,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🏥 Saúde Migração p/ Nuvem",
+          "dl": 22,
+          "eta": 2,
+          "remaining": {
+            "front": 0,
+            "infra": 11.076832312000006
+          }
+        }
+      ],
+      "recent": [
+        "Dia 77: 📊 Semana 11: +$2.225 no caixa, 0 entrega(s)",
+        "Dia 74: 📜 Missão cumprida: +$3.800",
+        "Dia 73: ✅ Teste de conexão dedicada · Amostra gratuita · produção +5% por 1 dia",
+        "Dia 73: 📨 Evento: Teste de conexão dedicada"
+      ]
+    },
+    {
+      "day": 78,
+      "money": 6810,
+      "done": 7,
+      "staff": 4,
+      "level": 1,
+      "rep": 5.52,
+      "mood": 100,
+      "research": 5,
+      "chapter": 3,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🚀 Startup Dashboard BI",
+          "dl": 43,
+          "eta": 13,
+          "remaining": {
+            "back": 108,
+            "infra": 108
+          }
+        }
+      ],
+      "recent": [
+        "Dia 78: 🔬 Pesquisa concluída: Aprendizado compartilhado.",
+        "Dia 78: 🔬 +2 conhecimentos por 1 contrato(s) entregue(s).",
+        "Dia 78: ✅ Entregue: 🏥 Saúde Migração p/ Nuvem",
+        "Dia 77: 📊 Semana 11: +$2.225 no caixa, 0 entrega(s)"
+      ]
+    },
+    {
+      "day": 79,
+      "money": 6495,
+      "done": 7,
+      "staff": 4,
+      "level": 1,
+      "rep": 5.52,
+      "mood": 100,
+      "research": 5,
+      "chapter": 3,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🚀 Startup Dashboard BI",
+          "dl": 42,
+          "eta": 12,
+          "remaining": {
+            "back": 97.80817836,
+            "infra": 92.826072
+          }
+        }
+      ],
+      "recent": [
+        "Dia 78: 🔬 Pesquisa concluída: Aprendizado compartilhado.",
+        "Dia 78: 🔬 +2 conhecimentos por 1 contrato(s) entregue(s).",
+        "Dia 78: ✅ Entregue: 🏥 Saúde Migração p/ Nuvem",
+        "Dia 77: 📊 Semana 11: +$2.225 no caixa, 0 entrega(s)"
+      ]
+    },
+    {
+      "day": 80,
+      "money": 6180,
+      "done": 7,
+      "staff": 4,
+      "level": 1,
+      "rep": 5.52,
+      "mood": 100,
+      "research": 5,
+      "chapter": 3,
+      "showcase": {
+        "bairro": {
+          "status": "complete",
+          "attempts": 1,
+          "started": 22,
+          "completed": 43
+        }
+      },
+      "active": [
+        {
+          "name": "🚀 Startup Dashboard BI",
+          "dl": 41,
+          "eta": null,
+          "remaining": {
+            "back": 87.612074442,
+            "infra": 92.826072
+          }
+        }
+      ],
+      "recent": [
+        "Dia 78: 🔬 Pesquisa concluída: Aprendizado compartilhado.",
+        "Dia 78: 🔬 +2 conhecimentos por 1 contrato(s) entregue(s).",
+        "Dia 78: ✅ Entregue: 🏥 Saúde Migração p/ Nuvem",
+        "Dia 77: 📊 Semana 11: +$2.225 no caixa, 0 entrega(s)"
+      ]
+    }
+  ]
+}

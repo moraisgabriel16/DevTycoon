@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-22T18:26:52.471Z",
+  "firstContract": {
+    "done": 1,
+    "knowledge": 2,
+    "log": [
+      "Dia 9: 🔬 +2 conhecimentos por 1 contrato(s) entregue(s).",
+      "Dia 9: 🏅 Conquista: 💰 Primeiro contrato",
+      "Dia 9: ✅ Entregue: 🛍️ Site da Padaria",
+      "Dia 8: 📨 Evento: Oficina da comunidade"
+    ],
+    "expected": 750,
+    "day": 9,
+    "cash": 6390
+  },
+  "passed": [
+    "Central pausa o jogo, apresenta nove pesquisas e bloqueia recompensas não conquistadas",
+    "Primeira padaria entrega por produção real, sem multa aleatória, e rende dois conhecimentos",
+    "Pesquisa compra uma vez, consome pontos e aplica +5% à produção",
+    "Capítulo paga uma vez; jornada, pesquisa e fachada sobrevivem ao recarregamento",
+    "Vitrine permite um projeto por vez, entrega selo e bloqueia repetição; falha pode ser refeita após três dias",
+    "IPO preserva capítulos e coleção, mantém preferências da sede e reinicia a pesquisa da nova empresa",
+    "Exportação e importação transportam os novos sistemas",
+    "Árvore completa custa 39 pontos e limita bônus a +9,2% de produção e +8% em novas propostas",
+    "Cinco abas funcionam por toque a 390px sem rolagem horizontal ou foco preso",
+    "Final da jornada conclui após legado e IPO, sem pagamento duplicado",
+    "Trocar empresas mantém pesquisas e capítulos independentes",
+    "Nenhum erro JavaScript nos cenários novos"
+  ]
+}

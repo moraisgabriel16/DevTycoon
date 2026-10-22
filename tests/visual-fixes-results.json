@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-22T19:48:23.947Z",
+  "passed": [
+    "80 poses de interação preservam o rosto, cabelo, cor e escala do personagem",
+    "Paredes contínuas sem buracos nos seis temas; peças isométricas preservam sua silhueta",
+    "Café, servidor, leitura, sofá, planta e jogo mantêm a posição e devolvem a pessoa à mesa",
+    "Sala pessoal compartilha a parede contínua e as poses do avatar usam a mesma aparência",
+    "Sem erros JavaScript no desktop, celular e com movimento reduzido"
+  ],
+  "identityChecks": 80,
+  "trips": [
+    {
+      "type": "server",
+      "position": [
+        3,
+        3
+      ]
+    },
+    {
+      "type": "coffee",
+      "position": [
+        5,
+        3
+      ]
+    },
+    {
+      "type": "bookshelf",
+      "position": [
+        7,
+        3
+      ]
+    },
+    {
+      "type": "sofa",
+      "position": [
+        3,
+        6
+      ]
+    },
+    {
+      "type": "plant",
+      "position": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "pong",
+      "position": [
+        7,
+        6
+      ]
+    }
+  ]
+}

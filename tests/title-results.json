@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-22T20:15:41.685Z",
+  "passed": [
+    "Menu de entrada contém ações de partida, logo transparente e bloqueia os controles da empresa ao fundo",
+    "Nova empresa procura um espaço livre; abrir saves não sobrescreve nem muda a campanha atual",
+    "Voltar das opções e dos saves mantém a tela inicial sem atalhos de gestão",
+    "Demo abre a partida; Jornada, Minha Sala e exterior continuam acessíveis dentro do jogo",
+    "Continuar reabre a empresa salva sem iniciar outra campanha",
+    "Abertura e arte do logo carregam offline após o primeiro acesso",
+    "Menu em 498, 390 e 320px sem rolagem horizontal; controles do jogo não sobrepõem os botões"
+  ]
+}

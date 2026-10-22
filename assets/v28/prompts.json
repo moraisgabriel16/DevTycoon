@@ -1,0 +1,23 @@
+{
+  "version": 28,
+  "method": "Built-in image_gen",
+  "assets": [
+    {
+      "file": "office-props.png",
+      "layout": {
+        "columns": 4,
+        "rows": 2
+      },
+      "prompt": "Create a production game sprite atlas PNG for a cozy isometric technology office management game. Transparent background, NO TEXT, NO LABELS, no border or grid lines. Exactly 4 columns by 2 rows, equal square cells, one separate object per cell, all centered in its cell, with generous transparent padding (object stays inside central 78% of cell). Consistent 2:1 isometric projection, 30 degree view, clean detailed pixel art (approximately 96x96 meaningful pixel detail per object), crisp pixels, warm cream, walnut wood, desaturated jade/teal, brass details and deep slate outlines. Top row from left: (1) compact espresso coffee counter with espresso machine and two mugs; (2) indoor leafy broadleaf plant in terracotta pot; (3) small two-seat sage upholstered sofa with walnut legs and a cream cushion; (4) dark slate server rack with tiny mint status lights. Bottom row from left: (1) indoor water dispenser in off-white and muted blue with a clear jug; (2) open small bookcase in walnut wood with colored books and one tiny plant; (3) rounded wooden bench for an exterior plaza; (4) terracotta rectangular planter of assorted green leaves and small cream flowers. Each object standalone, natural footprint, soft minimal contact shadow only, matching scale across furniture, entirely inside its cell. These are real gameplay sprite assets, not an illustration of a room, no floor tile, no scenery, no people, no UI. Camera looks at the front and the right side of all objects consistently. Canvas landscape 2:1 ratio with equal square grid cells."
+    },
+    {
+      "file": "people-atlas.png",
+      "layout": {
+        "columns": 4,
+        "rows": 8
+      },
+      "prompt": "Production-ready character sprite atlas for a cozy isometric office tycoon game. A PNG sprite sheet on TRUE TRANSPARENT background, exactly 4 equal columns and 8 equal rows (32 equal square cells), portrait canvas aspect 1:2. No text, no labels, no visible grid, no room or props. Each row is ONE consistent character, shown in 4 frames. Columns left to right: idle front three-quarter looking toward bottom-right; same facing front three-quarter walking with left leg forward; same facing front three-quarter walking with right leg forward; idle back three-quarter looking toward upper-right. Keep the same character design and same scale within each row. Every character complete head to shoes, centered horizontally in its cell, feet aligned at 88% of cell height, whole sprite within central 60% width and 80% height. Style: polished crisp pixel art with chibi-friendly proportions, big readable heads, detailed hair, tiny simple eyes, expressive silhouettes, clean dark blue-gray outline, about 32x42 logical pixels per character, soft warm light from upper-left, muted jade/teal tops, deep navy pants, cream sneakers, all characters wearing these same base clothing colors so clothing can be palette-swapped in game. Rows top to bottom: 1 young man with short dark hair and light skin; 2 young woman with copper bob hair and light skin; 3 Black man with curly dark hair and dark brown skin; 4 woman with dark wavy shoulder-length hair and medium brown skin; 5 man with round glasses and short brown hair, tan skin; 6 woman with dark hair in a bun, medium brown skin; 7 older man with silver hair and light skin; 8 woman with long dark braids and dark brown skin. Art cohesive with cozy modern isometric management games. Consistent exact grid spacing and equal cells are critical for the actual game's frame slicing. No contact shadow, no words, no tiles, no accessories held in hands. Every frame has ample transparent gutters."
+    }
+  ],
+  "notes": "Atlases originais gerados para o projeto. Células são recortadas por transparência em tempo de execução, preservando as imagens originais no workspace."
+}

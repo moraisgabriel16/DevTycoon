@@ -1,0 +1,31 @@
+#exteriorView[hidden]{display:none!important}
+#exteriorView{position:fixed;inset:0;z-index:10025;background:#0b1221;overflow:auto;padding:18px;color:#e8eef2;display:flex;align-items:center;justify-content:center}
+.ext-shell{width:min(1440px,100%);max-height:100%;background:#141f30;border:1px solid #394b5c;border-radius:20px;overflow:auto;box-shadow:0 30px 100px #0006}
+.ext-header{display:flex;align-items:center;gap:12px;padding:18px 22px;border-bottom:1px solid #324457}
+.ext-header>div{flex:1}.ext-header h2{margin:2px 0;font-size:22px;letter-spacing:-.6px}.ext-eyebrow{font-size:10px;letter-spacing:2px;color:#9ecbbd}.ext-header small{color:#a6b8c9}
+#exteriorView button{min-height:44px;border-radius:10px;background:#202f41;border:1px solid #405467;color:#e6eef5;box-shadow:none;font-family:inherit}
+#exteriorView button:hover{background:#2b4053}#exteriorView button.on{border-color:#99d8bd;outline:1px solid #99d8bd;background:#2c4948}
+#exteriorView .ext-primary{background:#b9e3ca;color:#142c29;border-color:#b9e3ca;font-weight:700}
+#exteriorView button.ext-primary:hover{background:#ceeeda;color:#142c29}
+.ext-layout{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(300px,1fr)}
+.ext-scene{position:relative;min-width:0;background:#152335;display:flex;flex-direction:column}
+.ext-scene canvas{border:0;border-radius:0;width:100%;aspect-ratio:960/720;background:#17283a;touch-action:none}
+.ext-badge{position:absolute;left:20px;top:18px;background:#101e2bcc;border:1px solid #506476;color:#d8e5e9;border-radius:20px;padding:7px 12px;font-size:11px;pointer-events:none}
+.ext-camera{position:absolute;right:16px;top:14px;display:flex;gap:5px}#exteriorView .ext-camera button{width:44px;background:#142335d9}
+.ext-scene-caption{padding:13px 20px;margin-top:auto;font-size:12px;color:#bdccd7;background:#12202f;border-top:1px solid #344959;min-height:46px}
+.ext-controls{border-left:1px solid #354959;min-width:0;display:flex;flex-direction:column;max-height:76dvh}
+.ext-building{padding:16px 18px 0}.ext-building label{display:block;font-size:11px;color:#9fb5c6;margin-bottom:6px}
+#exteriorView select,#exteriorView input{font:inherit;width:100%;padding:11px;border-radius:8px;border:1px solid #486070;background:#0f1c2a;color:#e6eef5;min-height:44px}
+.ext-tabs{display:flex;padding:14px 16px 8px;gap:6px;flex-wrap:wrap}.ext-tabs button{flex:1;font-size:11px;padding:8px}
+#exteriorPanel{overflow:auto;padding:8px 18px 18px;min-height:0;flex:1}
+#exteriorPanel h3{font-size:13px;font-weight:600;margin:14px 0 10px;color:#ebd8b1}#exteriorPanel p{font-size:12px;color:#acbdc9;line-height:1.6;margin:4px 0 12px}
+.ext-swatches{display:flex;flex-wrap:wrap;gap:8px}#exteriorView .ext-swatches button{width:38px;min-height:38px;border-radius:50%;border:3px solid #ffffff26;padding:0}#exteriorView .ext-swatches button.on{outline:2px solid #e6eedc;outline-offset:2px}
+.ext-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.ext-options button{display:flex;flex-direction:column;gap:5px;align-items:flex-start;text-align:left;padding:12px;font-size:12px}.ext-options button span:first-child{font-size:22px}.ext-options button small{font-size:10px;color:#aec0cd}
+.ext-footer{padding:14px 18px;border-top:1px solid #354959;display:flex;gap:8px;align-items:center;flex-wrap:wrap;background:#182638}.ext-footer .ext-primary{flex:1}.ext-footer small{width:100%;color:#9ab3b9;font-size:10px}
+.ext-status{color:#b9e3ca;font-size:12px;min-height:18px;padding-top:10px}.ext-hint{padding:10px;border:1px solid #3b5564;border-radius:8px;margin-top:12px!important}
+#exteriorEntry{border-color:#689d8e;color:#c4e9d8}#installGame[hidden]{display:none}
+@media(max-width:760px){#exteriorView{padding:0;align-items:flex-start}.ext-shell{border:0;border-radius:0;max-height:none;min-height:100dvh}.ext-header{padding:12px 14px;gap:6px}.ext-header h2{font-size:18px}.ext-header small{font-size:10px}.ext-eyebrow{font-size:9px}.ext-layout{grid-template-columns:1fr}.ext-scene canvas{aspect-ratio:960/650;max-height:48dvh;object-fit:contain}.ext-badge{top:12px;left:12px;font-size:10px;padding:6px 9px}.ext-camera{right:10px;top:8px;gap:3px}#exteriorView .ext-camera button{width:36px;min-height:36px}.ext-controls{border-left:0;max-height:none}.ext-tabs{padding:12px 14px 6px}.ext-building{padding:12px 14px 0}#exteriorPanel{overflow:visible;padding:6px 14px 16px}.ext-footer{position:sticky;bottom:0;padding-bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:2}.ext-options{grid-template-columns:repeat(3,minmax(0,1fr))}.ext-options button{padding:10px 8px;font-size:11px}.ext-scene-caption{padding:10px 14px;font-size:11px}.personalEntryBar button{min-height:40px}}
+@media(prefers-reduced-motion:reduce){#exteriorView *{scroll-behavior:auto}}
+html.ext-open,html.ext-open body{overflow:hidden}
+html.ext-open #sheet,html.ext-open #dock{visibility:hidden}
+@media(max-width:760px){.ext-shell{overflow:visible}.ext-scene canvas{aspect-ratio:960/720;max-height:none;object-fit:fill}}

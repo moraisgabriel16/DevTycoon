@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-22T19:51:34.637Z",
+  "returned": {
+    "outside": false,
+    "phase": "inside",
+    "seated": true,
+    "remembered": true,
+    "desk": true
+  },
+  "passed": [
+    "Pixel art original preserva poses, objetos e paletas dos personagens",
+    "Escritório e exterior compartilham campanha, identidade visual e edição da fachada",
+    "Toque na fachada entra no andar correto usando o elevador existente",
+    "Seletor de andares também funciona na vista externa",
+    "As duas faces da fachada são interativas e a última troca de vista prevalece",
+    "Seleção de NPC mostra necessidades e dá acesso ao perfil e às histórias existentes",
+    "O mesmo NPC caminha até a saída, aparece uma vez na praça e deixa de produzir durante a pausa",
+    "A pausa termina, recupera necessidades, cria memória e mantém a mesa para o retorno",
+    "Recarregar durante o passeio recupera a campanha sem funcionários presos ou duplicados",
+    "Celular: cenário amplo, gaveta de gestão, seleção por toque e troca entre interior e exterior",
+    "A fachada permanece centralizada e o toque entra no andar correto na câmera do celular",
+    "Layout também cabe em 320px e na orientação paisagem",
+    "Novos sprites e as duas vistas da sede reabrem offline",
+    "Nenhum erro JavaScript na experiência V29"
+  ]
+}

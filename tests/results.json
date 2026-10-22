@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-22T20:15:45.948Z",
+  "passed": [
+    "Editor pausa a empresa e aplica alterações sem cobrar dinheiro",
+    "Personalização persiste após recarregar e descarta prévias não aplicadas",
+    "Prédios futuros permitem prévia sem alterar a campanha",
+    "Slots independentes, quatro coberturas e exportação de foto PNG",
+    "Simulação original: aceitar contrato e avançar dias",
+    "Tela de celular sem rolagem horizontal; toque posiciona item e texto é tratado como texto",
+    "Reabertura offline pelo Service Worker com campanha preservada",
+    "Nenhum erro JavaScript nos fluxos testados"
+  ]
+}
