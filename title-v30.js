@@ -26,11 +26,11 @@
   titleRender=function(){
     titleBefore();syncGameUI();ts.classList.toggle('start30',tsStep===0);if(tsStep!==0)return;
     const copy=$('#ts .titleCopy23'),menu=$('#ts .titleSecondary23');if(!copy||!menu)return;
-    const logo=document.createElement('img');logo.className='start-logo30';logo.src='./assets/v30/devtycoon-logo.png';logo.alt='DevTycoon';logo.width=1860;logo.height=846;logo.fetchPriority='high';logo.decoding='async';
+    const logo=document.createElement('img');logo.className='start-logo30';logo.src='./assets/devcorp-logo.svg';logo.alt='DevCorp';logo.width=760;logo.height=180;logo.fetchPriority='high';logo.decoding='async';
     copy.querySelectorAll('.titleLogo23,h1').forEach(e=>e.remove());copy.prepend(logo);
     $('.titleEyebrow').textContent='UM JOGO DE GESTÃO DE TECNOLOGIA';
     copy.querySelector('h2').innerHTML='Comece na garagem.<br><em>Cresça com cada entrega.</em>';
-    copy.querySelector('p').textContent='Contrate sua equipe, entregue projetos e construa a sede do seu jeito.';
+    copy.querySelector('p').textContent='Reúna pessoas, ajude o bairro e construa a sede do seu jeito. Não precisa saber programar.';
     const db=ensureSlots(),saved=!!(G.tut||db.slots[db.active]?.data?.tut);
     const save=$('#ts .titleCurrent23');save.querySelector('span').textContent=(saved?'EMPRESA SALVA':'PRONTA PARA COMEÇAR')+' · SLOT '+(db.active+1);
     const primary=$('#ts .titlePrimary23');primary.id='startPlay30';primary.textContent=saved?'Continuar partida':'Começar empresa';primary.classList.toggle('has-save30',saved);
@@ -41,9 +41,9 @@
       menuButton('startDemo30','Explorar demo','m9 5 10 7-10 7V5Z',()=>loadSlot(2)),
       menuButton('startOptions30','Opções','M4 6h16M4 12h16M4 18h16M8 3v6m8 0v6m-6 0v6',()=>{tsStep=2;titleRender()})
     );
-    const footer=$('#ts .titleFoot23');footer.querySelector('span')?.remove();footer.querySelector('small').textContent='V30';
+    const footer=$('#ts .titleFoot23');footer.querySelector('span')?.remove();footer.querySelector('small').textContent='V35';
     $('#ts .titleSceneHeader23 small').textContent='DENTRO DO JOGO';
-    ts.setAttribute('aria-label','Menu principal do DevTycoon');
+    ts.setAttribute('aria-label','Menu principal do DevCorp');
   };
   if(ts.style.display==='flex')titleRender();
 })();

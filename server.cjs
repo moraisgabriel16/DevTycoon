@@ -15,6 +15,6 @@ http.createServer((req,res) => {
     res.writeHead(200,{'Content-Type':types[path.extname(file)]||'application/octet-stream','Cache-Control':'no-cache'}).end(data);
   });
 }).listen(port,'0.0.0.0',() => {
-  console.log(`DevTycoon: http://localhost:${port}`);
+  console.log(`DevCorp: http://localhost:${port}`);
   for(const values of Object.values(os.networkInterfaces())) for(const net of values||[]) if(net.family==='IPv4'&&!net.internal) console.log(`Celular na mesma rede: http://${net.address}:${port}`);
 });

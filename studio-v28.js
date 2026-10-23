@@ -6,7 +6,7 @@
   document.body.classList.add('game28');
   document.documentElement.classList.add('game-root28');
   const header=text('header','game-header28');header.id='gameHeader28';
-  header.innerHTML=`<div class="game-brand28"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M3 5h34v27H3z" fill="#252e32" stroke="#d9b76e" stroke-width="2"/><path d="M3 12h34M10 8h1m3 0h1m3 0h1" stroke="#d9b76e" stroke-width="2"/><path d="m10 18 5 4-5 4m10 0h8" stroke="#e9dfc6" stroke-width="2" fill="none"/><path d="M15 33h10v3H15z" fill="#d9b76e"/></svg><div><b>DEV<span>TYCOON</span></b><small>ESTÚDIO DE JOGOS & TECNOLOGIA</small></div></div><div class="game-company28"><strong id="companyName28"></strong><small id="companyAddress28"></small></div><div class="game-metrics28"><div><small>Caixa</small><b id="cash28"></b></div><div><small>Calendário</small><b id="day28"></b></div><div><small>Equipe</small><b id="staff28"></b></div><div><small>Reputação</small><b id="rep28"></b></div></div><div class="game-header-actions28"><span class="game-save28" id="saveState28">Salvo</span><button id="journey28" title="Central da empresa">Central</button><button id="menu28" aria-label="Abrir menu">☰</button></div>`;
+  header.innerHTML=`<div class="game-brand28"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M3 5h34v27H3z" fill="#252e32" stroke="#d9b76e" stroke-width="2"/><path d="M3 12h34M10 8h1m3 0h1m3 0h1" stroke="#d9b76e" stroke-width="2"/><path d="m10 18 5 4-5 4m10 0h8" stroke="#e9dfc6" stroke-width="2" fill="none"/><path d="M15 33h10v3H15z" fill="#d9b76e"/></svg><div><b>DEV<span>CORP</span></b><small>ESTÚDIO DE JOGOS & TECNOLOGIA</small></div></div><div class="game-company28"><strong id="companyName28"></strong><small id="companyAddress28"></small></div><div class="game-metrics28"><div><small>Caixa</small><b id="cash28"></b></div><div><small>Calendário</small><b id="day28"></b></div><div><small>Equipe</small><b id="staff28"></b></div><div><small>Reputação</small><b id="rep28"></b></div></div><div class="game-header-actions28"><span class="game-save28" id="saveState28">Salvo</span><button id="journey28" title="Central da empresa">Central</button><button id="menu28" aria-label="Abrir menu">☰</button></div>`;
   document.body.insertBefore(header,document.body.firstChild);$('journey28').onclick=()=>DevJourney27.open();$('menu28').onclick=()=>showTitle();
   const centralButton=$('commandEntry27');centralButton.textContent='Central';$('journey28').replaceWith(centralButton);
   const exteriorButton=$('exteriorEntry');exteriorButton.innerHTML='<svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m4 13 9-9 3 3-9 9-4 1Z"/><path d="m11 6 3 3"/></svg>';exteriorButton.title='Personalizar exterior';exteriorButton.setAttribute('aria-label','Personalizar exterior');$('menu28').before(exteriorButton);
@@ -71,11 +71,11 @@
     if(kind==='outside'){const ok=NPCLife28.startOutdoor(e.id,true);if(ok){setView('outside');DevJourney27.notify(e.n+' está indo tomar ar.')}else DevJourney27.notify('Aguarde a atividade atual terminar e confira o caminho até a saída.');}
     else if(kind==='profile'){focus.hidden=true;openLife25('people',e.id);}
     else if(kind==='follow'){if(NPCLife28.active(e))setView('outside');else{setView('inside',false);if(e.floor!==G.floor)requestFloor(e.floor);followId=e.id;}}
-    else{if(NPCLife28.trip(e))NPCLife28.returnInside(e,false);setView('inside',false);lifeCommand25(e.id,kind);}
+    else{if(NPCLife28.active(e)){NPCLife28.requestReturn(e.id,kind);renderFocus();return}if(NPCLife28.trip(e))cancelAction(e);setView('inside',false);lifeCommand25(e.id,kind);}
     renderFocus();
   }
   function renderFocus(){
-    const e=companyStaff().find(e=>e.id===G.sel);if(!e||profileFull){focus.hidden=true;return}focus.hidden=false;const a=ensureBrain25(e),key=[e.id,e.n,e.role].join('|');
+    const e=companyStaff().find(e=>e.id===G.sel),visible=e&&(currentView==='outside'?NPCLife28.trip(e):!NPCLife28.active(e)&&(e.floor??0)===(G.floor??0));if(!visible||profileFull){focus.hidden=true;return}focus.hidden=false;const a=ensureBrain25(e),key=[e.id,e.n,e.role].join('|');
     if(focus.dataset.employee===key&&focus.firstChild){focus.querySelector('.npc-reason28').textContent=NPCLife28.reason(e);const items=focus.querySelectorAll('.npc-needs28>div');[['energy','Energia'],['thirst','Hidratação'],['social','Convívio']].forEach(([need,label],i)=>{items[i].querySelector('small').textContent=label+' '+Math.round(a.needs[need])+'%';items[i].querySelector('i span').style.width=Math.max(0,Math.min(100,a.needs[need]))+'%'});focus.querySelectorAll('.npc-focus-actions28 button')[1].disabled=NPCLife28.trip(e);return}
     focus.dataset.employee=key;focus.replaceChildren();
     const head=text('div','npc-focus-head28'),portrait=text('div','npc-portrait28');portrait.append(drawPortrait(e,32,42));const name=text('div');name.append(text('b',null,e.n),text('small',null,roleLabel(e)+' · '+PERSONALITIES25[a.personality].name));head.append(portrait,name,button('×',()=>{G.sel=null;focus.hidden=true;$('ep').style.display='none';renderCrew(true)},''));head.lastChild.setAttribute('aria-label','Fechar pessoa selecionada');
@@ -111,7 +111,7 @@
       if(pendingSelection&&!liftBusy&&G.floor===pendingSelection.floor){G.sel=pendingSelection.id;pendingSelection=null;renderFocus();}
       $('companyName28').textContent=G.name||'Sua empresa';const floors=FLOOR_COUNTS[G.lvl],staff=companyStaff().length;$('companyAddress28').textContent=BLD[G.lvl].n+' · '+floors+(floors===1?' andar':' andares');$('cash28').textContent=n$(G.money);$('cash28').classList.toggle('negative',G.money<0);$('day28').textContent='Dia '+G.day+' · '+WD[(G.day-1)%7];$('staff28').textContent=staff+(staff===1?' pessoa':' pessoas');$('rep28').textContent=G.rep.toFixed(1)+' ★';
       const saveText=$('saveIndicator')?.textContent||'Salvo';$('saveState28').textContent=saveText.includes('erro')?'Confira o save':'Salvo';updateLabels();renderCrew();renderRoster();renderUtilities();more.classList.toggle('on',tab==='ut'&&shOpen);
-      $('cnm').textContent=(G.name||'Minha Empresa')+' · V30';
+      $('cnm').textContent=(G.name||'Minha Empresa')+' · V35';
     }finally{rendering=false}
   }
   let ghostKey='',ghostValid=false,ghostTime=0;
@@ -120,20 +120,22 @@
     const key=[x,y,tool,G.money,moveFrom].join('|');if(key!==ghostKey||performance.now()-ghostTime>300){ghostValid=G.money>=TL[tool].c&&canPlace(k(x,y),tool);ghostKey=key;ghostTime=performance.now()}
     cx.save();cx.setTransform(ZT.z,0,0,ZT.z,Math.round(ZT.tx),Math.round(ZT.ty));v19Path(cx,[P(x,y),P(x+1,y),P(x+1,y+1),P(x,y+1)]);cx.fillStyle=ghostValid?'#78ac7055':'#d5766155';cx.strokeStyle=ghostValid?'#4c8054':'#bc644a';cx.lineWidth=1.5;cx.fill();cx.stroke();const p=P(x+.5,y+.5),im=S[tool];cx.globalAlpha=.55;cx.drawImage(im,p[0]-im.width/2,p[1]+10-im.height);cx.restore();
   }
-  const drawBase=draw2;draw2=function(t){if(currentView!=='inside'||ts.style.display==='flex')return;drawBase(t);ghost()};
+  function sceneCovered(){return document.hidden||['storyView35','districtView34','neighborhoodView33','exteriorView','commandView27','personalView','businessView','officeView','lifeView25','slotsView','eventView','liftMenu'].some(id=>{const e=$(id);return e&&!e.hidden})}
+  const drawBase=draw2;draw2=function(t){if(currentView!=='inside'||ts.style.display==='flex'||sceneCovered())return;drawBase(t);ghost()};
   function worldPoint(x,y,z=0){const p=ExteriorScene28.project(x,y,z);return[(p[0]-480)*worldZoom+480,(p[1]-360)*worldZoom+360]}
   function drawWorld(t){
     ExteriorScene28.render(worldCanvas,ensureLife25().clock*1000,{night:worldNight,zoom:worldZoom});const g=worldCanvas.getContext('2d');g.setTransform(1,0,0,1,0,0);worldHits=[];
     // Highlight a real floor of this campaign; tapping it uses the existing elevator.
     for(const shape of ExteriorScene28.floorShapes().filter(s=>s.floor===selectedFloor)){g.beginPath();shape.points.forEach((p,i)=>{const x=(p[0]-480)*worldZoom+480,y=(p[1]-360)*worldZoom+360;i?g.lineTo(x,y):g.moveTo(x,y)});g.closePath();g.fillStyle='#e5d28e08';g.fill();g.strokeStyle='#e5d18da0';g.lineWidth=1.5;g.stroke()}
-    for(const e of NPCLife28.outside().sort((a,b)=>{const p=NPCLife28.worldPosition(a),q=NPCLife28.worldPosition(b);return p.x+p.y-q.x-q.y})){
-      const p=NPCLife28.worldPosition(e),[x,y]=worldPoint(p.x,p.y,1),phase=p.moving&&!paused()&&!reducedMotion()?1+Math.floor(ensureLife25().clock*7)%2:0,im=personCanvas23(employeeAppearance(e),p.back?3:phase,phase),scale=worldZoom;
-      g.fillStyle='#213c3c33';g.beginPath();g.ellipse(x,y+2,8*scale,3*scale,0,0,Math.PI*2);g.fill();g.imageSmoothingEnabled=false;g.drawImage(im,x-16*scale,y-37*scale,32*scale,42*scale);worldHits.push({id:e.id,x,y});
-      if(e.id===G.sel){g.strokeStyle='#f5d590';g.beginPath();g.ellipse(x,y+3,11*scale,4*scale,0,0,Math.PI*2);g.stroke();g.font='11px system-ui';g.fillStyle='#2f4941';g.textAlign='center';g.fillText(e.n,x,y-42*scale)}
-      if(e.life28.until>ensureLife25().clock&&e.id===G.sel){g.font='10px system-ui';g.fillStyle='#fff7e7';g.fillRect(x-64,y-66*scale,128,18);g.fillStyle='#375449';g.fillText(e.life28.say,x,y-53*scale,120)}
-    }
+    const actors=NPCLife28.outside().map(e=>{const p=NPCLife28.worldPosition(e),[x,y]=worldPoint(p.x,p.y,1);worldHits.push({id:e.id,x,y});return{x:p.x,y:p.y,draw:g=>{
+      const phase=p.moving&&!reducedMotion()?[1,0,2,0][Math.floor(p.distance/.16)%4]:0,im=personCanvas23(employeeAppearance(e),p.back?3:phase,phase),scale=worldZoom;
+      g.fillStyle='#213c3c33';g.beginPath();g.ellipse(x,y+2,6*scale,2.5*scale,0,0,Math.PI*2);g.fill();g.imageSmoothingEnabled=false;g.save();g.translate(x,y+3*scale);if(p.flip)g.scale(-1,1);g.drawImage(im,-11*scale,-29*scale,22*scale,29*scale);g.restore();
+      if(e.id===G.sel){g.strokeStyle='#f5d590';g.beginPath();g.ellipse(x,y+3,8*scale,3*scale,0,0,Math.PI*2);g.stroke();g.font='11px system-ui';g.fillStyle='#2f4941';g.textAlign='center';g.fillText(e.n,x,y-32*scale)}
+      if(e.life28.until>ensureLife25().clock&&e.id===G.sel){g.font='10px system-ui';g.textAlign='center';g.fillStyle='#fff7e7';g.fillRect(x-64,y-57*scale,128,18);g.fillStyle='#375449';g.fillText(e.life28.say,x,y-44*scale,120)}
+    }}});
     // A visiting client is the same visitor managed by the office simulation.
-    const visitor=G.life?.visitor;if(visitor?.phase==='arriving'&&visitor.person.x+visitor.person.y<2){const p=worldPoint(5.5,9.5,1),im=personCanvas23(employeeAppearance(visitor.person),1);g.drawImage(im,p[0]-16,p[1]-38,32,42)}
+    const visitor=G.life?.visitor;if(visitor?.phase==='arriving'&&visitor.person.x+visitor.person.y<2){const p=worldPoint(5.5,9.5,1),im=personCanvas23(employeeAppearance(visitor.person),1);actors.push({x:5.5,y:9.5,draw:g=>g.drawImage(im,p[0]-11,p[1]-26,22,29)})}
+    ExteriorScene28.renderActors(worldCanvas,ensureLife25().clock*1000,{night:worldNight,zoom:worldZoom},actors);
   }
   function screenPoint(event){const r=worldCanvas.getBoundingClientRect();return{x:(event.clientX-r.left)*960/r.width,y:(event.clientY-r.top)*720/r.height}}
   worldCanvas.addEventListener('pointerup',event=>{
@@ -148,13 +150,13 @@
     for(let i=0;i<6;i++){const coin=text('span','coin-flight',i%2?'●':'✦'),x=source.left+source.width*.5+(i-2.5)*12,y=source.top+source.height*.48;coin.style.left=x+'px';coin.style.top=y+'px';coin.style.color='#be984c';document.body.append(coin);const animation=coin.animate([{transform:'translate(0,0) scale(.6)',opacity:0},{transform:'translate(0,-24px) scale(1)',opacity:1,offset:.22},{transform:'translate('+(target.left+target.width/2-x)+'px,'+(target.top-y)+'px) scale(.3)',opacity:0}],{duration:750,delay:i*45,easing:'ease-in-out'});animation.onfinish=()=>coin.remove();setTimeout(()=>coin.remove(),1600);}
   };
   function loop(t){
-    if(currentView==='outside'&&ts.style.display!=='flex'&&$('exteriorView').hidden)drawWorld(t);
-    if(t-lastRefresh>500){lastRefresh=t;refresh();if(!focus.hidden)renderFocus()}
+    if(currentView==='outside'&&ts.style.display!=='flex'&&!sceneCovered())drawWorld(t);
+    if(t-lastRefresh>500){lastRefresh=t;refresh();if(G.sel!=null||!focus.hidden)renderFocus()}
     rafId=requestAnimationFrame(loop);
   }
   const uiBase=ui;ui=function(){uiBase();if($('pn')){delete $('pn').dataset.roster28;delete $('pn').dataset.utility28;}refresh()};
   const initBase=init;init=function(){G.sel=null;pendingSelection=null;focus.hidden=true;crewKey='';initBase();selectedFloor=G.floor||0;setView('inside',false);refresh()};
-  const titleBase=titleRender;titleRender=function(){titleBase();const version=ts.querySelector('.titleFoot23 small');if(version)version.textContent='V29';const eyebrow=ts.querySelector('.titleEyebrow');if(eyebrow)eyebrow.textContent='DEV TYCOON · JOGO DE GESTÃO';const h=ts.querySelector('.titleCopy23 h2');if(h)h.innerHTML='Da garagem<br>ao próximo<br><em>grande estúdio.</em>';const p=ts.querySelector('.titleCopy23>p');if(p)p.textContent='Contrate, entregue projetos e construa a sede da sua empresa.'};
+  const titleBase=titleRender;titleRender=function(){titleBase();const version=ts.querySelector('.titleFoot23 small');if(version)version.textContent='V29';const eyebrow=ts.querySelector('.titleEyebrow');if(eyebrow)eyebrow.textContent='DEVCORP · JOGO DE GESTÃO';const h=ts.querySelector('.titleCopy23 h2');if(h)h.innerHTML='Da garagem<br>ao próximo<br><em>grande estúdio.</em>';const p=ts.querySelector('.titleCopy23>p');if(p)p.textContent='Contrate, entregue projetos e construa a sede da sua empresa.'};
   const artReady=Art28.ready;artReady.then(()=>{crewKey='';focus.dataset.employee='';renderCrew(true);renderFocus()});
   window.Studio28={setView,enterFloor,selectEmployee,refresh,setDetail(key,value){if(key in detailState)detailState[key]=!!value},get view(){return currentView},get selectedFloor(){return selectedFloor},get zoom(){return worldZoom},worldPoint,get hits(){return worldHits},fit:resize};
   setView('inside',false);ui();resize();rafId=requestAnimationFrame(loop);if(ts.style.display==='flex')titleRender();

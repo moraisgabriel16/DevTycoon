@@ -7,27 +7,35 @@
   // Animate the actual character rather than compositing a new head over a
   // legacy action body. The face, hair, clothes and silhouette stay together.
   function actionSprite(a,pose,phase=0){
-    const step=phase%2,key=JSON.stringify([a,pose,step]);if(poses.has(key))return poses.get(key);
-    const source=personCanvas23(a,pose==='run'?1+step:0,step),c=canvas(32,42),g=c.getContext('2d');g.imageSmoothingEnabled=false;
+    const frame=((Math.floor(phase)%6)+6)%6,step=[0,1,2,2,1,0][frame],key=JSON.stringify([a,pose,frame]);if(poses.has(key))return poses.get(key);
+    const source=personCanvas23(a,pose==='sweepBack'?3:pose==='run'?1+frame%2:0,step),c=canvas(32,42),g=c.getContext('2d');g.imageSmoothingEnabled=false;
     if(pose==='sit'){
       g.drawImage(source,0,0,32,29,0,4,32,29);
       g.drawImage(source,0,29,32,12,1,32,30,8);
+      g.fillStyle=AVATAR_SKIN[a.skin??1];g.fillRect(23,31-step,3,2);
     }else{
       g.drawImage(source,0,0);
       const skin=AVATAR_SKIN[a.skin??1],shirt=a.shirt||'#389fa8';
-      if(['drink','read','work','play','water','paint'].includes(pose)){
+      if(['drink','read','work','play','water','paint','sweep','sweepBack'].includes(pose)){
         // Keep the shoulder attached; only the forearm rotates toward the prop.
-        g.clearRect(23,26,5,7);g.strokeStyle=shirt;g.lineWidth=4;g.lineCap='round';g.beginPath();g.moveTo(23,24);g.lineTo(24,pose==='drink'?25:28-step);g.stroke();
-        g.strokeStyle=skin;g.lineWidth=3;g.beginPath();g.moveTo(24,pose==='drink'?25:28-step);g.lineTo(pose==='drink'?24:27,pose==='drink'?21+step:26-step);g.stroke();
+        g.clearRect(23,26,5,7);g.strokeStyle=shirt;g.lineWidth=4;g.lineCap='round';g.beginPath();g.moveTo(23,24);g.lineTo(24,pose==='drink'?27-step:28-step);g.stroke();
+        g.strokeStyle=skin;g.lineWidth=3;g.beginPath();g.moveTo(24,pose==='drink'?27-step:28-step);g.lineTo(pose==='drink'?24:27,pose==='drink'?27-step*3:26-step);g.stroke();
       }
       if(pose==='drink'){
-        g.fillStyle='#faf1db';g.fillRect(22,19+step,5,5);g.strokeStyle='#a79d86';g.lineWidth=1;g.strokeRect(26,20+step,2,2);g.fillStyle='#87644a';g.fillRect(23,19+step,3,1);
+        const y=25-step*3;g.fillStyle='#faf1db';g.fillRect(22,y,5,5);g.strokeStyle='#a79d86';g.lineWidth=1;g.strokeRect(26,y+1,2,2);g.fillStyle='#87644a';g.fillRect(23,y,3,1);
       }else if(pose==='read'){
         poly(g,[[15,25],[21,26],[27,24],[27,31],[21,33],[15,31]],'#eddfbd','#8c7858');g.strokeStyle='#b5a079';g.beginPath();g.moveTo(21,26);g.lineTo(21,32);g.stroke();
+        if(frame===2||frame===3)poly(g,[[21,26],[23+step,24],[24+step,30],[21,32]],'#fff3d5','#b5a079');
       }else if(pose==='work'){
         g.strokeStyle='#c9cfd0';g.lineWidth=1;g.beginPath();g.moveTo(27,26-step);g.lineTo(29,22-step);g.stroke();g.fillStyle='#d9e3de';g.fillRect(28,21-step,3,2);
       }else if(pose==='play'){
-        g.fillStyle='#af6650';g.beginPath();g.ellipse(28,23-step,3,4,.3,0,Math.PI*2);g.fill();
+        g.fillStyle='#af6650';g.beginPath();g.ellipse(28,24-step,3,4,.3,0,Math.PI*2);g.fill();
+      }else if(pose==='water'){
+        g.fillStyle='#6c9990';g.fillRect(23,26-step,7,5);g.fillStyle='#d6d7b0';g.fillRect(29,25-step,3,2);g.strokeStyle='#476b65';g.lineWidth=1;g.strokeRect(23,23-step,4,4);
+      }else if(pose==='paint'){
+        g.strokeStyle='#b88b53';g.lineWidth=1;g.beginPath();g.moveTo(26,27-step);g.lineTo(29,21-step);g.stroke();g.fillStyle=a.shirt||'#608d91';g.fillRect(28,Math.max(18,19-step),2,3);
+      }else if(pose==='sweep'||pose==='sweepBack'){
+        g.strokeStyle='#a17c50';g.lineWidth=2;g.beginPath();g.moveTo(25,23);g.lineTo(27-step*2,38);g.stroke();g.fillStyle='#c5aa71';g.fillRect(24-step*2,37,7,4);g.fillStyle='#857354';g.fillRect(24-step*2,37,7,1);
       }
     }
     poses.set(key,c);return c;
@@ -37,10 +45,19 @@
     if(v23Ready&&match)return actionSprite(e.personalAppearance||employeeAppearance(e),match[1],Number(match[2]));
     return legacyTint(source,e,station);
   };
+  // Cleaners use their whole native body too, rather than a scaled head pasted
+  // onto a different body. Feet and broom stay on the same ground anchor.
+  const legacyWorker=workerSprite23;workerSprite23=function(e,frame=0){
+    if(!v23Ready)return legacyWorker(e,frame);ensureLook(e);
+    const a=employeeAppearance({...e,role:'infra'});
+    if(e.work>0)return actionSprite(a,e.back?'sweepBack':'sweep',reducedMotion()?0:Math.floor(e.work*5)%6);
+    const phase=e.path?.length&&!reducedMotion()?[1,0,2,0][Math.floor(Motion31.state(e).distance/.16)%4]:0;
+    return personCanvas23(a,e.back?3:phase,phase);
+  };
   const legacyAction=drawAction;drawAction=function(e,tm,atObject=false){
     if(!v23Ready)return legacyAction(e,tm,atObject);
     const a=e.brk,s=ACT[a?.type];if(!s||!a.p)return;
-    const obj=P(...a.p.split(',').map(v=>Number(v)+.5)),c=atObject?obj:P(e.x+.5,e.y+.5),phase=paused()||reducedMotion()?0:Math.floor(tm/420+e.id)%2;
+    const obj=P(...a.p.split(',').map(v=>Number(v)+.5)),c=atObject?obj:P(e.x+.5,e.y+.5),phase=reducedMotion()?0:Math.floor((a.elapsed||0)*5)%6;
     const im=actionSprite(e.personalAppearance||employeeAppearance(e),s.pose,phase),flip=!atObject&&obj[0]<c[0],baseline=c[1]+(atObject&&s.pose==='sit'?-1:8);
     v19Select(e,c);if(!atObject){cx.fillStyle='#0003';cx.beginPath();cx.ellipse(c[0],c[1]+8,7,3,0,0,Math.PI*2);cx.fill()}
     cx.save();cx.translate(Math.round(c[0]),Math.round(baseline));if(flip)cx.scale(-1,1);cx.drawImage(im,-16,-42);cx.restore();

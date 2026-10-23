@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="180" viewBox="0 0 760 180" role="img" aria-label="DevCorp">
+  <g shape-rendering="crispEdges">
+    <path d="M16 36h120v108H16z" fill="#293235"/>
+    <path d="M16 36h120v23H16z" fill="#52645c"/>
+    <path d="M26 45h7v7h-7zm14 0h7v7h-7zm14 0h7v7h-7z" fill="#e4c284"/>
+    <path d="m40 78 18 16-18 16m35 0h29" fill="none" stroke="#e4c284" stroke-width="8"/>
+    <path d="M27 144h120v9H27z" fill="#9c8053"/>
+  </g>
+  <text x="163" y="125" font-family="Tahoma,Arial,sans-serif" font-weight="900" font-size="104" letter-spacing="-6" fill="#293235">Dev<tspan fill="#92703e">Corp</tspan></text>
+</svg>
