@@ -111,7 +111,7 @@
       if(pendingSelection&&!liftBusy&&G.floor===pendingSelection.floor){G.sel=pendingSelection.id;pendingSelection=null;renderFocus();}
       $('companyName28').textContent=G.name||'Sua empresa';const floors=FLOOR_COUNTS[G.lvl],staff=companyStaff().length;$('companyAddress28').textContent=BLD[G.lvl].n+' · '+floors+(floors===1?' andar':' andares');$('cash28').textContent=n$(G.money);$('cash28').classList.toggle('negative',G.money<0);$('day28').textContent='Dia '+G.day+' · '+WD[(G.day-1)%7];$('staff28').textContent=staff+(staff===1?' pessoa':' pessoas');$('rep28').textContent=G.rep.toFixed(1)+' ★';
       const saveText=$('saveIndicator')?.textContent||'Salvo';$('saveState28').textContent=saveText.includes('erro')?'Confira o save':'Salvo';updateLabels();renderCrew();renderRoster();renderUtilities();more.classList.toggle('on',tab==='ut'&&shOpen);
-      $('cnm').textContent=(G.name||'Minha Empresa')+' · V35';
+      $('cnm').textContent=(G.name||'Minha Empresa')+' · V36';
     }finally{rendering=false}
   }
   let ghostKey='',ghostValid=false,ghostTime=0;

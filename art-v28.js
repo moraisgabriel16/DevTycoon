@@ -9,10 +9,11 @@
   function actionSprite(a,pose,phase=0){
     const frame=((Math.floor(phase)%6)+6)%6,step=[0,1,2,2,1,0][frame],key=JSON.stringify([a,pose,frame]);if(poses.has(key))return poses.get(key);
     const source=personCanvas23(a,pose==='sweepBack'?3:pose==='run'?1+frame%2:0,step),c=canvas(32,42),g=c.getContext('2d');g.imageSmoothingEnabled=false;
-    if(pose==='sit'){
+    if(pose==='sit'||pose==='sitRead'){
       g.drawImage(source,0,0,32,29,0,4,32,29);
       g.drawImage(source,0,29,32,12,1,32,30,8);
       g.fillStyle=AVATAR_SKIN[a.skin??1];g.fillRect(23,31-step,3,2);
+      if(pose==='sitRead'){poly(g,[[14,29],[20,30],[27,28],[27,34],[20,36],[14,34]],'#eddfbd','#8c7858');g.strokeStyle='#b5a079';g.lineWidth=1;g.beginPath();g.moveTo(20,30);g.lineTo(20,35);g.stroke()}
     }else{
       g.drawImage(source,0,0);
       const skin=AVATAR_SKIN[a.skin??1],shirt=a.shirt||'#389fa8';
@@ -58,7 +59,8 @@
     if(!v23Ready)return legacyAction(e,tm,atObject);
     const a=e.brk,s=ACT[a?.type];if(!s||!a.p)return;
     const obj=P(...a.p.split(',').map(v=>Number(v)+.5)),c=atObject?obj:P(e.x+.5,e.y+.5),phase=reducedMotion()?0:Math.floor((a.elapsed||0)*5)%6;
-    const im=actionSprite(e.personalAppearance||employeeAppearance(e),s.pose,phase),flip=!atObject&&obj[0]<c[0],baseline=c[1]+(atObject&&s.pose==='sit'?-1:8);
+    const pose=atObject&&s.seated?(s.pose==='read'?'sitRead':'sit'):s.pose;
+    const im=actionSprite(e.personalAppearance||employeeAppearance(e),pose,phase),flip=!atObject&&obj[0]<c[0],baseline=c[1]+(atObject&&s.seated?-1:8);
     v19Select(e,c);if(!atObject){cx.fillStyle='#0003';cx.beginPath();cx.ellipse(c[0],c[1]+8,7,3,0,0,Math.PI*2);cx.fill()}
     cx.save();cx.translate(Math.round(c[0]),Math.round(baseline));if(flip)cx.scale(-1,1);cx.drawImage(im,-16,-42);cx.restore();
     // Status and progress sit above the same head, never over the face.

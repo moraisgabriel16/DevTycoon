@@ -10,7 +10,7 @@
   function walkable(x,y,n=navigation()){
     const b=n.building;if(x<.5||y<.5||x>11.5||y>11.5)return false;
     if(x>b.x-.3&&x<b.x+b.w+.3&&y>b.y-.3&&y<b.y+b.d+.3)return false;
-    for(const p of n.props){const size=p.type==='bench'?[.68,.43]:p.type==='planter'?[.62,.48]:p.type==='fountain'?[.95,.95]:p.type==='bike'?[.7,.45]:p.type==='table'?[1,.65]:p.type==='hedge'?[.75,.48]:p.type==='flowers'?[.7,.5]:[.4,.4];if(Math.abs(x-p.x)<size[0]&&Math.abs(y-p.y)<size[1])return false}return true;
+    for(const p of n.props){const size=p.footprint||(p.type==='bench'?[.68,.43]:p.type==='planter'?[.62,.48]:p.type==='fountain'?[.95,.95]:p.type==='bike'?[.7,.45]:p.type==='table'?[1,.65]:p.type==='hedge'?[.75,.48]:p.type==='flowers'?[.7,.5]:[.4,.4]);if(Math.abs(x-p.x)<size[0]&&Math.abs(y-p.y)<size[1])return false}return true;
   }
   function outdoorRoute(destination){
     const n=navigation(),start=n.entry,key=(x,y)=>x+','+y,queue=[[start.x,start.y]],parents=new Map([[key(start.x,start.y),null]]);let at=0;
@@ -20,8 +20,10 @@
     }return null;
   }
   function planTrip(e){
-    const used=companyStaff().filter(o=>o.id!==e.id&&trip(o)).map(o=>o.life28.route?.at(-1)).filter(Boolean),first=Math.abs(e.id)%restSpots.length;
-    for(let i=0;i<restSpots.length;i++){const spot=restSpots[(first+i)%restSpots.length];if(used.some(p=>Math.hypot(p[0]-spot[0],p[1]-spot[1])<.8))continue;const route=outdoorRoute(spot);if(route)return route}return null;
+    const used=companyStaff().filter(o=>o.id!==e.id&&trip(o)).map(o=>o.life28.route?.at(-1)).filter(Boolean),custom=[];
+    for(const p of navigation().props.filter(p=>p.rest))for(const[dx,dy]of [[1,0],[-1,0],[0,1],[0,-1]]){const spot=[p.x+dx,p.y+dy];if(walkable(...spot)&&outdoorRoute(spot)){custom.push(spot);break}}
+    const spots=custom.length?custom.concat(restSpots):restSpots,first=Math.abs(e.id)%spots.length;
+    for(let i=0;i<spots.length;i++){const spot=spots[(first+i)%spots.length];if(used.some(p=>Math.hypot(p[0]-spot[0],p[1]-spot[1])<.8))continue;const route=outdoorRoute(spot);if(route)return route}return null;
   }
   function routeLength(route){let length=0;for(let i=1;i<route.length;i++)length+=Math.hypot(route[i][0]-route[i-1][0],route[i][1]-route[i-1][1]);return length}
   function ensure(e){
@@ -44,7 +46,7 @@
     const s=ensure(e),order=s.pendingOrder;s.phase='returning';s.elapsed=0;delete s.pendingOrder;delete s.returnStarted;delete s.returnFrom;
     if(e.brk?.type==='outdoor28')e.brk=null;e.path=null;e.x=0;e.y=0;e.seated=false;
     const a=ensureBrain25(e);a.nextDecision=clock()+25;
-    if(natural){a.needs.energy=Math.min(100,a.needs.energy+24);a.needs.social=Math.min(100,a.needs.social+16);e.mood=Math.min(100,e.mood+4);brainMemory25(e,'Uma pausa na praça da sede para respirar.');say(e,'Voltei com uma ideia.');}
+    if(natural){const benefits=ExteriorScene28.outdoorBenefits?.(s.route?.at(-1))||{};a.needs.energy=Math.min(100,a.needs.energy+24+(benefits.energy||0));a.needs.thirst=Math.min(100,a.needs.thirst+(benefits.thirst||0));a.needs.social=Math.min(100,a.needs.social+16);e.mood=Math.min(100,e.mood+4);brainMemory25(e,'Uma pausa na praça da sede para respirar.');say(e,'Voltei com uma ideia.');}
     setBrainReason25(e,'Voltando à mesa depois de tomar ar.');
     if(order){s.phase='inside';onFloor(e.floor??0,()=>lifeCommand25(e.id,order));if(G.sel===e.id&&window.Studio28){Studio28.selectEmployee(e.id);Studio28.setView('inside')}}save();
   }

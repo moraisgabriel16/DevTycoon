@@ -2,7 +2,7 @@
 (() => {
   'use strict';
   const $=s=>document.querySelector(s);
-  function syncGameUI(){const open=ts.style.display==='flex';for(const id of ['gameHeader28','gameLayout28']){const e=document.getElementById(id);if(e)e.inert=open}}
+  function syncGameUI(){const open=ts.style.display==='flex';document.documentElement.classList.toggle('at-title36',open);for(const id of ['gameHeader28','gameLayout28']){const e=document.getElementById(id);if(e)e.inert=open}}
   new MutationObserver(syncGameUI).observe(ts,{attributes:true,attributeFilter:['style']});
   const sceneCopy=[
     ['Primeiro expediente','Uma mesa, uma equipe e o primeiro contrato.'],
@@ -41,7 +41,7 @@
       menuButton('startDemo30','Explorar demo','m9 5 10 7-10 7V5Z',()=>loadSlot(2)),
       menuButton('startOptions30','Opções','M4 6h16M4 12h16M4 18h16M8 3v6m8 0v6m-6 0v6',()=>{tsStep=2;titleRender()})
     );
-    const footer=$('#ts .titleFoot23');footer.querySelector('span')?.remove();footer.querySelector('small').textContent='V35';
+    const footer=$('#ts .titleFoot23');footer.querySelector('span')?.remove();footer.querySelector('small').textContent='V37';
     $('#ts .titleSceneHeader23 small').textContent='DENTRO DO JOGO';
     ts.setAttribute('aria-label','Menu principal do DevCorp');
   };

@@ -1,0 +1,738 @@
+{
+  "version": 1,
+  "cell": 96,
+  "sheets": {
+    "creation": "creation-atlas.png",
+    "focus": "focus-atlas.png",
+    "social": "social-atlas.png",
+    "wellbeing": "wellbeing-atlas.png",
+    "reception": "reception-atlas.png",
+    "collaboration": "collaboration-atlas.png",
+    "garden": "garden-atlas.png",
+    "plaza": "plaza-atlas.png",
+    "circulation": "circulation-atlas.png",
+    "identity": "identity-atlas.png"
+  },
+  "frames": {
+    "prototype36": {
+      "sheet": "creation",
+      "x": 16,
+      "y": 30,
+      "w": 64,
+      "h": 58,
+      "anchor": [
+        32,
+        58
+      ],
+      "sourceName": "work",
+      "source": [
+        122,
+        201,
+        420,
+        397
+      ]
+    },
+    "supply36": {
+      "sheet": "creation",
+      "x": 125,
+      "y": 40,
+      "w": 38,
+      "h": 48,
+      "anchor": [
+        19,
+        48
+      ],
+      "sourceName": "work",
+      "source": [
+        177,
+        771,
+        304,
+        358
+      ]
+    },
+    "printer36": {
+      "sheet": "creation",
+      "x": 25,
+      "y": 126,
+      "w": 46,
+      "h": 58,
+      "anchor": [
+        23,
+        58
+      ],
+      "sourceName": "creation-focus",
+      "source": [
+        158,
+        144,
+        367,
+        440
+      ]
+    },
+    "drawing36": {
+      "sheet": "creation",
+      "x": 115,
+      "y": 136,
+      "w": 58,
+      "h": 48,
+      "anchor": [
+        29,
+        48
+      ],
+      "sourceName": "creation-focus",
+      "source": [
+        740,
+        176,
+        404,
+        413
+      ]
+    },
+    "focus36": {
+      "sheet": "focus",
+      "x": 26,
+      "y": 16,
+      "w": 44,
+      "h": 72,
+      "anchor": [
+        22,
+        72
+      ],
+      "sourceName": "work",
+      "source": [
+        793,
+        112,
+        311,
+        486
+      ]
+    },
+    "reading36": {
+      "sheet": "focus",
+      "x": 123,
+      "y": 42,
+      "w": 42,
+      "h": 46,
+      "anchor": [
+        21,
+        46
+      ],
+      "sourceName": "lounge",
+      "source": [
+        765,
+        284,
+        327,
+        344
+      ]
+    },
+    "library36": {
+      "sheet": "focus",
+      "x": 27,
+      "y": 118,
+      "w": 42,
+      "h": 66,
+      "anchor": [
+        21,
+        66
+      ],
+      "sourceName": "creation-focus",
+      "source": [
+        187,
+        686,
+        330,
+        504
+      ]
+    },
+    "study36": {
+      "sheet": "focus",
+      "x": 115,
+      "y": 134,
+      "w": 58,
+      "h": 50,
+      "anchor": [
+        29,
+        50
+      ],
+      "sourceName": "creation-focus",
+      "source": [
+        730,
+        784,
+        432,
+        363
+      ]
+    },
+    "tea36": {
+      "sheet": "social",
+      "x": 24,
+      "y": 36,
+      "w": 48,
+      "h": 52,
+      "anchor": [
+        24,
+        52
+      ],
+      "sourceName": "lounge",
+      "source": [
+        176,
+        245,
+        335,
+        370
+      ]
+    },
+    "fruit36": {
+      "sheet": "social",
+      "x": 121,
+      "y": 36,
+      "w": 46,
+      "h": 52,
+      "anchor": [
+        23,
+        52
+      ],
+      "sourceName": "social-wellbeing",
+      "source": [
+        191,
+        111,
+        416,
+        432
+      ]
+    },
+    "snacks36": {
+      "sheet": "social",
+      "x": 24,
+      "y": 128,
+      "w": 48,
+      "h": 56,
+      "anchor": [
+        24,
+        56
+      ],
+      "sourceName": "social-wellbeing",
+      "source": [
+        836,
+        117,
+        456,
+        465
+      ]
+    },
+    "game36": {
+      "sheet": "social",
+      "x": 116,
+      "y": 138,
+      "w": 56,
+      "h": 46,
+      "anchor": [
+        28,
+        46
+      ],
+      "sourceName": "social-wellbeing",
+      "source": [
+        175,
+        629,
+        474,
+        369
+      ]
+    },
+    "planter36": {
+      "sheet": "wellbeing",
+      "x": 19,
+      "y": 40,
+      "w": 58,
+      "h": 48,
+      "anchor": [
+        29,
+        48
+      ],
+      "sourceName": "lounge",
+      "source": [
+        161,
+        796,
+        406,
+        373
+      ]
+    },
+    "aquarium36": {
+      "sheet": "wellbeing",
+      "x": 124,
+      "y": 26,
+      "w": 40,
+      "h": 62,
+      "anchor": [
+        20,
+        62
+      ],
+      "sourceName": "lounge",
+      "source": [
+        823,
+        790,
+        262,
+        380
+      ]
+    },
+    "recliner36": {
+      "sheet": "wellbeing",
+      "x": 27,
+      "y": 136,
+      "w": 42,
+      "h": 48,
+      "anchor": [
+        21,
+        48
+      ],
+      "sourceName": "social-wellbeing",
+      "source": [
+        864,
+        613,
+        389,
+        416
+      ]
+    },
+    "stretch36": {
+      "sheet": "wellbeing",
+      "x": 119,
+      "y": 144,
+      "w": 50,
+      "h": 40,
+      "anchor": [
+        25,
+        40
+      ],
+      "sourceName": "care-reception",
+      "source": [
+        202,
+        144,
+        407,
+        367
+      ]
+    },
+    "reception36": {
+      "sheet": "reception",
+      "x": 17,
+      "y": 40,
+      "w": 62,
+      "h": 48,
+      "anchor": [
+        31,
+        48
+      ],
+      "sourceName": "care-reception",
+      "source": [
+        830,
+        97,
+        480,
+        441
+      ]
+    },
+    "waiting36": {
+      "sheet": "reception",
+      "x": 115,
+      "y": 46,
+      "w": 58,
+      "h": 42,
+      "anchor": [
+        29,
+        42
+      ],
+      "sourceName": "care-reception",
+      "source": [
+        180,
+        628,
+        429,
+        379
+      ]
+    },
+    "brochure36": {
+      "sheet": "reception",
+      "x": 31,
+      "y": 126,
+      "w": 34,
+      "h": 58,
+      "anchor": [
+        17,
+        58
+      ],
+      "sourceName": "care-reception",
+      "source": [
+        982,
+        592,
+        204,
+        438
+      ]
+    },
+    "coat36": {
+      "sheet": "reception",
+      "x": 127,
+      "y": 118,
+      "w": 34,
+      "h": 66,
+      "anchor": [
+        17,
+        66
+      ],
+      "sourceName": "reception-collab",
+      "source": [
+        237,
+        114,
+        201,
+        469
+      ]
+    },
+    "planning36": {
+      "sheet": "collaboration",
+      "x": 20,
+      "y": 36,
+      "w": 56,
+      "h": 52,
+      "anchor": [
+        28,
+        52
+      ],
+      "sourceName": "work",
+      "source": [
+        747,
+        723,
+        396,
+        406
+      ]
+    },
+    "teamtable36": {
+      "sheet": "collaboration",
+      "x": 114,
+      "y": 42,
+      "w": 60,
+      "h": 46,
+      "anchor": [
+        30,
+        46
+      ],
+      "sourceName": "reception-collab",
+      "source": [
+        664,
+        257,
+        539,
+        339
+      ]
+    },
+    "flipchart36": {
+      "sheet": "collaboration",
+      "x": 28,
+      "y": 122,
+      "w": 40,
+      "h": 62,
+      "anchor": [
+        20,
+        62
+      ],
+      "sourceName": "reception-collab",
+      "source": [
+        232,
+        713,
+        263,
+        433
+      ]
+    },
+    "videocall36": {
+      "sheet": "collaboration",
+      "x": 124,
+      "y": 118,
+      "w": 40,
+      "h": 66,
+      "anchor": [
+        20,
+        66
+      ],
+      "sourceName": "reception-collab",
+      "source": [
+        793,
+        685,
+        299,
+        490
+      ]
+    },
+    "treeBox36": {
+      "sheet": "garden",
+      "x": 21,
+      "y": 14,
+      "w": 54,
+      "h": 74,
+      "anchor": [
+        27,
+        74
+      ],
+      "sourceName": "garden",
+      "source": [
+        221,
+        80,
+        326,
+        451
+      ]
+    },
+    "flowerBed36": {
+      "sheet": "garden",
+      "x": 115,
+      "y": 58,
+      "w": 58,
+      "h": 30,
+      "anchor": [
+        29,
+        30
+      ],
+      "sourceName": "garden",
+      "source": [
+        815,
+        223,
+        461,
+        341
+      ]
+    },
+    "hedgeBox36": {
+      "sheet": "garden",
+      "x": 19,
+      "y": 146,
+      "w": 58,
+      "h": 38,
+      "anchor": [
+        29,
+        38
+      ],
+      "sourceName": "garden",
+      "source": [
+        190,
+        668,
+        437,
+        351
+      ]
+    },
+    "trellis36": {
+      "sheet": "garden",
+      "x": 123,
+      "y": 114,
+      "w": 42,
+      "h": 70,
+      "anchor": [
+        21,
+        70
+      ],
+      "sourceName": "garden",
+      "source": [
+        887,
+        604,
+        354,
+        414
+      ]
+    },
+    "parkBench36": {
+      "sheet": "plaza",
+      "x": 19,
+      "y": 52,
+      "w": 58,
+      "h": 36,
+      "anchor": [
+        29,
+        36
+      ],
+      "sourceName": "plaza",
+      "source": [
+        188,
+        153,
+        419,
+        373
+      ]
+    },
+    "cafeTable36": {
+      "sheet": "plaza",
+      "x": 114,
+      "y": 18,
+      "w": 60,
+      "h": 70,
+      "anchor": [
+        30,
+        70
+      ],
+      "sourceName": "plaza",
+      "source": [
+        840,
+        54,
+        452,
+        467
+      ]
+    },
+    "waterFountain36": {
+      "sheet": "plaza",
+      "x": 33,
+      "y": 140,
+      "w": 30,
+      "h": 44,
+      "anchor": [
+        15,
+        44
+      ],
+      "sourceName": "plaza",
+      "source": [
+        310,
+        687,
+        177,
+        311
+      ]
+    },
+    "readingShade36": {
+      "sheet": "plaza",
+      "x": 115,
+      "y": 116,
+      "w": 58,
+      "h": 68,
+      "anchor": [
+        29,
+        68
+      ],
+      "sourceName": "plaza",
+      "source": [
+        863,
+        593,
+        418,
+        441
+      ]
+    },
+    "cycleRack36": {
+      "sheet": "circulation",
+      "x": 18,
+      "y": 48,
+      "w": 60,
+      "h": 40,
+      "anchor": [
+        30,
+        40
+      ],
+      "sourceName": "circulation",
+      "source": [
+        87,
+        221,
+        486,
+        371
+      ]
+    },
+    "wayfinding36": {
+      "sheet": "circulation",
+      "x": 124,
+      "y": 26,
+      "w": 40,
+      "h": 62,
+      "anchor": [
+        20,
+        62
+      ],
+      "sourceName": "circulation",
+      "source": [
+        771,
+        104,
+        403,
+        476
+      ]
+    },
+    "bollards36": {
+      "sheet": "circulation",
+      "x": 24,
+      "y": 154,
+      "w": 48,
+      "h": 30,
+      "anchor": [
+        24,
+        30
+      ],
+      "sourceName": "circulation",
+      "source": [
+        133,
+        825,
+        402,
+        334
+      ]
+    },
+    "shuttleStop36": {
+      "sheet": "circulation",
+      "x": 112,
+      "y": 120,
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        64
+      ],
+      "sourceName": "circulation",
+      "source": [
+        686,
+        697,
+        518,
+        472
+      ]
+    },
+    "monumentSign36": {
+      "sheet": "identity",
+      "x": 20,
+      "y": 44,
+      "w": 56,
+      "h": 44,
+      "anchor": [
+        28,
+        44
+      ],
+      "sourceName": "identity",
+      "source": [
+        227,
+        168,
+        407,
+        381
+      ]
+    },
+    "banner36": {
+      "sheet": "identity",
+      "x": 127,
+      "y": 10,
+      "w": 34,
+      "h": 78,
+      "anchor": [
+        17,
+        78
+      ],
+      "sourceName": "identity",
+      "source": [
+        1000,
+        45,
+        196,
+        499
+      ]
+    },
+    "plazaLamp36": {
+      "sheet": "identity",
+      "x": 27,
+      "y": 106,
+      "w": 42,
+      "h": 78,
+      "anchor": [
+        21,
+        78
+      ],
+      "sourceName": "identity",
+      "source": [
+        299,
+        594,
+        278,
+        436
+      ]
+    },
+    "sculpture36": {
+      "sheet": "identity",
+      "x": 123,
+      "y": 128,
+      "w": 42,
+      "h": 56,
+      "anchor": [
+        21,
+        56
+      ],
+      "sourceName": "identity",
+      "source": [
+        908,
+        615,
+        361,
+        428
+      ]
+    }
+  }
+}

@@ -1,3 +1,4 @@
+const artifact=require('./artifacts.cjs');
 const {chromium}=require('playwright');
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
@@ -45,7 +46,7 @@ function pass(name){results.push(name);console.log('✓ '+name)}
   });
   await page.locator('#commandEntry27').click();
   const claim=await page.evaluate(()=>{const cash=G.money,one=DevJourney27.claim(),after=G.money,two=DevJourney27.claim();return{one,two,reward:after-cash,claimed:DevJourney27.ensure().claimed}});
-  assert.deepEqual(claim,{one:true,two:false,reward:300,claimed:[0]});
+  assert.deepEqual(claim,{one:true,two:false,reward:750,claimed:[0]});
   await page.reload();await page.waitForFunction(()=>!!window.DevJourney27);
   assert.deepEqual(await page.evaluate(()=>DevJourney27.ensure().claimed),[0]);assert.equal(await page.evaluate(()=>Research27.unlockedCount()),1);
   pass('Capítulo paga uma vez; jornada, pesquisa e fachada sobrevivem ao recarregamento');
@@ -55,7 +56,7 @@ function pass(name){results.push(name);console.log('✓ '+name)}
   assert.equal(await page.evaluate(()=>DevJourney27.startShowcase('bairro')),false);
   assert.equal(await page.evaluate(()=>DevJourney27.startShowcase('festival')),false);
   assert.equal(await page.evaluate(()=>G.act.filter(c=>c.showcase27).length),1);
-  await page.screenshot({path:path.join(root,'showcases-desktop.png')});
+  await page.screenshot({path:artifact('showcases-desktop.png')});
   const showcase=await page.evaluate(()=>{const c=G.act.find(c=>c.showcase27);for(const role in c.need)c.need[role]=0;const before=Research27.points();tick();return{state:DevJourney27.ensure().showcases.bairro,album:G.life.album.some(m=>m.key==='showcase27:bairro'),knowledge:Research27.points()-before}});
   assert.equal(showcase.state.status,'complete');assert.equal(showcase.album,true);assert.ok(showcase.knowledge>=2);assert.equal(await page.evaluate(()=>DevJourney27.startShowcase('bairro')),false);
   await page.evaluate(()=>{DevJourney27.close();openExterior()});await page.getByRole('button',{name:'Jardim',exact:true}).click();
@@ -80,9 +81,9 @@ function pass(name){results.push(name);console.log('✓ '+name)}
   pass('Árvore completa custa 39 pontos e limita bônus a +9,2% de produção e +8% em novas propostas');
   const phoneContext=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,deviceScaleFactor:2}),phone=await phoneContext.newPage();phone.on('pageerror',e=>errors.push(e.message));
   await phone.goto(base);await phone.waitForFunction(()=>!!window.DevJourney27);await phone.evaluate(()=>{tsHide();DevJourney27.open()});
-  assert.equal(await phone.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);await phone.screenshot({path:path.join(root,'journey-mobile.png')});
+  assert.equal(await phone.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);await phone.screenshot({path:artifact('journey-mobile.png')});
   for(const label of ['⌘ Pesquisa','✦ Vitrine','▥ Panorama','? Guia','◈ Jornada']){await phone.getByRole('button',{name:label,exact:true}).tap();assert.equal(await phone.evaluate(()=>document.querySelector('.command-shell27').scrollWidth<=innerWidth),true)}
-  await phone.getByRole('button',{name:'⌘ Pesquisa',exact:true}).tap();await phone.screenshot({path:path.join(root,'research-mobile.png')});
+  await phone.getByRole('button',{name:'⌘ Pesquisa',exact:true}).tap();await phone.screenshot({path:artifact('research-mobile.png')});
   await phone.getByRole('button',{name:'Voltar ao jogo',exact:true}).tap();
   assert.equal(await phone.evaluate(()=>document.querySelector('#mainc').inert),false);
   pass('Cinco abas funcionam por toque a 390px sem rolagem horizontal ou foco preso');
@@ -93,5 +94,5 @@ function pass(name){results.push(name);console.log('✓ '+name)}
   await page.evaluate(()=>loadSlot(0));assert.deepEqual(await page.evaluate(()=>DevJourney27.ensure().claimed),[0]);
   pass('Trocar empresas mantém pesquisas e capítulos independentes');
   assert.deepEqual(errors,[]);pass('Nenhum erro JavaScript nos cenários novos');
-  fs.writeFileSync(path.join(root,'tests/progression-results.json'),JSON.stringify({date:new Date().toISOString(),firstContract:first,passed:results},null,2));
+  fs.writeFileSync(artifact('progression-results.json'),JSON.stringify({date:new Date().toISOString(),firstContract:first,passed:results},null,2));
 })().catch(error=>{console.error(error);process.exitCode=1}).finally(async()=>{await browser?.close();server.kill()});

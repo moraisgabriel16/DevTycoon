@@ -1,3 +1,4 @@
+const artifact=require('./artifacts.cjs');
 const {chromium}=require('playwright');
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
@@ -10,7 +11,7 @@ let browser;const passed=[];const pass=name=>{passed.push(name);console.log('✓
   await new Promise((resolve,reject)=>{server.stdout.once('data',resolve);server.once('error',reject);server.stderr.once('data',d=>reject(new Error(String(d))))});
   try{browser=await chromium.launch({headless:true})}catch{browser=await chromium.launch({channel:'msedge',headless:true})}
   const page=await browser.newPage({viewport:{width:1440,height:1000}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
-  await page.goto(base);await page.waitForFunction(()=>window.Art28?.loaded&&window.Studio28);await page.evaluate(()=>{loadSlot(2);spd(0)});
+  await page.goto(base);await page.waitForFunction(()=>window.Art28?.loaded&&window.DevCorpBoot?.ready&&window.Studio28);await page.evaluate(()=>{loadSlot(2);spd(0)});
   const identity=await page.evaluate(()=>{
     const issues=[];let checks=0;
     for(let look=0;look<8;look++)for(const pose of ['drink','read','work','play','sit'])for(let phase=0;phase<2;phase++){
@@ -29,7 +30,7 @@ let browser;const passed=[];const pass=name=>{passed.push(name);console.log('✓
       g.drawImage(im,25+i*160,40+look*104,64,84);
     }
     return c.toDataURL().split(',')[1];
-  });fs.writeFileSync(path.join(root,'interaction-sprites-v28-1.png'),Buffer.from(gallery,'base64'));
+  });fs.writeFileSync(artifact('interaction-sprites-v28-1.png'),Buffer.from(gallery,'base64'));
   const walls=await page.evaluate(()=>{
     const issues=[];
     for(let theme=0;theme<6;theme++){
@@ -65,16 +66,16 @@ let browser;const passed=[];const pass=name=>{passed.push(name);console.log('✓
     assert.equal(arrived,true,'Chegada ao objeto '+p);
     const anchor=await page.evaluate(()=>{const e=companyStaff().find(e=>e.id===testEmployee);return[e.x,e.y,e.brk.elapsed]});await page.clock.runFor(600);
     const still=await page.evaluate(()=>{const e=companyStaff().find(e=>e.id===testEmployee);return[e.x,e.y,e.brk.elapsed]});assert.deepEqual(still.slice(0,2),anchor.slice(0,2));assert.ok(still[2]>anchor[2]);
-    if(p==='4,3'){await page.evaluate(()=>{spd(0);ZT.z=2.35;const p=P(4,3);ZT.tx=450-p[0]*ZT.z;ZT.ty=300-p[1]*ZT.z});await page.clock.runFor(100);await page.locator('#cv').screenshot({path:path.join(root,'interaction-server-fixed.png')});await page.evaluate(()=>spd(1));}
+    if(p==='4,3'){await page.evaluate(()=>{spd(0);ZT.z=2.35;const p=P(4,3);ZT.tx=450-p[0]*ZT.z;ZT.ty=300-p[1]*ZT.z});await page.clock.runFor(100);await page.locator('#cv').screenshot({path:artifact('interaction-server-fixed.png')});await page.evaluate(()=>spd(1));}
     await page.clock.runFor(13000);
     assert.deepEqual(await page.evaluate(()=>{const e=companyStaff().find(e=>e.id===testEmployee);return{busy:!!e.brk,seated:e.seated,desk:e.desk,position:[e.x,e.y]}}),{busy:false,seated:true,desk:'2,2',position:[2,2]});
     console.log('  · Percurso e retorno: '+trips.at(-1).type);
   }
   pass('Café, servidor, leitura, sofá, planta e jogo mantêm a posição e devolvem a pessoa à mesa');
-  await page.evaluate(()=>{spd(0);G.sk=0;Art28.invalidate();ZT.z=1.6;ZT.tx=-270;ZT.ty=90;draw2(performance.now())});await page.clock.runFor(100);await page.locator('#cv').screenshot({path:path.join(root,'walls-fixed-v28-1.png')});
-  await page.evaluate(()=>{openPersonalRoom();G.myRoom.wallTheme=0;Art28.invalidate()});await page.clock.runFor(100);assert.equal(await page.locator('#personalView').isVisible(),true);await page.screenshot({path:path.join(root,'personal-walls-fixed-v28-1.png')});pass('Sala pessoal compartilha a parede contínua e as poses do avatar usam a mesma aparência');
+  await page.evaluate(()=>{spd(0);G.sk=0;Art28.invalidate();ZT.z=1.6;ZT.tx=-270;ZT.ty=90;draw2(performance.now())});await page.clock.runFor(100);await page.locator('#cv').screenshot({path:artifact('walls-fixed-v28-1.png')});
+  await page.evaluate(()=>{openPersonalRoom();G.myRoom.wallTheme=0;Art28.invalidate()});await page.clock.runFor(100);assert.equal(await page.locator('#personalView').isVisible(),true);await page.screenshot({path:artifact('personal-walls-fixed-v28-1.png')});pass('Sala pessoal compartilha a parede contínua e as poses do avatar usam a mesma aparência');
   await page.evaluate(()=>closePersonalRoom());await page.emulateMedia({reducedMotion:'reduce'});await page.evaluate(()=>draw2(performance.now()));
   await page.setViewportSize({width:390,height:844});await page.clock.runFor(200);assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
   assert.deepEqual(errors,[]);pass('Sem erros JavaScript no desktop, celular e com movimento reduzido');
-  fs.writeFileSync(path.join(root,'tests/visual-fixes-results.json'),JSON.stringify({date:new Date().toISOString(),passed,identityChecks:identity.checks,trips},null,2));
+  fs.writeFileSync(artifact('visual-fixes-results.json'),JSON.stringify({date:new Date().toISOString(),passed,identityChecks:identity.checks,trips},null,2));
 })().catch(e=>{console.error(e);process.exitCode=1}).finally(async()=>{await browser?.close();server.kill()});

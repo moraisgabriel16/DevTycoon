@@ -1,8 +1,8 @@
 {
   "name": "devcorp",
-  "version": "35.0.0",
+  "version": "37.0.0",
   "private": true,
   "description": "DevCorp: uma sede viva, por dentro e por fora, no navegador e celular",
-  "scripts": { "build": "node build.cjs", "start": "node server.cjs", "test": "node tests/game.cjs && node tests/fixes.cjs && node tests/progression.cjs && node tests/studio.cjs && node tests/visual-fixes.cjs && node tests/title.cjs && node tests/runtime.cjs && node tests/management.cjs && node tests/neighborhood.cjs && node tests/district.cjs && node tests/story.cjs && node tests/deployment.cjs" },
+  "scripts": { "build": "node build.cjs", "start": "node server.cjs", "atlas:pack": "node scripts/pack-atlases-v36.cjs", "test": "node tests/game.cjs && node tests/fixes.cjs && node tests/progression.cjs && node tests/studio.cjs && node tests/visual-fixes.cjs && node tests/boot.cjs && node tests/title.cjs && node tests/runtime.cjs && node tests/management.cjs && node tests/neighborhood.cjs && node tests/district.cjs && node tests/story.cjs && node tests/office-atlas.cjs && node tests/customization.cjs && node tests/deployment.cjs" },
   "devDependencies": { "playwright": "^1.56.0" }
 }

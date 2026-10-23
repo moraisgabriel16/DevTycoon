@@ -2,7 +2,7 @@
 
 ## Atualização V34
 
-O bairro de clientes foi implementado: padaria, loja e escola têm três projetos cada, com contratos reais e mudanças visíveis depois da entrega. A confiança usa os clientes existentes. Após as etapas, novas propostas seguem o intervalo e os requisitos do sistema de relacionamento. O mapa tem pontos interativos e acesso a visitas e à sede. Consulte o README e `tests/district-results.json` para os fluxos e a validação.
+O bairro de clientes foi implementado: padaria, loja e escola têm três projetos cada, com contratos reais e mudanças visíveis depois da entrega. A confiança usa os clientes existentes. Após as etapas, novas propostas seguem o intervalo e os requisitos do sistema de relacionamento. O mapa tem pontos interativos e acesso a visitas e à sede. Consulte o README e `test-artifacts/district-results.json` para os fluxos e a validação.
 
 ## Atualização V33
 
@@ -36,7 +36,7 @@ Microsoft Edge headless, viewport 1280 × 900, demo com 60 funcionários, CPU li
 | Escritório / equipe | 53,4 ms | 26,7 ms |
 | Bairro / equipe | 53,4 ms | 13,5 ms |
 
-Os registros de tarefas acima de 50 ms somaram 29 nas três amostras anteriores e 5 nas posteriores. Ainda há picos de atualização diária: o trabalho foi reduzido, não eliminado. Os relatórios completos estão em `tests/profile-before-v31.json` e `tests/profile-after-v31.json`. `node tests/profile.cjs <nome>` gera uma nova amostra diagnóstica; tempos não são usados como asserções automáticas.
+Os registros de tarefas acima de 50 ms somaram 29 nas três amostras anteriores e 5 nas posteriores. Ainda há picos de atualização diária: o trabalho foi reduzido, não eliminado. Os relatórios completos estão em `docs/benchmarks/profile-before-v31.json` e `docs/benchmarks/profile-after-v31.json`. `node tests/profile.cjs <nome>` gera uma nova amostra diagnóstica; tempos não são usados como asserções automáticas.
 
 `tests/runtime.cjs` verifica conservação da distância, compartilhamento de previsões, gravação final, cache, trajetos nos seis prédios, oclusão, retorno para café e suspensão de desenho sob painéis. Os testes de integração, sprites, saves e abertura foram mantidos. A campanha simulada de 80 dias terminou com saldo positivo, seis entregas, quatro funcionários e quatro pesquisas, sem erros JavaScript.
 

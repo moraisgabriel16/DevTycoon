@@ -1,3 +1,4 @@
+const artifact=require('./artifacts.cjs');
 /* Headless campaign QA: actual frame/actor movement and production, seeded randomness. */
 const {chromium}=require('playwright');
 const {spawn}=require('node:child_process');
@@ -71,6 +72,6 @@ let browser;
     await page.clock.runFor(1675);
   }
   const report={seed:20027,first,final:rows.at(-1),errors,rows};
-  fs.writeFileSync(path.join(root,'tests/balance-results.json'),JSON.stringify(report,null,2));
+  fs.writeFileSync(artifact('balance-results.json'),JSON.stringify(report,null,2));
   console.log('FINAL',JSON.stringify(report.final));console.log('ERRORS',JSON.stringify(errors));
 })().catch(e=>{console.error(e);process.exitCode=1}).finally(async()=>{await browser?.close();server.kill()});

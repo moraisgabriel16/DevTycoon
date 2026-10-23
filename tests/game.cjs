@@ -1,3 +1,4 @@
+const artifact=require('./artifacts.cjs');
 const {chromium}=require('playwright');
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
@@ -49,7 +50,7 @@ function passed(name){results.push(name);console.log('✓ '+name)}
   for(const name of ['Energia solar','Jardim','Conectado','Terraço'])await page.locator('#exteriorPanel').getByRole('button',{name:new RegExp(name)}).click();
   await page.locator('#extSave').click();
   assert.equal(await page.evaluate(()=>G.exteriors.buildings[4].roof),'terrace');
-  await page.locator('#extDay').click();await page.screenshot({path:path.join(root,'exterior-desktop.png')});
+  await page.locator('#extDay').click();await page.screenshot({path:artifact('exterior-desktop.png')});
   const download=page.waitForEvent('download');await page.locator('#extExport').click();assert.ok((await download).suggestedFilename().endsWith('.png'));
   await page.locator('#extClose').click();await page.evaluate(()=>loadSlot(0));await page.locator('#exteriorEntry').click();
   await page.getByRole('button',{name:'Identidade',exact:true}).click();assert.equal(await page.locator('#extSign').inputValue(),'Minha Aurora');
@@ -66,14 +67,14 @@ function passed(name){results.push(name);console.log('✓ '+name)}
   await phone.touchscreen.tap(rect.x+(480-3*29)*rect.width/960,rect.y+(265+5*14.5-1)*rect.height/720);
   await phone.locator('#extSave').click();assert.equal(await phone.evaluate(()=>G.exteriors.buildings[0].props[1]),'fountain');
   assert.equal(await phone.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
-  await phone.locator('#exteriorView').evaluate(e=>e.scrollTo(0,0));await phone.screenshot({path:path.join(root,'exterior-mobile.png')});
+  await phone.locator('#exteriorView').evaluate(e=>e.scrollTo(0,0));await phone.screenshot({path:artifact('exterior-mobile.png')});
   await phone.getByRole('button',{name:'Identidade',exact:true}).click();await phone.locator('#extSign').fill('<img onerror=alert(1)>');await phone.locator('#extSave').click();assert.equal(await phone.locator('#exteriorView img').count(),0);
-  await phone.locator('#extClose').click();await phone.evaluate(()=>loadSlot(2));await phone.waitForTimeout(200);await phone.screenshot({path:path.join(root,'game-mobile.png'),fullPage:true});
+  await phone.locator('#extClose').click();await phone.evaluate(()=>loadSlot(2));await phone.waitForTimeout(200);await phone.screenshot({path:artifact('game-mobile.png'),fullPage:true});
   passed('Tela de celular sem rolagem horizontal; toque posiciona item e texto é tratado como texto');
   await page.evaluate(async()=>{await navigator.serviceWorker.ready;if(!navigator.serviceWorker.controller)await new Promise(resolve=>navigator.serviceWorker.addEventListener('controllerchange',resolve,{once:true}));});
-  await page.waitForFunction(async()=>{const c=await caches.open('devtycoon-v30-1');return !!(await c.match('./studio-v29.css'))});
+  await page.waitForFunction(async()=>{const c=await caches.open('devcorp-v37-1');return !!(await c.match('./studio-v29.css'))});
   await context.setOffline(true);await page.reload();await page.waitForFunction(()=>typeof openExterior==='function');await page.evaluate(()=>{tsHide();openExterior()});
   assert.equal(await page.locator('#exteriorView').isVisible(),true);await context.setOffline(false);passed('Reabertura offline pelo Service Worker com campanha preservada');
   assert.deepEqual(errors,[]);passed('Nenhum erro JavaScript nos fluxos testados');
-  fs.writeFileSync(path.join(root,'tests/results.json'),JSON.stringify({date:new Date().toISOString(),passed:results},null,2));
+  fs.writeFileSync(artifact('results.json'),JSON.stringify({date:new Date().toISOString(),passed:results},null,2));
 })().catch(error=>{console.error(error);process.exitCode=1}).finally(async()=>{await browser?.close();server.kill()});

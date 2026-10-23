@@ -1,0 +1,937 @@
+{
+  "version": 2,
+  "cell": 96,
+  "columns": 2,
+  "sheets": {
+    "creation": "creation-atlas.png",
+    "focus": "focus-atlas.png",
+    "social": "social-atlas.png",
+    "wellbeing": "wellbeing-atlas.png",
+    "reception": "reception-atlas.png",
+    "collaboration": "collaboration-atlas.png",
+    "garden": "garden-atlas.png",
+    "plaza": "plaza-atlas.png",
+    "circulation": "circulation-atlas.png",
+    "identity": "identity-atlas.png"
+  },
+  "collections": [
+    {
+      "id": "creation",
+      "scope": "office",
+      "name": "Criação e protótipos",
+      "function": "Experimente ideias e ganhe experiência por atividade."
+    },
+    {
+      "id": "focus",
+      "scope": "office",
+      "name": "Foco e estudo",
+      "function": "Leitura, experiência e recuperação de energia."
+    },
+    {
+      "id": "social",
+      "scope": "office",
+      "name": "Convivência",
+      "function": "Alimentos, hidratação e convívio nas pausas."
+    },
+    {
+      "id": "wellbeing",
+      "scope": "office",
+      "name": "Bem-estar",
+      "function": "Descanso, alongamento e cuidado com o ambiente."
+    },
+    {
+      "id": "reception",
+      "scope": "office",
+      "name": "Recepção",
+      "function": "Prepare o térreo para receber visitas de clientes."
+    },
+    {
+      "id": "collaboration",
+      "scope": "office",
+      "name": "Colaboração",
+      "function": "Use os móveis para reunir a equipe e planejar."
+    },
+    {
+      "id": "garden",
+      "scope": "exterior",
+      "name": "Paisagismo",
+      "function": "Vegetação recupera +4 energia ao terminar uma pausa natural na praça. Não acumula por peça."
+    },
+    {
+      "id": "plaza",
+      "scope": "exterior",
+      "name": "Convivência na praça",
+      "function": "Bancos e mesas viram destinos reais para as pausas da equipe."
+    },
+    {
+      "id": "circulation",
+      "scope": "exterior",
+      "name": "Circulação",
+      "function": "Oriente visitantes e organize a passagem. O mapa e as visitas têm atalhos nas placas."
+    },
+    {
+      "id": "identity",
+      "scope": "exterior",
+      "name": "Identidade e iluminação",
+      "function": "Destaque o nome da empresa, sinalize a entrada e ilumine a sede à noite."
+    }
+  ],
+  "items": [
+    {
+      "id": "prototype36",
+      "name": "Bancada de protótipos",
+      "sheet": "creation",
+      "slot": 0,
+      "size": [
+        64,
+        58
+      ],
+      "cost": 650,
+      "category": "work",
+      "action": "Testar uma ideia",
+      "pose": "work",
+      "seconds": 8,
+      "mood": 2,
+      "xp": 2,
+      "routine": "bookshelf",
+      "description": "Teste uma ideia: +2 humor e +2 experiência por uso.",
+      "source": "work",
+      "sourceSlot": 0,
+      "scope": "office"
+    },
+    {
+      "id": "focus36",
+      "name": "Cabine de foco",
+      "sheet": "focus",
+      "slot": 0,
+      "size": [
+        44,
+        72
+      ],
+      "cost": 900,
+      "category": "work",
+      "action": "Planejar sem interrupções",
+      "pose": "sit",
+      "seated": true,
+      "seconds": 8,
+      "mood": 4,
+      "xp": 1,
+      "routine": "poltrona",
+      "energy": 35,
+      "description": "Uma pausa tranquila: +4 humor e +1 experiência por uso.",
+      "source": "work",
+      "sourceSlot": 1,
+      "scope": "office"
+    },
+    {
+      "id": "supply36",
+      "name": "Carrinho de materiais",
+      "sheet": "creation",
+      "slot": 1,
+      "size": [
+        38,
+        48
+      ],
+      "cost": 220,
+      "category": "work",
+      "action": "Organizar os materiais",
+      "pose": "work",
+      "seconds": 6,
+      "mood": 2,
+      "xp": 1,
+      "routine": "bookshelf",
+      "description": "Organize o material: +2 humor e +1 experiência por uso.",
+      "source": "work",
+      "sourceSlot": 2,
+      "scope": "office"
+    },
+    {
+      "id": "planning36",
+      "name": "Painel de planejamento",
+      "sheet": "collaboration",
+      "slot": 0,
+      "size": [
+        56,
+        52
+      ],
+      "cost": 340,
+      "category": "work",
+      "action": "Revisar o próximo passo",
+      "pose": "read",
+      "seconds": 7,
+      "mood": 2,
+      "xp": 1,
+      "routine": "bookshelf",
+      "description": "Permite reuniões da equipe. Revise um plano: +2 humor e +1 experiência por uso.",
+      "source": "work",
+      "sourceSlot": 3,
+      "scope": "office",
+      "meeting": true
+    },
+    {
+      "id": "tea36",
+      "name": "Estação de chá",
+      "sheet": "social",
+      "slot": 0,
+      "size": [
+        48,
+        52
+      ],
+      "cost": 240,
+      "category": "rest",
+      "action": "Preparar um chá",
+      "pose": "drink",
+      "seconds": 6,
+      "mood": 5,
+      "xp": 0,
+      "routine": "coffee",
+      "thirst": 55,
+      "description": "Prepare uma bebida: +5 humor e hidratação por uso.",
+      "source": "lounge",
+      "sourceSlot": 0,
+      "scope": "office"
+    },
+    {
+      "id": "reading36",
+      "name": "Poltrona de leitura",
+      "sheet": "focus",
+      "slot": 1,
+      "size": [
+        42,
+        46
+      ],
+      "cost": 380,
+      "category": "rest",
+      "action": "Ler com calma",
+      "pose": "read",
+      "seated": true,
+      "seconds": 9,
+      "mood": 6,
+      "xp": 1,
+      "routine": "sofa",
+      "energy": 45,
+      "description": "Leia e descanse: +6 humor e +1 experiência por uso.",
+      "source": "lounge",
+      "sourceSlot": 1,
+      "scope": "office"
+    },
+    {
+      "id": "planter36",
+      "name": "Jardineira divisória",
+      "sheet": "wellbeing",
+      "slot": 0,
+      "size": [
+        58,
+        48
+      ],
+      "cost": 180,
+      "category": "deco",
+      "action": "Cuidar das folhas",
+      "pose": "water",
+      "seconds": 6,
+      "mood": 4,
+      "xp": 0,
+      "routine": "plant",
+      "description": "Cuide das plantas: +4 humor por uso.",
+      "source": "lounge",
+      "sourceSlot": 2,
+      "scope": "office"
+    },
+    {
+      "id": "aquarium36",
+      "name": "Aquário da recepção",
+      "sheet": "wellbeing",
+      "slot": 1,
+      "size": [
+        40,
+        62
+      ],
+      "cost": 520,
+      "category": "deco",
+      "action": "Observar os peixes",
+      "pose": "idle",
+      "seconds": 7,
+      "mood": 4,
+      "xp": 0,
+      "routine": "plant",
+      "description": "Uma pausa para observar: +4 humor por uso.",
+      "source": "lounge",
+      "sourceSlot": 3,
+      "scope": "office"
+    },
+    {
+      "id": "printer36",
+      "name": "Impressora de protótipos",
+      "source": "creation-focus",
+      "sourceSlot": 0,
+      "size": [
+        46,
+        58
+      ],
+      "cost": 800,
+      "category": "work",
+      "scope": "office",
+      "action": "Experimentar um protótipo",
+      "pose": "work",
+      "mood": 3,
+      "xp": 3,
+      "seconds": 10,
+      "routine": "bookshelf",
+      "description": "Experimentar um protótipo: +3 humor e +3 experiência por uso.",
+      "sheet": "creation",
+      "slot": 2
+    },
+    {
+      "id": "drawing36",
+      "name": "Mesa de desenho",
+      "source": "creation-focus",
+      "sourceSlot": 1,
+      "size": [
+        58,
+        48
+      ],
+      "cost": 480,
+      "category": "work",
+      "scope": "office",
+      "action": "Rabiscar uma solução",
+      "pose": "paint",
+      "mood": 3,
+      "xp": 2,
+      "seconds": 8,
+      "routine": "bookshelf",
+      "description": "Rabiscar uma solução: +3 humor e +2 experiência por uso.",
+      "sheet": "creation",
+      "slot": 3
+    },
+    {
+      "id": "library36",
+      "name": "Biblioteca de apoio",
+      "source": "creation-focus",
+      "sourceSlot": 2,
+      "size": [
+        42,
+        66
+      ],
+      "cost": 420,
+      "category": "work",
+      "scope": "office",
+      "action": "Pesquisar uma ideia",
+      "pose": "read",
+      "mood": 3,
+      "xp": 2,
+      "seconds": 8,
+      "routine": "bookshelf",
+      "energy": 25,
+      "description": "Pesquisar uma ideia: +3 humor e +2 experiência por uso.",
+      "sheet": "focus",
+      "slot": 2
+    },
+    {
+      "id": "study36",
+      "name": "Escrivaninha de estudo",
+      "source": "creation-focus",
+      "sourceSlot": 3,
+      "size": [
+        58,
+        50
+      ],
+      "cost": 520,
+      "category": "work",
+      "scope": "office",
+      "action": "Estudar com calma",
+      "pose": "read",
+      "mood": 3,
+      "xp": 2,
+      "seconds": 8,
+      "routine": "bookshelf",
+      "energy": 30,
+      "seated": true,
+      "description": "Estudar com calma: +3 humor e +2 experiência por uso.",
+      "sheet": "focus",
+      "slot": 3
+    },
+    {
+      "id": "fruit36",
+      "name": "Carrinho de frutas",
+      "source": "social-wellbeing",
+      "sourceSlot": 0,
+      "size": [
+        46,
+        52
+      ],
+      "cost": 290,
+      "category": "rest",
+      "scope": "office",
+      "action": "Fazer um lanche",
+      "pose": "work",
+      "mood": 4,
+      "xp": 0,
+      "seconds": 8,
+      "routine": "snack",
+      "energy": 35,
+      "thirst": 20,
+      "social": 25,
+      "description": "Fazer um lanche: +4 humor por uso.",
+      "sheet": "social",
+      "slot": 1
+    },
+    {
+      "id": "snacks36",
+      "name": "Copa compacta",
+      "source": "social-wellbeing",
+      "sourceSlot": 1,
+      "size": [
+        48,
+        56
+      ],
+      "cost": 440,
+      "category": "rest",
+      "scope": "office",
+      "action": "Aquecer o lanche",
+      "pose": "work",
+      "mood": 5,
+      "xp": 0,
+      "seconds": 8,
+      "routine": "snack",
+      "energy": 40,
+      "social": 25,
+      "description": "Aquecer o lanche: +5 humor por uso.",
+      "sheet": "social",
+      "slot": 2
+    },
+    {
+      "id": "game36",
+      "name": "Mesa de jogos",
+      "source": "social-wellbeing",
+      "sourceSlot": 2,
+      "size": [
+        56,
+        46
+      ],
+      "cost": 480,
+      "category": "rest",
+      "scope": "office",
+      "action": "Jogar uma rodada",
+      "pose": "play",
+      "mood": 6,
+      "xp": 0,
+      "seconds": 8,
+      "routine": "pong",
+      "social": 35,
+      "description": "Jogar uma rodada: +6 humor por uso.",
+      "sheet": "social",
+      "slot": 3
+    },
+    {
+      "id": "recliner36",
+      "name": "Poltrona de descanso",
+      "source": "social-wellbeing",
+      "sourceSlot": 3,
+      "size": [
+        42,
+        48
+      ],
+      "cost": 460,
+      "category": "rest",
+      "scope": "office",
+      "action": "Recarregar as energias",
+      "pose": "sit",
+      "mood": 6,
+      "xp": 0,
+      "seconds": 8,
+      "routine": "sofa",
+      "energy": 50,
+      "seated": true,
+      "description": "Recarregar as energias: +6 humor por uso.",
+      "sheet": "wellbeing",
+      "slot": 2
+    },
+    {
+      "id": "stretch36",
+      "name": "Estação de alongamento",
+      "source": "care-reception",
+      "sourceSlot": 0,
+      "size": [
+        50,
+        40
+      ],
+      "cost": 280,
+      "category": "rest",
+      "scope": "office",
+      "action": "Alongar o corpo",
+      "pose": "run",
+      "mood": 5,
+      "xp": 0,
+      "seconds": 8,
+      "routine": "sofa",
+      "energy": 35,
+      "description": "Alongar o corpo: +5 humor por uso.",
+      "sheet": "wellbeing",
+      "slot": 3
+    },
+    {
+      "id": "reception36",
+      "name": "Balcão de acolhimento",
+      "source": "care-reception",
+      "sourceSlot": 1,
+      "size": [
+        62,
+        48
+      ],
+      "cost": 900,
+      "category": "work",
+      "scope": "office",
+      "action": "Preparar a recepção",
+      "pose": "work",
+      "mood": 3,
+      "xp": 1,
+      "seconds": 8,
+      "routine": "bookshelf",
+      "reception": true,
+      "description": "Recebe visitas de clientes no térreo. Preparar a recepção: +3 humor e +1 experiência por uso.",
+      "sheet": "reception",
+      "slot": 0
+    },
+    {
+      "id": "waiting36",
+      "name": "Banco de espera",
+      "source": "care-reception",
+      "sourceSlot": 2,
+      "size": [
+        58,
+        42
+      ],
+      "cost": 340,
+      "category": "rest",
+      "scope": "office",
+      "action": "Fazer uma pausa curta",
+      "pose": "sit",
+      "mood": 4,
+      "xp": 0,
+      "seconds": 8,
+      "routine": "sofa",
+      "energy": 25,
+      "seated": true,
+      "description": "Fazer uma pausa curta: +4 humor por uso.",
+      "sheet": "reception",
+      "slot": 1
+    },
+    {
+      "id": "brochure36",
+      "name": "Expositor de projetos",
+      "source": "care-reception",
+      "sourceSlot": 3,
+      "size": [
+        34,
+        58
+      ],
+      "cost": 210,
+      "category": "work",
+      "scope": "office",
+      "action": "Conhecer os projetos",
+      "pose": "read",
+      "mood": 3,
+      "xp": 1,
+      "seconds": 8,
+      "routine": "bookshelf",
+      "reception": true,
+      "description": "Recebe visitas de clientes no térreo. Conhecer os projetos: +3 humor e +1 experiência por uso.",
+      "sheet": "reception",
+      "slot": 2
+    },
+    {
+      "id": "coat36",
+      "name": "Cabideiro de visitas",
+      "source": "reception-collab",
+      "sourceSlot": 0,
+      "size": [
+        34,
+        66
+      ],
+      "cost": 140,
+      "category": "deco",
+      "scope": "office",
+      "action": "Organizar a chegada",
+      "pose": "work",
+      "mood": 2,
+      "xp": 0,
+      "seconds": 8,
+      "routine": "plant",
+      "description": "Organizar a chegada: +2 humor por uso.",
+      "sheet": "reception",
+      "slot": 3
+    },
+    {
+      "id": "teamtable36",
+      "name": "Mesa de colaboração",
+      "source": "reception-collab",
+      "sourceSlot": 1,
+      "size": [
+        60,
+        46
+      ],
+      "cost": 600,
+      "category": "work",
+      "scope": "office",
+      "action": "Compartilhar uma ideia",
+      "pose": "work",
+      "mood": 3,
+      "xp": 1,
+      "seconds": 8,
+      "routine": "meeting",
+      "meeting": true,
+      "description": "Permite reuniões da equipe. Compartilhar uma ideia: +3 humor e +1 experiência por uso.",
+      "sheet": "collaboration",
+      "slot": 1
+    },
+    {
+      "id": "flipchart36",
+      "name": "Cavalete de reunião",
+      "source": "reception-collab",
+      "sourceSlot": 2,
+      "size": [
+        40,
+        62
+      ],
+      "cost": 320,
+      "category": "work",
+      "scope": "office",
+      "action": "Organizar uma conversa",
+      "pose": "read",
+      "mood": 3,
+      "xp": 1,
+      "seconds": 8,
+      "routine": "board",
+      "meeting": true,
+      "description": "Permite reuniões da equipe. Organizar uma conversa: +3 humor e +1 experiência por uso.",
+      "sheet": "collaboration",
+      "slot": 2
+    },
+    {
+      "id": "videocall36",
+      "name": "Estação de videochamada",
+      "source": "reception-collab",
+      "sourceSlot": 3,
+      "size": [
+        40,
+        66
+      ],
+      "cost": 650,
+      "category": "work",
+      "scope": "office",
+      "action": "Planejar com a equipe",
+      "pose": "work",
+      "mood": 3,
+      "xp": 1,
+      "seconds": 8,
+      "routine": "meeting",
+      "meeting": true,
+      "description": "Permite reuniões da equipe. Planejar com a equipe: +3 humor e +1 experiência por uso.",
+      "sheet": "collaboration",
+      "slot": 3
+    },
+    {
+      "id": "treeBox36",
+      "name": "Árvore em cachepô",
+      "source": "garden",
+      "sourceSlot": 0,
+      "size": [
+        54,
+        74
+      ],
+      "scope": "exterior",
+      "description": "Sombra e vegetação para a pausa natural.",
+      "footprint": [
+        0.65,
+        0.5
+      ],
+      "nature": true,
+      "sheet": "garden",
+      "slot": 0
+    },
+    {
+      "id": "flowerBed36",
+      "name": "Canteiro florido",
+      "source": "garden",
+      "sourceSlot": 1,
+      "size": [
+        58,
+        30
+      ],
+      "scope": "exterior",
+      "description": "Flores e vegetação para a pausa natural.",
+      "footprint": [
+        0.65,
+        0.5
+      ],
+      "nature": true,
+      "sheet": "garden",
+      "slot": 1
+    },
+    {
+      "id": "hedgeBox36",
+      "name": "Jardineira de cerca viva",
+      "source": "garden",
+      "sourceSlot": 2,
+      "size": [
+        58,
+        38
+      ],
+      "scope": "exterior",
+      "description": "Organize o jardim com vegetação.",
+      "footprint": [
+        0.65,
+        0.5
+      ],
+      "nature": true,
+      "sheet": "garden",
+      "slot": 2
+    },
+    {
+      "id": "trellis36",
+      "name": "Treliça verde",
+      "source": "garden",
+      "sourceSlot": 3,
+      "size": [
+        42,
+        70
+      ],
+      "scope": "exterior",
+      "description": "Um painel de folhas para o jardim.",
+      "footprint": [
+        0.65,
+        0.5
+      ],
+      "nature": true,
+      "sheet": "garden",
+      "slot": 3
+    },
+    {
+      "id": "parkBench36",
+      "name": "Banco da praça",
+      "source": "plaza",
+      "sourceSlot": 0,
+      "size": [
+        58,
+        36
+      ],
+      "scope": "exterior",
+      "description": "Destino de descanso para os funcionários.",
+      "footprint": [
+        0.65,
+        0.5
+      ],
+      "rest": true,
+      "sheet": "plaza",
+      "slot": 0
+    },
+    {
+      "id": "cafeTable36",
+      "name": "Mesa com guarda-sol",
+      "source": "plaza",
+      "sourceSlot": 1,
+      "size": [
+        60,
+        70
+      ],
+      "scope": "exterior",
+      "description": "Ponto de convivência nas pausas.",
+      "footprint": [
+        0.8,
+        0.7
+      ],
+      "rest": true,
+      "sheet": "plaza",
+      "slot": 1
+    },
+    {
+      "id": "waterFountain36",
+      "name": "Bebedouro da praça",
+      "source": "plaza",
+      "sourceSlot": 2,
+      "size": [
+        30,
+        44
+      ],
+      "scope": "exterior",
+      "description": "Destino de pausa; hidrata quem descansar ao lado.",
+      "footprint": [
+        0.4,
+        0.4
+      ],
+      "rest": true,
+      "water": true,
+      "sheet": "plaza",
+      "slot": 2
+    },
+    {
+      "id": "readingShade36",
+      "name": "Banco de leitura coberto",
+      "source": "plaza",
+      "sourceSlot": 3,
+      "size": [
+        58,
+        68
+      ],
+      "scope": "exterior",
+      "description": "Um ponto protegido para descansar.",
+      "footprint": [
+        0.65,
+        0.5
+      ],
+      "rest": true,
+      "sheet": "plaza",
+      "slot": 3
+    },
+    {
+      "id": "cycleRack36",
+      "name": "Bicicletário urbano",
+      "source": "circulation",
+      "sourceSlot": 0,
+      "size": [
+        60,
+        40
+      ],
+      "scope": "exterior",
+      "description": "Toque para abrir as visitas aos vizinhos.",
+      "footprint": [
+        0.65,
+        0.5
+      ],
+      "shortcut": "neighbors",
+      "sheet": "circulation",
+      "slot": 0
+    },
+    {
+      "id": "wayfinding36",
+      "name": "Placa de orientação",
+      "source": "circulation",
+      "sourceSlot": 1,
+      "size": [
+        40,
+        62
+      ],
+      "scope": "exterior",
+      "description": "Toque para abrir o mapa e os clientes do bairro.",
+      "footprint": [
+        0.35,
+        0.35
+      ],
+      "shortcut": "district",
+      "sheet": "circulation",
+      "slot": 1
+    },
+    {
+      "id": "bollards36",
+      "name": "Balizadores de passagem",
+      "source": "circulation",
+      "sourceSlot": 2,
+      "size": [
+        48,
+        30
+      ],
+      "scope": "exterior",
+      "description": "Delimite a calçada; as rotas respeitam a passagem.",
+      "footprint": [
+        0.65,
+        0.3
+      ],
+      "sheet": "circulation",
+      "slot": 2
+    },
+    {
+      "id": "shuttleStop36",
+      "name": "Abrigo de chegada",
+      "source": "circulation",
+      "sourceSlot": 3,
+      "size": [
+        64,
+        64
+      ],
+      "scope": "exterior",
+      "description": "Um ponto de chegada. Toque para visitar os vizinhos.",
+      "footprint": [
+        0.8,
+        0.6
+      ],
+      "shortcut": "neighbors",
+      "sheet": "circulation",
+      "slot": 3
+    },
+    {
+      "id": "monumentSign36",
+      "name": "Totem da empresa",
+      "source": "identity",
+      "sourceSlot": 0,
+      "size": [
+        56,
+        44
+      ],
+      "scope": "exterior",
+      "description": "Exibe o nome da empresa. Toque para entrar na sede.",
+      "footprint": [
+        0.65,
+        0.5
+      ],
+      "shortcut": "entrance",
+      "companySign": true,
+      "sheet": "identity",
+      "slot": 0
+    },
+    {
+      "id": "banner36",
+      "name": "Bandeira da sede",
+      "source": "identity",
+      "sourceSlot": 1,
+      "size": [
+        34,
+        78
+      ],
+      "scope": "exterior",
+      "description": "Uma bandeira para destacar a entrada.",
+      "footprint": [
+        0.3,
+        0.3
+      ],
+      "sheet": "identity",
+      "slot": 1
+    },
+    {
+      "id": "plazaLamp36",
+      "name": "Poste de duas luzes",
+      "source": "identity",
+      "sourceSlot": 2,
+      "size": [
+        42,
+        78
+      ],
+      "scope": "exterior",
+      "description": "Ilumina a praça na vista noturna.",
+      "footprint": [
+        0.3,
+        0.3
+      ],
+      "light": true,
+      "sheet": "identity",
+      "slot": 2
+    },
+    {
+      "id": "sculpture36",
+      "name": "Escultura de boas-vindas",
+      "source": "identity",
+      "sourceSlot": 3,
+      "size": [
+        42,
+        56
+      ],
+      "scope": "exterior",
+      "description": "Uma peça de identidade para a entrada.",
+      "footprint": [
+        0.65,
+        0.5
+      ],
+      "sheet": "identity",
+      "slot": 3
+    }
+  ]
+}

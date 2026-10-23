@@ -1,3 +1,4 @@
+const artifact=require('./artifacts.cjs');
 /* Diagnostic benchmark, not a timing assertion. Run before/after on the same host. */
 const {chromium}=require('playwright');
 const fs=require('node:fs');
@@ -9,7 +10,7 @@ let browser;
 (async()=>{
   await new Promise((resolve,reject)=>{server.stdout.once('data',resolve);server.once('error',reject);server.stderr.once('data',d=>reject(Error(String(d))))});
   browser=await chromium.launch({channel:'msedge',headless:true});const page=await browser.newPage({viewport:{width:1280,height:900}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
-  await page.goto('http://127.0.0.1:4296');await page.waitForFunction(()=>window.Studio28&&Art28.loaded);
+  await page.goto('http://127.0.0.1:4296');await page.waitForFunction(()=>window.Studio28&&Art28.loaded&&window.DevCorpBoot?.ready);
   await page.evaluate(()=>{loadSlot(2);tsHide();wl.style.display='none';OPT.pauseUrgent=OPT.pauseRisk=OPT.pauseEvents=OPT.pauseProduct=0;G.eventSystem.nextDay=1e8;for(const c of G.act)c.dl=1e5;for(const o of G.off)o.exp=1e5;spd(1)});
   const cdp=await page.context().newCDPSession(page);await cdp.send('Emulation.setCPUThrottlingRate',{rate:4});
   await page.evaluate(()=>{
@@ -26,5 +27,5 @@ let browser;
     const row=await page.evaluate(()=>{const b=bench31;b.active=false;const percentile=(a,q)=>{const s=[...a].sort((x,y)=>x-y);return s[Math.floor((s.length-1)*q)]||0};return{duration:performance.now()-b.started,frames:b.frames.length,frameMedian:percentile(b.frames,.5),frameP95:percentile(b.frames,.95),frameP99:percentile(b.frames,.99),over50:b.frames.filter(x=>x>50).length,longTasks:b.long.length,maxTask:Math.max(0,...b.long),functions:b.stats,paused:paused(),staff:companyStaff().length}});
     rows.push({view,panel,...row});console.log(view,panel,JSON.stringify({frames:row.frames,p95:row.frameP95,long:row.longTasks,hot:Object.entries(row.functions).sort((a,b)=>b[1].ms-a[1].ms).slice(0,4)}));
   }
-  fs.writeFileSync(path.join(root,'tests','profile-'+tag+'.json'),JSON.stringify({date:new Date().toISOString(),cpuThrottle:4,rows,errors},null,2));if(errors.length)throw Error(errors.join('\n'));
+  fs.writeFileSync(artifact('profile-'+tag+'.json'),JSON.stringify({date:new Date().toISOString(),cpuThrottle:4,rows,errors},null,2));if(errors.length)throw Error(errors.join('\n'));
 })().catch(e=>{console.error(e);process.exitCode=1}).finally(async()=>{await browser?.close();server.kill()});

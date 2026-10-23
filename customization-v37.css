@@ -1,0 +1,32 @@
+/* Workshop controls use the game's paper, ink and pixel-art palette. */
+body.game28 #personalView .custom-history37{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin:12px 0;padding-bottom:12px;border-bottom:1px solid #c5b997}
+body.game28 #personalView .custom-history37 button{font-size:11px;flex:1}
+body.game28 #personalView .custom-history37 small{width:100%;font-size:10px}
+body.game28 #personalView #roomCategories33{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+body.game28 #personalView #roomCategories33 button{white-space:normal;text-align:left;line-height:1.4}
+body.game28 #personalView #roomPresetChoices33{grid-template-columns:1fr 1fr}
+body.game28 #personalView #roomPresetChoices33 button{line-height:1.5;padding:9px}
+body.game28 #personalView .personal-note37{border-left:3px solid #9fa67b;padding:7px 10px;background:#e3dfc6}
+.catalog-count37{display:block;margin:12px 0 8px}
+.wardrobe37{margin:16px 0;padding:0 0 12px;border-bottom:1px solid #c5b997}
+.wardrobe-slot37{display:grid;grid-template-columns:34px 1fr auto auto;gap:6px;align-items:center;padding:9px 0;border-top:1px solid #d0c5a6}
+.wardrobe-slot37 img{width:32px;height:42px;image-rendering:pixelated;object-fit:contain}
+.wardrobe-slot37 b{font:700 11px Tahoma,sans-serif;display:block}
+.wardrobe-slot37 small{font-size:9px!important;display:block;line-height:1.5!important}
+body.game28 #personalView .wardrobe-slot37 button{font-size:10px;padding:7px}
+.wardrobe-empty37{text-align:center;color:#8d9875;font-size:23px}
+.ext-history37{display:flex;gap:5px;flex-wrap:wrap;width:100%}
+.ext-history37 button{flex:1;font-size:10px!important;padding:6px}
+.ext-history37 small{flex-basis:100%;font-size:10px}
+body.game28 #exteriorView .ext-history37 button:disabled{opacity:.4}
+.ext-slot-picker37{border-top:1px solid #c1b693;margin-top:18px;padding-top:12px}
+.ext-slot-picker37 summary{font-size:12px;cursor:pointer;min-height:36px;color:#53694b}
+.ext-slot-grid37{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+body.game28 #exteriorView .ext-slot-grid37 button{text-align:left;font-size:10px;padding:7px;line-height:1.5}
+body.game28 #exteriorView .ext-style-preview37{display:flex;gap:5px;min-height:24px!important}
+.ext-style-preview37 i{display:block;width:24px;height:18px;border:1px solid #0002}
+body.game28 #personalView button:focus-visible,body.game28 #exteriorView button:focus-visible{outline:2px solid #335e68;outline-offset:2px}
+@media(max-width:760px){body.game28 #personalView .wardrobe-slot37{grid-template-columns:34px minmax(60px,1fr) auto auto}.ext-history37 button{min-height:44px!important}body.game28 #exteriorView .ext-options{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+body.game28 #personalView #roomCategories33{background:transparent;border:0;padding:0}
+body.game28 #personalView #personalTabs.avatar-focused37{display:none}
