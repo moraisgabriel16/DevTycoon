@@ -69,7 +69,7 @@
   function ensure(){
     if(campaign===G&&cached===G.story35)return cached;
     const old=G.story35||{},entries=Array.isArray(old.entries)?old.entries:[],seen=new Set();
-    G.story35={version:1,entries:entries.filter(e=>e&&STORIES[e.id]&&!seen.has(e.id)&&seen.add(e.id)).map(e=>({id:e.id,day:Math.max(1,Number(e.day)||1)})),read:Array.isArray(old.read)?old.read.filter(id=>STORIES[id]):[],coachHidden:!!old.coachHidden};
+    G.story35={version:1,entries:entries.filter(e=>e&&STORIES[e.id]&&!seen.has(e.id)&&seen.add(e.id)).map(e=>({id:e.id,day:Math.max(1,Number(e.day)||1)})),read:Array.isArray(old.read)?old.read.filter(id=>STORIES[id]):[],coachHidden:!!old.coachHidden,clientVisited:!!old.clientVisited};
     campaign=G;cached=G.story35;baseline=snapshot();return cached;
   }
   function snapshot(){return{staff:companyStaff().length,level:G.lvl,products:(G.business?.products||[]).filter(p=>p.state==='live'||p.updating).length}}
@@ -90,20 +90,29 @@
     if(!G.done)return STORIES.welcome;
     return{person:'Ana',title:'Qual será a próxima história?',text:'O bairro tem novos problemas para resolver. Confira as propostas e escolha um projeto que caiba na sua equipe.',action:'Encontrar clientes',dest:'bakery'};
   }
+  // Three real actions explain the core loop before the game's many optional systems appear.
+  function firstSteps(){
+    if((G.done||0)>0)return null;
+    const s=ensure();
+    if(G.act.length)return{person:'Ana',title:'3 de 3 · Acompanhe a entrega',text:'A equipe trabalha sozinha enquanto o tempo passa. Espaço pausa; 1 usa ritmo normal e 3 acelera. O prazo conta dias úteis. Você pode deixar a equipe trabalhar e voltar quando quiser.',action:'Acompanhar pedido',dest:'contracts',onboarding:true,step:3};
+    if(s.clientVisited)return{person:'Ana',title:'2 de 3 · Escolha o primeiro pedido',text:'A Ana já pode cuidar do Site da Padaria. Em Contratos, confira o valor e as pessoas necessárias. Só ao aceitar o prazo começa; conhecer a cliente não cobra nada.',action:'Ver propostas',dest:'contracts',onboarding:true,step:2};
+    return{person:'Ana',title:'1 de 3 · Vamos conhecer uma cliente',text:'Vamos fazer uma entrega real, sem precisar saber de tecnologia. Conhecer Dona Lúcia e ver o pedido não custa nada; você decide depois se quer aceitar.',action:'Conhecer a padaria',dest:'bakery',onboarding:true,step:1};
+  }
   function refresh(){
-    const s=ensure(),unread=s.entries.filter(e=>!s.read.includes(e.id)),latest=unread.at(-1),message=latest?STORIES[latest.id]:hint(),key=[message.title,unread.length,s.coachHidden,G.tut,ts.style.display,wl.style.display].join('|');
+    const s=ensure(),unread=s.entries.filter(e=>!s.read.includes(e.id)),latest=unread.at(-1),steps=firstSteps(),message=steps|| (latest?STORIES[latest.id]:hint()),key=[message.title,unread.length,s.coachHidden,G.tut,ts.style.display,wl.style.display].join('|');
     coach.hidden=!G.tut||ts.style.display==='flex'||wl.style.display==='flex'||s.coachHidden;
     entry.textContent='História e ajuda'+(unread.length?' · '+unread.length:'');
-    if(key===signature)return;signature=key;coach.replaceChildren();coach.append(portrait(message.person));
-    const copy=node('div',undefined,'story-copy35');copy.append(node('small',message.person+' / '+(latest?'NOVO MOMENTO':'PRÓXIMO PASSO')),node('strong',message.title),node('p',message.text));
-    const actions=node('div',undefined,'story-actions35');actions.append(button(message.action,()=>go(message.dest)),button('Ler história',()=>open()));copy.append(actions);coach.append(copy);
+    coach.dataset.moment=latest&&!steps?'new':'hint';coach.dataset.onboarding=steps?'true':'false';if(key===signature)return;signature=key;coach.replaceChildren();coach.append(portrait(message.person));
+    const copy=node('div',undefined,'story-copy35');copy.append(node('small',steps?'PRIMEIROS PASSOS · '+steps.step+' DE 3':message.person+' / '+(latest?'NOVO MOMENTO':'PRÓXIMO PASSO')),node('strong',message.title),node('p',message.text));
+    if(steps){const progress=node('div',undefined,'first-steps-progress39');progress.setAttribute('aria-label','Passo '+steps.step+' de 3');for(let i=1;i<=3;i++)progress.append(node('i',undefined,i<=steps.step?'reached':''));copy.append(progress)}
+    const actions=node('div',undefined,'story-actions35');actions.append(button(message.action,()=>go(message.dest)),button(steps?'Entenda o jogo':'Ler história',()=>open(steps?'guide':'story')));copy.append(actions);coach.append(copy);
     const dismiss=button('✕',()=>{s.read=s.entries.map(e=>e.id);s.coachHidden=true;save();signature='';refresh()},'story-dismiss35');dismiss.setAttribute('aria-label','Recolher conversa');coach.append(dismiss);
   }
   function render(){
     const root=$('storyContent35');root.replaceChildren();root.scrollTop=0;
     $('storyTab35').setAttribute('aria-pressed',section==='story');$('guideTab35').setAttribute('aria-pressed',section==='guide');
     if(section==='guide'){
-      const intro=node('section',undefined,'story-guide-intro35');intro.append(node('h3','Você decide. A equipe realiza.'),node('p','Escolha um pedido → prepare as especialidades → deixe a equipe trabalhar → entregue → cuide das pessoas e reinvista. Você pode pausar para pensar a qualquer momento.'),button('Conhecer os clientes do bairro →',()=>go('bakery')));root.append(intro);
+      const intro=node('section',undefined,'story-guide-intro35');intro.append(node('h3','Você decide. A equipe realiza.'),node('p','Escolha um pedido → prepare as especialidades → deixe a equipe trabalhar → entregue → cuide das pessoas e reinvista. Você pode pausar para pensar a qualquer momento.'),button('Conhecer os clientes do bairro →',()=>go('bakery')));if(firstSteps())intro.append(button('Retomar meus primeiros passos',()=>{ensure().coachHidden=false;save();close();refresh()}));root.append(intro);
       root.append(node('h3','Quem faz o quê?'),node('p','Você contrata pessoas por especialidade. Um projeto pode precisar de mais de uma. Os nomes entre parênteses são apenas os termos usados na área.'));
       const grid=node('div',undefined,'story-role-grid35');for(const[id,[label,text]]of Object.entries(ROLES)){if(!RO[id])continue;const card=node('article');card.append(node('b',label),node('p',text));grid.append(card)}root.append(grid,node('h3','Sem complicação'));
       for(const[term,definition]of TERMS){const d=node('details');d.append(node('summary',term),node('p',definition));root.append(d)}return;
@@ -121,7 +130,7 @@
     if(active){section=next;render();return true}
     DevJourney27.close();District34.close();Neighborhood33.close();ExteriorScene28.close();if(!personalView.hidden)closePersonalRoom();for(const e of [businessView,lifeView25,officeView])e.hidden=true;if(shOpen)shClose();
     previousFocus=document.activeElement;section=next;active=true;view.hidden=false;inert=[...document.body.children].filter(e=>e!==view&&!['SCRIPT','STYLE'].includes(e.tagName)).map(e=>[e,e.inert]);for(const[e]of inert)e.inert=true;
-    const s=ensure();s.read=s.entries.map(e=>e.id);save();render();$('storyClose35').focus();return true;
+    const s=ensure();if(section==='story')s.read=s.entries.map(e=>e.id);save();render();$('storyClose35').focus();return true;
   }
   function go(dest){close();if(['bakery','shop','school'].includes(dest))District34.open(dest);else if(dest==='contracts')tabOpen('ct');else if(dest==='journey')DevJourney27.open('journey');else if(dest==='people')openLife25('people');else if(dest==='exterior')openExterior();else if(dest==='products')openBusiness('products')}
   $('storyClose35').onclick=close;$('storyTab35').onclick=()=>{section='story';render()};$('guideTab35').onclick=()=>{section='guide';render()};
@@ -134,6 +143,7 @@
   const beforeWelcome=wgo;wgo=function(d){const completing=ws===TUT.length-1&&d===1;beforeWelcome(d);if(completing&&G.tut){add('welcome');save();refresh()}};
   const beforeAccept=accept;accept=function(id){const prior=G.act.length,result=beforeAccept(id);if(G.act.length>prior){add('accepted');save()}return result};
   const beforeDelivery=recordDelivery25;recordDelivery25=function(c){const d=c.district34,stage=d?District34.ensure().sites[d.site]?.stage:null;const result=beforeDelivery(c);if(result===false)return false;add('firstDelivery');if(d){if(District34.ensure().sites[d.site]?.stage>stage)add(d.site+':'+d.stage)}return result};
+  const beforeDistrictOpen=District34.open;District34.open=function(id){const result=beforeDistrictOpen(id);if(result&&!(G.done||0)&&!G.act.length){ensure().clientVisited=true;save();signature='';refresh()}return result};
   const beforeFailure=recordClientFailure25;recordClientFailure25=function(c){beforeFailure(c);add('setback')};
   // A short, specific response closes each activity without moving its anchor.
   const beforeFinish=finishAction;finishAction=function(e){const type=e.brk?.type;beforeFinish(e);if(!type)return;const text=ACT[type]?.pose==='drink'?'Agora sim. Café e uma ideia.':ACT[type]?.pose==='read'?'Já sei por onde começar.':ACT[type]?.pose==='sit'?'Essa pausa fez diferença.':ACT[type]?.pose==='play'?'Depois eu bato esse recorde.':'Pronto. Podemos continuar.';NPCLife28.say(e,text,4)};

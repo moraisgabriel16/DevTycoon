@@ -49,7 +49,7 @@
   overlay.innerHTML=`<div class="command-shell27"><header class="command-head27"><div><div class="command-kicker27">DEVCORP / CENTRAL DA EMPRESA</div><h2 id="commandTitle27"></h2><p>O próximo capítulo é uma escolha sua.</p></div><button id="commandClose27" aria-label="Voltar ao jogo">✕</button></header><nav class="command-tabs27" id="commandTabs27" aria-label="Central da empresa"></nav><div class="command-content27" id="commandContent27"><p id="commandMessage27" role="status"></p><div id="commandPanel27"></div></div><footer class="command-footer27"><span id="commandFoot27">Tempo pausado · sem perder prazos enquanto planeja</span><button id="commandSaves27">💾 Suas empresas</button></footer></div>`;
   document.body.append(overlay);
   const toast=elem('div','notice27');toast.hidden=true;toast.setAttribute('role','status');document.body.append(toast);
-  function notify(text){toast.textContent=text;toast.hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.hidden=true,4800)}
+  function notify(text){if(window.GamePolish38)return GamePolish38.notify(text);toast.textContent=text;toast.hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.hidden=true,4800)}
   function message(text){$('commandMessage27').textContent=text}
   const bar=elem('section');bar.id='journeyBar27';bar.setAttribute('aria-label','Próximo objetivo da campanha');$('stage').before(bar);
   const entry=button('◈ Central da empresa',()=>openHub());entry.id='commandEntry27';personalEntryBar.prepend(entry);

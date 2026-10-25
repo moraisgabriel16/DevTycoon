@@ -120,7 +120,7 @@
     const key=[x,y,tool,G.money,moveFrom].join('|');if(key!==ghostKey||performance.now()-ghostTime>300){ghostValid=G.money>=TL[tool].c&&canPlace(k(x,y),tool);ghostKey=key;ghostTime=performance.now()}
     cx.save();cx.setTransform(ZT.z,0,0,ZT.z,Math.round(ZT.tx),Math.round(ZT.ty));v19Path(cx,[P(x,y),P(x+1,y),P(x+1,y+1),P(x,y+1)]);cx.fillStyle=ghostValid?'#78ac7055':'#d5766155';cx.strokeStyle=ghostValid?'#4c8054':'#bc644a';cx.lineWidth=1.5;cx.fill();cx.stroke();const p=P(x+.5,y+.5),im=S[tool];cx.globalAlpha=.55;cx.drawImage(im,p[0]-im.width/2,p[1]+10-im.height);cx.restore();
   }
-  function sceneCovered(){return document.hidden||['storyView35','districtView34','neighborhoodView33','exteriorView','commandView27','personalView','businessView','officeView','lifeView25','slotsView','eventView','liftMenu'].some(id=>{const e=$(id);return e&&!e.hidden})}
+  function sceneCovered(){return document.hidden||ov.style.display==='flex'||['inboxView38','storyView35','districtView34','neighborhoodView33','exteriorView','commandView27','personalView','businessView','officeView','lifeView25','slotsView','eventView','liftMenu'].some(id=>{const e=$(id);return e&&!e.hidden})}
   const drawBase=draw2;draw2=function(t){if(currentView!=='inside'||ts.style.display==='flex'||sceneCovered())return;drawBase(t);ghost()};
   function worldPoint(x,y,z=0){const p=ExteriorScene28.project(x,y,z);return[(p[0]-480)*worldZoom+480,(p[1]-360)*worldZoom+360]}
   function drawWorld(t){
@@ -158,6 +158,6 @@
   const initBase=init;init=function(){G.sel=null;pendingSelection=null;focus.hidden=true;crewKey='';initBase();selectedFloor=G.floor||0;setView('inside',false);refresh()};
   const titleBase=titleRender;titleRender=function(){titleBase();const version=ts.querySelector('.titleFoot23 small');if(version)version.textContent='V29';const eyebrow=ts.querySelector('.titleEyebrow');if(eyebrow)eyebrow.textContent='DEVCORP · JOGO DE GESTÃO';const h=ts.querySelector('.titleCopy23 h2');if(h)h.innerHTML='Da garagem<br>ao próximo<br><em>grande estúdio.</em>';const p=ts.querySelector('.titleCopy23>p');if(p)p.textContent='Contrate, entregue projetos e construa a sede da sua empresa.'};
   const artReady=Art28.ready;artReady.then(()=>{crewKey='';focus.dataset.employee='';renderCrew(true);renderFocus()});
-  window.Studio28={setView,enterFloor,selectEmployee,refresh,setDetail(key,value){if(key in detailState)detailState[key]=!!value},get view(){return currentView},get selectedFloor(){return selectedFloor},get zoom(){return worldZoom},worldPoint,get hits(){return worldHits},fit:resize};
+  window.Studio28={setView,enterFloor,selectEmployee,refresh,setDetail(key,value){if(key in detailState)detailState[key]=!!value},get view(){return currentView},get selectedFloor(){return selectedFloor},get zoom(){return worldZoom},setZoom(value){worldZoom=Math.max(.7,Math.min(1.6,Number(value)||1.12));return worldZoom},worldPoint,get hits(){return worldHits},fit:resize};
   setView('inside',false);ui();resize();rafId=requestAnimationFrame(loop);if(ts.style.display==='flex')titleRender();
 })();

@@ -1,0 +1,103 @@
+/* Brass, paper and dark ink: the interface belongs to the same small studio. */
+body.game28{--fg:#293b3a;--mut:#666b5e}
+body.game28 #mainc{gap:9px}
+body.game28 #journeyBar27.mission-bar38{display:flex;align-items:center;gap:13px;flex-shrink:0;padding:12px 14px;background:#eee7d3;border:1px solid #a49b7c;border-left:4px solid #a98745;margin:0;box-shadow:0 2px #474f3520}
+.mission-number38{font:700 27px/1 Georgia,serif;color:#927341;padding:4px 12px 4px 2px;border-right:1px solid #c9b991}
+.mission-copy38{flex:1;min-width:0}
+body.game28 #journeyBar27 .mission-copy38>small{font-size:9px;letter-spacing:.4px;color:#786c4b;display:block;line-height:1.5}
+body.game28 #journeyBar27 .mission-copy38>strong{display:block;font-size:14px;line-height:1.45;color:#30483e;margin:3px 0}
+body.game28 #journeyBar27 .mission-reward38{font-size:10px;letter-spacing:0;color:#5f6d50}
+.mission-steps38{display:flex;gap:5px;margin-top:8px}
+body.game28 #journeyBar27 .mission-steps38 button{flex:1;min-width:0;max-width:210px;min-height:25px;height:25px;padding:3px 7px;font-size:0;background:#c7c1a9;border:0;border-top:3px solid #b5a682;box-shadow:none;text-align:left;overflow:hidden}
+body.game28 #journeyBar27 .mission-steps38 button:before{content:'A FAZER';font-size:8px;letter-spacing:.7px;color:#5b6250}
+body.game28 #journeyBar27 .mission-steps38 button.complete{background:#d1d8b8;border-color:#637e58}
+body.game28 #journeyBar27 .mission-steps38 button.complete:before{content:'✓ CONCLUÍDO';color:#456046}
+body.game28 #journeyBar27 button.mission-action38{padding:8px 14px;min-height:42px;background:#3a5749;color:#fff0cc;border-color:#244339;max-width:180px;line-height:1.4}
+body.game28 .story-coach35{padding:9px 35px 9px 11px;margin:0;gap:10px;border-left-width:2px;flex-shrink:0}
+.story-coach35 .story-portrait35{width:29px;height:38px}
+.story-coach35 .story-copy35 strong{font-size:12px;margin:2px 0}
+.story-coach35 .story-copy35 p{font-size:11px;margin:4px 0 7px;line-height:1.45}
+.story-coach35 .story-actions35{display:flex}.story-coach35 .story-actions35 button{font-size:10px;min-height:30px;padding:4px 9px}
+body.game28 .scene-arena28{border-color:#758675;box-shadow:inset 0 0 0 2px #e8dfbd66}
+body.game28 .scene-label28{background:#2f4542f0;border-color:#81947d;color:#fff0cc}
+body.game28 .scene-label28 small,body.game28 .scene-label28 b,body.game28 .scene-live28{color:#f0e7ca}
+body.game28 #al{top:auto;bottom:49px;left:12px;max-width:min(480px,calc(100% - 65px));pointer-events:auto}
+body.game28 #al .alr{font-size:10px;padding:6px 9px;background:#eee1baeF;color:#4e492f;border:1px solid #b7a477;line-height:1.5}
+body.game28 #log{max-width:calc(100% - 95px);font-size:10px;background:#263c36e8;color:#ece4cb;border-color:#71816a}
+body.game28 .inbox-entry38{position:relative;font-size:18px;width:35px;padding:3px}
+.inbox-badge38{position:absolute;top:-5px;right:-5px;min-width:16px;height:16px;padding:1px 3px;background:#dcba70;color:#293a36;border:1px solid #35453b;font:700 9px/12px Tahoma,sans-serif}
+.inbox-badge38[hidden]{display:none}
+body.game28 #pn .contract-links38{display:flex;gap:6px;flex-wrap:wrap;margin:4px 0 13px}
+body.game28 #pn .contract-links38 button{min-height:36px;padding:6px 9px;font-size:10px;flex:1}
+body.game28 #pn .contract-section38{font-size:13px;color:#30473e;margin:21px 0 10px;display:flex;justify-content:space-between;gap:8px;align-items:center}
+.contract-section38>span{font-size:11px;background:#ded7bc;padding:3px 8px;border:1px solid #b9ad89}
+body.game28 #pn .contract-card38{display:block;background:#f6efdb;border:1px solid #c3b798;border-left:3px solid #718565;padding:12px;margin:0 0 10px;min-width:0}
+body.game28 #pn .contract-card38.at-risk{border-left-color:#b7894b}
+.contract-head38{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.contract-head38>span{font-size:8px;color:#756d52;letter-spacing:.6px}
+body.game28 #pn .contract-head38>strong{font-size:15px;color:#3f6450;white-space:nowrap;font-variant-numeric:tabular-nums}
+body.game28 #pn .contract-card38 h3{font-size:13px;line-height:1.5;color:#283e37;margin:7px 0 10px}
+.contract-roles38{display:flex;flex-wrap:wrap;gap:5px;margin:7px 0}
+.contract-roles38>span{font-size:9px;background:#e3dfcb;color:#4c594b;border-left:2px solid var(--role);padding:4px 6px}
+.contract-timing38{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px;font-size:9px;color:#6b6d5b;margin-top:9px}
+body.game28 #pn .contract-forecast38{font-size:10px;line-height:1.5;margin:8px 0;color:#526649}
+body.game28 #pn .at-risk .contract-forecast38{color:#8b5b33}
+.contract-progress38{height:6px;background:#d5cdb7;overflow:hidden;margin:12px 0 5px}
+.contract-progress38>i{height:100%;display:block;background:#748b5d;transition:width .25s ease-out}
+.contract-actions38{display:flex;gap:6px;margin-top:10px}
+body.game28 #pn .contract-actions38 button{flex:1;min-height:37px;padding:7px 9px;font-size:10px;line-height:1.4;white-space:normal}
+body.game28 #pn .contract-actions38 .accept38{background:#3b5949;color:#fff0cc;border-color:#2b4739}
+body.game28 #pn .contract-actions38 .subtle38{flex:0 1 auto;background:transparent;color:#756d53;border-color:#c6b998;box-shadow:none}
+body.game28 #pn .contract-filters38{display:flex;gap:4px;flex-wrap:wrap;padding:0;background:transparent;margin:0 0 12px}
+body.game28 #pn .contract-filters38 button{font-size:10px;padding:5px 8px;min-height:30px}
+body.game28 #pn .contract-filters38 button[aria-pressed=true]{background:#465f4c;color:#fff0ce;border-color:#3b5340}
+.contract-empty38{padding:15px 12px;border:1px dashed #a6a689;background:#e5e4cc}
+body.game28 #pn .contract-empty38 p,body.game28 #pn .contract-explain38{font-size:11px;line-height:1.6;color:#6a715a;margin:8px 0}
+.game-toast38{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);width:min(460px,calc(100vw - 28px));display:flex;gap:12px;align-items:center;background:#2d463c;color:#f4e8c5;border:1px solid #bba16a;border-bottom:3px solid #172c25;box-shadow:0 6px 24px #10282040;padding:13px 12px;z-index:1300;pointer-events:auto}
+.game-toast38[hidden],#inboxView38[hidden]{display:none!important}
+.game-toast38>span{font:24px Georgia,serif;color:#d5b777}.game-toast38>div{min-width:0;flex:1}.game-toast38 small{font-size:8px;color:#bcbf9a;letter-spacing:1px;display:block}.game-toast38 b{font-size:12px;line-height:1.5;display:block;margin-top:4px}
+body.game28 .game-toast38 .toast-close38{background:transparent;color:#ded9b3;border:0;box-shadow:none;min-width:32px;min-height:36px;padding:3px;font-size:18px}
+#inboxView38{position:fixed;inset:0;z-index:12000;background:#1b302bd9;display:flex;align-items:center;justify-content:center;padding:24px;color:#30463d}
+.inbox-shell38{display:flex;flex-direction:column;width:min(790px,100%);max-height:calc(100dvh - 48px);background:#eee7d2;border:1px solid #b4aa87;box-shadow:5px 6px 0 #0c251b55;min-height:0}
+.inbox-shell38>header{display:flex;align-items:flex-start;gap:14px;padding:21px 24px;border-bottom:1px solid #bfb18d;background:#30483d;color:#f3e7c4}
+.inbox-shell38>header>div{flex:1}.inbox-shell38 header small{font-size:9px;letter-spacing:1px;color:#c8b782}.inbox-shell38 h2{font-size:22px;line-height:1.3;margin:6px 0}.inbox-shell38 header p{font-size:12px;line-height:1.5;color:#c6ccac;margin:5px 0}
+body.game28 .inbox-shell38 button{font-size:11px;min-height:40px;padding:8px 12px;background:#e2d6b3;color:#3c5747;border:1px solid #a8a483}
+body.game28 .inbox-shell38 header button{font-size:20px;min-width:40px;padding:3px;background:transparent;color:#fff0ce;border-color:#75896e}
+#inboxList38{padding:20px 24px;overflow:auto;overscroll-behavior:contain;min-height:0}
+.inbox-card38{display:flex;gap:15px;padding:18px 0;border-bottom:1px solid #c8bfa3}.inbox-icon38{width:34px;font-size:25px;color:#8c8159;flex:none;text-align:center}.inbox-card38>div{flex:1;min-width:0}.inbox-card38 small{font-size:9px;letter-spacing:.6px;color:#7c785b}.inbox-card38 h3{font-size:15px;line-height:1.45;margin:5px 0;color:#344a3d}.inbox-card38 p{font-size:12px;line-height:1.7;margin:6px 0 10px;color:#65705b}.inbox-card38.unread .inbox-icon38{color:#a9823d}.inbox-card38.unread small{color:#8a6c35}
+.inbox-shell38>footer{padding:14px 24px;display:flex;gap:12px;align-items:center;border-top:1px solid #bfb18d;background:#ddd8c0}.inbox-shell38 footer small{font-size:9px;color:#697056;line-height:1.7}.inbox-empty38{text-align:center;padding:32px 8px}.inbox-empty38>span{font-size:45px;color:#9f8955}.inbox-empty38 h3{font-size:18px}.inbox-empty38 p{font-size:12px;line-height:1.7;color:#73775d}
+@media(max-width:1100px){.game-metrics28{gap:15px}.game-company28{min-width:90px;padding-left:10px}.game-header28{gap:12px}.game-brand28{min-width:160px}body.game28 #journeyBar27 .mission-copy38>strong{font-size:12px}.mission-number38{font-size:23px;padding-right:9px}body.game28 #journeyBar27 button.mission-action38{font-size:10px;max-width:140px}}
+@media(max-width:760px){body.game28 #journeyBar27.mission-bar38{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px;padding:9px 10px;border-left-width:3px}.mission-number38{display:none}body.game28 #journeyBar27 .mission-copy38>small:first-child{font-size:8px;letter-spacing:0}body.game28 #journeyBar27 .mission-copy38>strong{font-size:11px;line-height:1.4;margin:3px 0}body.game28 #journeyBar27 .mission-reward38{font-size:9px}.mission-steps38{gap:3px;margin-top:6px}body.game28 #journeyBar27 .mission-steps38 button{min-height:8px;height:8px;padding:0;border-top-width:2px}body.game28 #journeyBar27 .mission-steps38 button:before{content:none}body.game28 #journeyBar27 button.mission-action38{max-width:105px;min-height:44px;font-size:10px;padding:7px 8px}.story-coach35 .story-copy35 p{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}.story-coach35 .story-portrait35{width:24px;height:32px}.story-coach35 .story-copy35 strong{font-size:11px}.story-coach35 .story-actions35 button{min-height:38px}.game-toast38{bottom:calc(83px + env(safe-area-inset-bottom,0px));padding:10px;gap:9px}.game-toast38 b{font-size:11px}body.game28 #pn .contract-actions38 button,body.game28 #pn .contract-filters38 button{min-height:44px}#inboxView38{padding:0}.inbox-shell38{width:100%;height:100dvh;max-height:100dvh;border:0;box-shadow:none}.inbox-shell38>header{padding:calc(17px + env(safe-area-inset-top,0px)) 16px 15px}.inbox-shell38 h2{font-size:20px}#inboxList38{padding:12px 16px}.inbox-shell38>footer{flex-direction:column;align-items:stretch;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px))}.inbox-shell38 footer small{display:none}.inbox-card38{gap:10px}body.game28 .inbox-shell38 button{min-height:44px}.game-header-actions28 #inboxEntry38{font-size:17px;min-width:30px;width:30px;padding:3px}}
+@media(prefers-reduced-motion:reduce){.contract-progress38>i{transition:none}}
+html.reduced-motion35 .contract-progress38>i{transition:none}
+
+@media(max-width:760px){
+ body.game28 #exteriorView .ext-scene{position:sticky;top:0;z-index:3;align-items:center;background:#9ca88b;box-shadow:0 2px 0 #50634766}
+ body.game28 #exteriorView .ext-scene canvas{width:min(100%,calc(34dvh * 1.333333));height:auto;max-height:none;aspect-ratio:4/3;object-fit:fill}
+ body.game28 #exteriorView .ext-scene-caption{width:100%;font-size:9px;min-height:28px;padding:6px 10px;line-height:1.5}
+ body.game28 #exteriorView .ext-scene .ext-badge{max-width:40%;font-size:8px;top:7px;left:8px}
+ body.game28 #exteriorView .ext-scene .ext-camera{top:7px;right:8px}
+ body.game28 #exteriorView .ext-scene .ext-camera button{width:30px;min-height:32px;padding:3px}
+}
+
+@media(max-width:760px){
+ .game-header28{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:32px 44px;gap:6px 8px;height:calc(98px + env(safe-area-inset-top,0px));padding:calc(6px + env(safe-area-inset-top,0px)) 10px 6px}
+ .game-brand28{min-width:0;gap:6px;grid-row:1;grid-column:1}.game-brand28 b{font-size:15px}.game-brand28 svg{width:27px;height:27px}
+ .game-metrics28{grid-row:1;grid-column:2;gap:12px;min-width:0}.game-metrics28>div{min-width:0}.game-metrics28>div:nth-child(2){display:block!important}.game-metrics28 b{font-size:11px;white-space:nowrap}.game-metrics28 small{font-size:7px}
+ .game-header-actions28{grid-row:2;grid-column:1 / -1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;width:100%;margin:0}
+ body.game28 .game-header-actions28 button,body.game28 .game-header-actions28 #customizeEntry33,body.game28 .game-header-actions28 #inboxEntry38,body.game28 .game-header-actions28 #menu28{height:44px;min-height:44px;min-width:0;width:100%;font-size:11px;padding:4px}
+ body.game28 .game-header-actions28 #customizeEntry33{font-size:0}body.game28 .game-header-actions28 #customizeEntry33:after{content:'Personalizar';font-size:10px}
+ body.game28 .game-header-actions28 #inboxEntry38{font-size:0}body.game28 .game-header-actions28 #inboxEntry38:after{content:'Novidades';font-size:10px}body.game28 .game-header-actions28 #inboxEntry38 .inbox-badge38{font-size:9px}
+ body.game28 .game-header-actions28 #menu28{font-size:0}body.game28 .game-header-actions28 #menu28:after{content:'Menu';font-size:10px}
+ .game-layout28{height:calc(100dvh - 161px - env(safe-area-inset-bottom,0px) - env(safe-area-inset-top,0px))}
+}
+@media(min-width:761px) and (max-width:950px){.game-brand28{min-width:0}.game-company28{display:none}}
+@media(min-width:761px) and (max-height:500px){body.game28 #dock{overflow-y:auto;min-height:0}body.game28 .scene-arena28{min-height:140px}.story-coach35{display:none}}
+
+body.game28 #journeyBar27 .mission-steps38 button{font-size:9px;color:#52614c;line-height:1.3}
+body.game28 #journeyBar27 .mission-steps38 button:before{content:none}
+@media(max-width:760px){body.game28 #journeyBar27 .mission-steps38 button{height:40px;min-height:40px;font-size:8px;padding:3px 2px}}
+
+@media(max-width:760px){.story-coach35[data-moment="hint"] .story-copy35 p{display:none}}
+body.game28 #journeyBar27 .mission-steps38 button.complete:before{content:none}
+@media(max-width:380px){.story-coach35[data-moment="hint"]{display:none}}

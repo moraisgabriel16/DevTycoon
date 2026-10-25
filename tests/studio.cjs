@@ -67,7 +67,7 @@ let browser;const results=[];const pass=name=>{results.push(name);console.log('�
   pass('A fachada permanece centralizada e o toque entra no andar correto na câmera do celular');
   await phone.setViewportSize({width:320,height:740});await phone.waitForTimeout(100);assert.equal(await phone.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);await phone.locator('#more28').tap();assert.equal(await phone.locator('.utilities28 button').count(),8);await phone.locator('#sheet .grab button').tap();
   await phone.setViewportSize({width:844,height:390});await phone.waitForTimeout(100);assert.equal(await phone.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);pass('Layout também cabe em 320px e na orientação paisagem');
-  await page.evaluate(async()=>{await navigator.serviceWorker.ready;});await page.waitForFunction(async()=>{const c=await caches.open('devcorp-v37-1');return !!(await c.match('./studio-v29.css'))});
+  await page.evaluate(async()=>{await navigator.serviceWorker.ready;});await page.waitForFunction(async()=>{const c=await caches.open('devcorp-v39-1');return !!(await c.match('./studio-v29.css'))});
   await context.setOffline(true);await page.reload();await page.waitForFunction(()=>!!window.Studio28&&Art28.loaded&&window.DevCorpBoot?.ready);await page.evaluate(()=>{tsHide();Studio28.setView('outside',false)});assert.equal(await page.locator('#worldCanvas28').isVisible(),true);await context.setOffline(false);
   pass('Novos sprites e as duas vistas da sede reabrem offline');
   assert.deepEqual(errors,[]);pass('Nenhum erro JavaScript na experiência V29');

@@ -12,10 +12,10 @@
     if(x>b.x-.3&&x<b.x+b.w+.3&&y>b.y-.3&&y<b.y+b.d+.3)return false;
     for(const p of n.props){const size=p.footprint||(p.type==='bench'?[.68,.43]:p.type==='planter'?[.62,.48]:p.type==='fountain'?[.95,.95]:p.type==='bike'?[.7,.45]:p.type==='table'?[1,.65]:p.type==='hedge'?[.75,.48]:p.type==='flowers'?[.7,.5]:[.4,.4]);if(Math.abs(x-p.x)<size[0]&&Math.abs(y-p.y)<size[1])return false}return true;
   }
-  function outdoorRoute(destination){
-    const n=navigation(),start=n.entry,key=(x,y)=>x+','+y,queue=[[start.x,start.y]],parents=new Map([[key(start.x,start.y),null]]);let at=0;
+  function outdoorRoute(destination,origin){
+    const n=navigation(),point=origin||n.entry,key=(x,y)=>x+','+y,starts=origin?[]:[{...n.entry,d:0}];if(origin)for(let x=.5;x<=11.5;x+=.5)for(let y=.5;y<=11.5;y+=.5)if(walkable(x,y,n))starts.push({x,y,d:Math.hypot(x-point.x,y-point.y)});starts.sort((a,b)=>a.d-b.d);const start=starts.find(p=>{const distance=Math.hypot(p.x-point.x,p.y-point.y);for(let v=.15;v<distance;v+=.15)if(!walkable(point.x+(p.x-point.x)*v/distance,point.y+(p.y-point.y)*v/distance,n)&&walkable(point.x,point.y,n))return false;return true});if(!start||start.d>1.5)return null;const queue=[[start.x,start.y]],parents=new Map([[key(start.x,start.y),null]]);let at=0;
     if(!walkable(destination[0],destination[1],n)||!walkable(start.x,start.y,n))return null;
-    while(at<queue.length){const[x,y]=queue[at++];if(x===destination[0]&&y===destination[1]){const route=[];let p=[x,y];while(p){route.push(p);p=parents.get(key(...p))}return route.reverse()}
+    while(at<queue.length){const[x,y]=queue[at++];if(x===destination[0]&&y===destination[1]){const route=[];let p=[x,y];while(p){route.push(p);p=parents.get(key(...p))}route.reverse();if(origin&&Math.hypot(route[0][0]-origin.x,route[0][1]-origin.y)>.0001)route.unshift([origin.x,origin.y]);return route}
       for(const[dx,dy]of [[0,.5],[.5,0],[0,-.5],[-.5,0]]){const a=x+dx,b=y+dy,k=key(a,b);if(!parents.has(k)&&walkable(a,b,n)){parents.set(k,[a-dx,b-dy]);queue.push([a,b])}}
     }return null;
   }
@@ -31,19 +31,19 @@
     return e.life28;
   }
   function say(e,text,seconds=4){const s=ensure(e);s.say=text;s.until=clock()+seconds;return text}
-  function reason(e){const s=ensure(e);return s.phase==='toExit'?(e.floor?'Descendo para respirar um pouco.':'Indo para a praça.'):s.phase==='outside'?(s.returnStarted!=null?'Voltando para atender seu pedido.':'Tomando ar na praça da empresa.'):s.phase==='returning'?'Voltando para sua mesa.':brainReason25(e)}
+  function reason(e){const s=ensure(e);return s.pathBlocked&&active(e)?'Sem caminho na praça: libere a passagem até a entrada.':s.phase==='toExit'?(e.floor?'Descendo para respirar um pouco.':'Indo para a praça.'):s.phase==='outside'?(s.returnStarted!=null?'Voltando para atender seu pedido.':'Tomando ar na praça da empresa.'):s.phase==='returning'?'Voltando para sua mesa.':brainReason25(e)}
   function startOutdoor(id,manual=true){
     const e=companyStaff().find(e=>e.id===Number(id));if(!e||trip(e)||e.brk?.meetingId||e.ai?.help)return false;
     if(!manual&&(e.brk||!e.seated||employeeUrgent25(e)||e.cr||ensureBrain25(e).manualUntil>clock()))return false;
     const limit=Math.min(3,Math.max(1,Math.ceil(companyStaff().length*.06)));if(companyStaff().filter(trip).length>=limit)return false;
     const route=onFloor(e.floor??0,()=>bfs(Math.round(e.x),Math.round(e.y),0,0,e.desk));if(!route)return false;
     const outsideRoute=planTrip(e);if(!outsideRoute)return false;const length=routeLength(outsideRoute);
-    cancelAction(e);const s=ensure(e);delete s.returnStarted;delete s.returnFrom;delete s.pendingOrder;Object.assign(s,{phase:'toExit',elapsed:0,walking:0,lastOutdoorDay:G.day,route:outsideRoute,routeLength:length,tripDuration:Math.max(24,2*length/walkSpeed+12),manual});
+    cancelAction(e);const s=ensure(e);delete s.pathBlocked;delete s.greeted;delete s.returnStarted;delete s.returnFrom;delete s.pendingOrder;Object.assign(s,{phase:'toExit',navigationKey:navigation().key,elapsed:0,walking:0,lastOutdoorDay:G.day,route:outsideRoute,routeLength:length,tripDuration:Math.max(24,2*length/walkSpeed+12),manual});
     e.brk={type:'outdoor28',x:0,y:0,t:100000,elapsed:0,duration:24,manual:manual?1:0};e.path=route;e.seated=false;
     if(manual)manualPriority25(e,'Uma pausa ao ar livre, por seu comando.');setBrainReason25(e,reason(e));say(e,'Vou tomar um ar.');save();return true;
   }
   function returnInside(e,natural=true){
-    const s=ensure(e),order=s.pendingOrder;s.phase='returning';s.elapsed=0;delete s.pendingOrder;delete s.returnStarted;delete s.returnFrom;
+    const s=ensure(e),order=s.pendingOrder;delete s.pathBlocked;delete s.greeted;s.phase='returning';s.elapsed=0;delete s.pendingOrder;delete s.returnStarted;delete s.returnFrom;
     if(e.brk?.type==='outdoor28')e.brk=null;e.path=null;e.x=0;e.y=0;e.seated=false;
     const a=ensureBrain25(e);a.nextDecision=clock()+25;
     if(natural){const benefits=ExteriorScene28.outdoorBenefits?.(s.route?.at(-1))||{};a.needs.energy=Math.min(100,a.needs.energy+24+(benefits.energy||0));a.needs.thirst=Math.min(100,a.needs.thirst+(benefits.thirst||0));a.needs.social=Math.min(100,a.needs.social+16);e.mood=Math.min(100,e.mood+4);brainMemory25(e,'Uma pausa na praça da sede para respirar.');say(e,'Voltei com uma ideia.');}
@@ -60,8 +60,9 @@
         if(s.walking>30){returnInside(e,false);continue}
         if(Math.hypot(e.x,e.y)<.08){s.phase='outside';s.elapsed=0;s.walking=0;e.path=[];e.brk.arrived=true;setBrainReason25(e,'Tomando ar na praça da empresa.');say(e,'Um pouco de ar fresco.');}
       }else if(s.phase==='outside'){
+        if(s.navigationKey!==navigation().key&&!replanOutside(e))continue;
         e.seated=false;s.elapsed+=dt;e.brk.elapsed=s.elapsed;
-        if(s.elapsed>7&&!s.greeted){s.greeted=true;const other=companyStaff().find(o=>o.id!==e.id&&active(o));if(other){growBond25(e,other,1);say(e,'Que bom te encontrar!');say(other,'Uma pausa faz bem.');}}
+        if(s.elapsed>7&&!s.greeted){const position=worldPosition(e),other=!position.moving&&companyStaff().find(o=>o.id!==e.id&&active(o)&&!ensure(o).greeted&&!worldPosition(o).moving&&Math.hypot(worldPosition(o).x-position.x,worldPosition(o).y-position.y)<=2.2);if(other){s.greeted=true;ensure(other).greeted=true;growBond25(e,other,1);say(e,'Que bom te encontrar!');say(other,'Uma pausa faz bem.');}}
         if(s.elapsed>=(s.tripDuration||24)){delete s.greeted;returnInside(e,s.returnStarted==null);}
       }else if(s.phase==='returning'&&e.seated)s.phase='inside';
     }
@@ -97,8 +98,16 @@
     for(let i=1;i<route.length;i++){const a=route[i-1],b=route[i],d=Math.hypot(b[0]-a[0],b[1]-a[1]);if(left<=d||i===route.length-1){const t=d?Math.min(1,left/d):0,dx=(b[0]-a[0])*(returning?-1:1),dy=(b[1]-a[1])*(returning?-1:1);return{x:a[0]+(b[0]-a[0])*t,y:a[1]+(b[1]-a[1])*t,moving,back:moving&&dx+dy<0,flip:moving&&dx-dy<0,distance:returning?length+(s.returnFrom??length)-progress:progress,progress}}left-=d}
     return{x:route.at(-1)[0],y:route.at(-1)[1],moving:false,back:false,flip:false,distance:length,progress:length};
   }
+  function replanOutside(e){
+    const s=ensure(e),nav=navigation(),point=worldPosition(e),returning=s.returnStarted!=null||s.elapsed>(s.tripDuration||24)-(s.routeLength||0)/walkSpeed;
+    const home=outdoorRoute([nav.entry.x,nav.entry.y],point);if(!home){if(!s.pathBlocked)say(e,'Preciso de espaço para chegar à entrada.');s.pathBlocked=true;return false}s.navigationKey=nav.key;delete s.pathBlocked;
+    const back=home.slice().reverse(),homeLength=routeLength(home);
+    if(returning||!walkable(point.x,point.y,nav)){s.route=back;s.routeLength=homeLength;s.elapsed=0;s.returnStarted=0;s.returnFrom=homeLength;s.tripDuration=homeLength/walkSpeed;return true}
+    const destinations=[s.route?.at(-1),...restSpots].filter(Boolean);let rest;for(const destination of destinations){rest=outdoorRoute(destination,point);if(rest)break}if(!rest)return false;
+    s.route=back.concat(rest.slice(1));s.routeLength=routeLength(s.route);s.elapsed=homeLength/walkSpeed;s.tripDuration=2*s.routeLength/walkSpeed+12;delete s.returnStarted;delete s.returnFrom;return true;
+  }
   function requestReturn(id,order){const e=companyStaff().find(e=>e.id===Number(id));if(!active(e))return false;const s=ensure(e),p=worldPosition(e);s.returnStarted=s.elapsed;s.returnFrom=p.progress;s.tripDuration=s.elapsed+p.progress/walkSpeed;s.pendingOrder=order;say(e,'Já estou voltando.');return true}
   const commandBase=lifeCommand25;lifeCommand25=function(id,kind){if(requestReturn(id,kind))return true;return commandBase(id,kind)};
   const orderBase=devOrder;devOrder=function(kind){if(requestReturn(G.sel,kind))return true;return orderBase(kind)};
-  window.NPCLife28={ensure,say,startOutdoor,returnInside,requestReturn,active,trip,reason,worldPosition,walkable,outdoorRoute,outside:()=>companyStaff().filter(active)};
+  window.NPCLife28={ensure,say,startOutdoor,returnInside,requestReturn,active,trip,reason,worldPosition,walkable,outdoorRoute,replanOutside,outside:()=>companyStaff().filter(active)};
 })();

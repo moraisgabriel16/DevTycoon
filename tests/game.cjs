@@ -36,7 +36,7 @@ function passed(name){results.push(name);console.log('✓ '+name)}
   await page.reload();await page.waitForFunction(()=>typeof openExterior==='function');
   await page.evaluate(()=>{tsHide();openExterior()});
   await page.getByRole('button',{name:'Identidade',exact:true}).click();assert.equal(await page.locator('#extSign').inputValue(),'Minha Aurora');
-  await page.locator('#extSign').fill('Não salvar');await page.locator('#extClose').click();await page.locator('#exteriorEntry').click();
+  await page.locator('#extSign').fill('Não salvar');await page.getByRole('button',{name:'Descartar prévia',exact:true}).click();await page.locator('#extClose').click();await page.locator('#exteriorEntry').click();
   assert.equal(await page.locator('#extSign').inputValue(),'Minha Aurora');
   passed('Personalização persiste após recarregar e descarta prévias não aplicadas');
   await page.locator('#extBuilding').selectOption('5');assert.equal(await page.locator('#extSave').isDisabled(),true);
@@ -63,7 +63,7 @@ function passed(name){results.push(name);console.log('✓ '+name)}
   await phone.getByRole('button',{name:'Jardim',exact:true}).click();
   await phone.locator('#exteriorPanel').getByRole('button',{name:/Fonte/}).click();
   // Slot 1: Q(1,4), converted from intrinsic canvas pixels to touch coordinates.
-  const rect=await phone.locator('#exteriorCanvas').boundingBox();
+  await phone.locator('#exteriorCanvas').scrollIntoViewIfNeeded();const rect=await phone.locator('#exteriorCanvas').boundingBox();
   await phone.touchscreen.tap(rect.x+(480-3*29)*rect.width/960,rect.y+(265+5*14.5-1)*rect.height/720);
   await phone.locator('#extSave').click();assert.equal(await phone.evaluate(()=>G.exteriors.buildings[0].props[1]),'fountain');
   assert.equal(await phone.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
@@ -72,7 +72,7 @@ function passed(name){results.push(name);console.log('✓ '+name)}
   await phone.locator('#extClose').click();await phone.evaluate(()=>loadSlot(2));await phone.waitForTimeout(200);await phone.screenshot({path:artifact('game-mobile.png'),fullPage:true});
   passed('Tela de celular sem rolagem horizontal; toque posiciona item e texto é tratado como texto');
   await page.evaluate(async()=>{await navigator.serviceWorker.ready;if(!navigator.serviceWorker.controller)await new Promise(resolve=>navigator.serviceWorker.addEventListener('controllerchange',resolve,{once:true}));});
-  await page.waitForFunction(async()=>{const c=await caches.open('devcorp-v37-1');return !!(await c.match('./studio-v29.css'))});
+  await page.waitForFunction(async()=>{const c=await caches.open('devcorp-v39-1');return !!(await c.match('./studio-v29.css'))});
   await context.setOffline(true);await page.reload();await page.waitForFunction(()=>typeof openExterior==='function');await page.evaluate(()=>{tsHide();openExterior()});
   assert.equal(await page.locator('#exteriorView').isVisible(),true);await context.setOffline(false);passed('Reabertura offline pelo Service Worker com campanha preservada');
   assert.deepEqual(errors,[]);passed('Nenhum erro JavaScript nos fluxos testados');

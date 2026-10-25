@@ -41,7 +41,7 @@
       menuButton('startDemo30','Explorar demo','m9 5 10 7-10 7V5Z',()=>loadSlot(2)),
       menuButton('startOptions30','Opções','M4 6h16M4 12h16M4 18h16M8 3v6m8 0v6m-6 0v6',()=>{tsStep=2;titleRender()})
     );
-    const footer=$('#ts .titleFoot23');footer.querySelector('span')?.remove();footer.querySelector('small').textContent='V37';
+    const footer=$('#ts .titleFoot23');footer.querySelector('span')?.remove();footer.querySelector('small').textContent='V39';
     $('#ts .titleSceneHeader23 small').textContent='DENTRO DO JOGO';
     ts.setAttribute('aria-label','Menu principal do DevCorp');
   };

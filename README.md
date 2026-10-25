@@ -1,8 +1,72 @@
-# DevCorp V35
+# DevCorp V39
 
-Jogo de gestão de uma empresa de tecnologia para navegador de computador e celular. A V35 refina a animação em pixel art e apresenta a empresa pelas histórias da equipe e dos clientes, com linguagem acessível para quem não conhece TI.
+Jogo de gestão de uma empresa de tecnologia para navegador de computador e celular. A V39 guia o primeiro contrato e a primeira entrega com explicações claras, sem exigir experiência com jogos de gestão ou conhecimento de tecnologia.
+
+## Primeiros passos V39
+
+A introdução acompanha três ações reais da empresa: conhecer uma cliente, escolher um pedido compatível e acompanhar a equipe até a entrega. Cada passo explica o que inicia o prazo, como o tempo avança e como pausar. A pessoa pode ignorar ou recolher a orientação; ela pode retomá-la no guia. O andamento fica salvo por empresa. No celular, a explicação permanece visível e os três passos têm um indicador visual.
+
+Histórias e ajuda continuam disponíveis durante a partida. Consultar o guia não marca acontecimentos como lidos, para que as conversas e histórias não desapareçam por acidente.
+
+O pacote geral anterior e suas medições estão em [docs/POLIMENTO_V38.md](docs/POLIMENTO_V38.md).
 
 O plano de evolução, validação e lançamento está em [docs/IMPLEMENTATION_PLAN.md](docs/IMPLEMENTATION_PLAN.md).
+
+## Pacote de polimento V38
+
+A revisão completa e as medições estão em [docs/POLIMENTO_V38.md](docs/POLIMENTO_V38.md).
+
+- **Objetivos visíveis:** o capítulo atual fica acima do cenário, com os três objetivos, recompensa e uma ação que leva ao próximo passo. O resgate usa a recompensa original, uma vez por capítulo.
+- **Contratos claros:** cards mostram especialidades, prazo em dias úteis, valor, andamento e estimativa considerando os contratos simultâneos. Propostas compatíveis aparecem primeiro, com filtro **Para sua equipe**. A ação **Preparar equipe** encaminha para a categoria de contratação necessária. A negociação mantém suas regras anteriores; abandonar agora apresenta a multa antes de confirmar.
+- **Primeira sessão:** a primeira padaria tem identificação própria e deixa de herdar uma categoria urgente aleatória. A pausa por propostas urgentes começa após a primeira entrega e considera a capacidade nominal da equipe. Riscos de contratos e eventos mantêm suas pausas configuráveis.
+- **Novidades da empresa:** entregas guardam o pagamento real, inclusive desconto por bugs; contratações, capítulos, endereços, produtos e resumos semanais entram em um histórico de até 30 itens. A leitura pausa a empresa. Marcar como lido ou reler não concede dinheiro ou conhecimento. O histórico acompanha o save e fica separado por empresa.
+- **Personagens e caminhos:** obstáculos novos no próximo trecho provocam recálculo do trajeto interno. Alterar a praça recalcula o passeio e o retorno a partir da posição atual. Conversas e vínculos ao ar livre exigem proximidade e pessoas paradas; não acontecem entre pessoas distantes. Uma passagem totalmente fechada fica indicada até ser liberada.
+- **Celular:** cabeçalho em duas linhas, ações maiores, notificações acessíveis e prévia externa fixa enquanto você percorre a decoração. Pinça aproxima a praça; soltar um gesto não aciona uma visita à fachada.
+- **Controles e ritmo:** Espaço pausa/retoma, 1 e 3 escolhem velocidade, C abre contratos, B construção, T equipe, M bairro, J jornada e ? abre ajuda. Campos, botões e editores mantêm suas interações próprias. Confirmações pausam a simulação e têm navegação por teclado.
+- **Desempenho:** a normalização dos andares é compartilhada dentro de um quadro, atualização ou comando síncrono. Trocas de empresa, nível ou equipe voltam a validar. O cenário não é desenhado sob o histórico de novidades ou as confirmações; calendário e prazos não avançam com a página oculta.
+
+`tests/polish.cjs` percorre a primeira entrega, pagamento, contratação, fachada e capítulo pela lógica real; verifica multa, histórico, deduplicação, isolamento, validação de andares, replanejamento da praça, pinça, atalhos, toque em 320/390px e paisagem e reabertura offline. A validação de telefone é emulada no navegador. Para gerar a publicação atual, execute `npm run build`.
+
+## Personalização V37
+
+Entre em **Personalizar** durante a partida e escolha **Avatar**, **Sala** ou **Exterior**.
+
+- **Avatar:** três espaços de guarda-roupa guardam suas combinações, com miniatura, vestir e substituir. Vestir mantém seu nome e sua posição. Desfazer e refazer restauram apenas o visual.
+- **Sala:** seis modelos com prévia (foco, lounge, jardim, ateliê, recepção e colaboração), aplicação de cores ou layout, seis filtros de coleções e 24 peças novas para decorar e interagir. Essas peças são gratuitas na sala pessoal; os benefícios para a equipe continuam ligados aos móveis comprados no escritório. Os troféus conquistados são preservados pelos modelos. O botão **Foto da sala** exporta o cenário em PNG.
+- **Exterior:** seis estilos de fachada preservam letreiro e jardim; quatro composições usam os novos atlas. É possível colocar objetos pelo cenário ou por uma lista dos 12 pontos. Desfazer, refazer e descartar prévia ficam ao lado de **Aplicar exterior**. A prévia é mantida ao alternar entre editores e prédios durante a sessão; somente **Aplicar exterior** a grava no save. Prédios futuros continuam disponíveis apenas para prévia.
+
+Avatar e sala salvam automaticamente. O histórico guarda até 30 alterações por editor e empresa durante a sessão; não volta dinheiro, equipe, progresso ou visuais já guardados no guarda-roupa. Saves anteriores são compatíveis. Os editores, atlas e visuais guardados funcionam offline.
+
+`tests/customization.cjs` verifica o fluxo de guarda-roupa, nomes repetidos no catálogo, acesso aos móveis dos seis modelos, posicionamento pelo canvas, interação, iluminação, histórico sem voltar a economia, prévia e aplicação externa, isolamento por empresa, persistência, emulação de toque em 320/390px e paisagem, e offline.
+
+## Dez atlas de móveis e exterior V36
+
+São **40 peças novas**, distribuídas em **seis coleções do escritório** e **quatro coleções externas**, com quatro peças em cada atlas. Use **Construir → Coleções do escritório** no escritório e **Personalizar sede → Jardim → Coleções externas** na praça.
+
+| Local | Coleção | Função no jogo |
+| --- | --- | --- |
+| Escritório | Criação e protótipos | Atividades que geram experiência. |
+| Escritório | Foco e estudo | Leitura e recuperação de energia. |
+| Escritório | Convivência | Lanches, hidratação e convívio. |
+| Escritório | Bem-estar | Descanso, alongamento e humor. |
+| Escritório | Recepção | Balcão e expositor recebem visitas reais de clientes no térreo. |
+| Escritório | Colaboração | Quatro móveis aceitam as reuniões existentes da equipe. |
+| Exterior | Paisagismo | Vegetação acrescenta 4 de energia ao terminar uma pausa natural; não acumula por peça. |
+| Exterior | Convivência na praça | Novos destinos de pausa; o bebedouro hidrata quem descansar ao lado. |
+| Exterior | Circulação | Objetos participam da colisão; placa abre o bairro e pontos de chegada abrem visitas. |
+| Exterior | Identidade e iluminação | Totem com o nome da empresa e entrada na sede, bandeira, escultura e poste com luz noturna. |
+
+Os móveis usam os preços, construção, caminhos, mudança, remoção e saves existentes. Seus benefícios são recebidos ao concluir uma atividade; não geram bônus de produção passivos ilimitados. As visitas e reuniões mantêm seus requisitos, custos e intervalos anteriores. O exterior continua gratuito e salvo por prédio.
+
+Os PNGs RGBA de execução ficam em `assets/v36/*-atlas.png`, com recortes e pontos de apoio em `manifest.json`. Cada atlas tem 192×192 pixels, quatro células de 96×96; os recortes têm até 64×78 pixels. A geração usou a ferramenta integrada **imagegen**, orientada pela pixel art nativa. Fontes maiores, referência e prompts estão preservados em `assets/v36`; `scripts/pack-atlases-v36.cjs` faz somente o empacotamento determinístico com alpha e escala por vizinho mais próximo.
+
+`tests/office-atlas.cjs` verifica os 40 recortes, compra e interação dos 24 móveis, visita de cliente, reunião, importação, recarga, posicionamento dos 16 itens externos, pausas da equipe, atalho no cenário, toque em 320/390px e paisagem e carregamento offline. A validação de celular usa emulação no navegador.
+
+## Correção de abertura V35.0.1
+
+A inicialização agora aguarda os módulos e os sprites antes de abrir o menu atual. Uma tela de carregamento impede que o menu legado ou o escritório apareçam durante esse intervalo, inclusive em conexão lenta. A simulação só inicia depois dessa preparação. Ao voltar ao menu, o cenário da partida fica oculto; continuar mantém a mesma empresa.
+
+O cache offline foi atualizado sem apagar os saves. Se um módulo falhar ao baixar, a abertura oferece **Carregar novamente** em vez de mostrar uma interface incompleta. `tests/boot.cjs` verifica carregamento atrasado, falha e nova tentativa, preservação do save, opções, toque e abertura offline.
 
 ## Animações e histórias V35
 
@@ -152,7 +216,7 @@ Também é possível abrir `index.html` diretamente, mas instalação e modo off
 
 Conecte o celular ao mesmo Wi-Fi do computador e abra o endereço **Celular na mesma rede** exibido pelo servidor, por exemplo `http://192.168.1.2:4280`. O servidor precisa continuar aberto. Se o Windows solicitar acesso à rede, permita na rede privada para tornar o jogo acessível pelo telefone.
 
-Para jogar pela internet e instalar como aplicativo, publique os arquivos de produção em uma hospedagem estática com HTTPS. O arquivo `DevCorp-Web.zip` contém o pacote pronto para hospedagem. Ainda não foi publicado em um endereço público.
+Para jogar pela internet e instalar como aplicativo, publique os arquivos de produção em uma hospedagem estática com HTTPS. Execute `npm run build` para gerar a pasta `dist-web/`, com os arquivos necessários à hospedagem.
 
 No Android, use **Instalar jogo** no menu inicial quando o navegador disponibilizar essa opção ou use o menu de instalação do navegador. No iPhone, use **Compartilhar → Adicionar à Tela de Início** no Safari. A instalação depende do suporte do navegador; não é um aplicativo de loja.
 
@@ -174,8 +238,21 @@ Use **Aplicar exterior** para salvar. Fechar descarta a prévia ainda não aplic
 
 `index.html` contém o jogo original e suas artes incorporadas, com um ajuste de justiça na primeira entrega. `exterior.js` e `exterior.css` fornecem o editor e o renderer externo compartilhado. `research.js`, `gameplay-fixes.js`, `progression.js` e `progression.css` implementam a evolução V27. `art-v28.js`, `npc-life-v28.js`, `studio-v28.js`, `studio-v28.css` e `assets/v28/` implementam a nova apresentação e a sede viva. `management-v32.js` e `management-v32.css` fornecem a gestão da limpeza e as configurações reconstruídas. `manifest.webmanifest`, `pwa.js`, `sw.js` e `icons/` fornecem os recursos PWA. `server.cjs` inicia o servidor local sem dependências.
 
-Para os testes: `npm install`, instale o Chromium com `npx playwright install chromium` se necessário, e execute `npm test`. Os testes também podem usar Microsoft Edge instalado. Verificam os exteriores, persistência, isolamento dos slots, importação, comandos repetidos, primeira entrega, pesquisas e bônus, capítulos, projetos, recompensas, IPO, toque e modo offline. A V28 acrescenta testes de sprites, fachada/andares, seleção de pessoas, passeio real, retorno e recuperação ao recarregar. Os relatórios ficam em `tests/results.json`, `tests/progression-results.json` e `tests/studio-results.json`.
+Para os testes: `npm install`, instale o Chromium com `npx playwright install chromium` se necessário, e execute `npm test`. Os testes também podem usar Microsoft Edge instalado. Verificam os exteriores, persistência, isolamento dos slots, importação, comandos repetidos, primeira entrega, pesquisas e bônus, capítulos, projetos, recompensas, IPO, toque e modo offline. A V28 acrescenta testes de sprites, fachada/andares, seleção de pessoas, passeio real, retorno e recuperação ao recarregar. Os relatórios ficam em `test-artifacts/results.json`, `test-artifacts/progression-results.json` e `test-artifacts/studio-results.json`.
 
-`node tests/balance.cjs` executa uma campanha prudente de oitenta dias com semente fixa, relógio virtual e atores reais. O relatório em `tests/balance-results.json` registrou cinco entregas, quatro funcionários de produção, cinco pesquisas, três capítulos concluídos e $3.513 em caixa, com a limpeza incluída na folha e sem erros. Essa amostra verifica a abertura e o primeiro projeto especial; não pretende provar o equilíbrio de todas as estratégias ou do fim de jogo.
+`node tests/balance.cjs` executa uma campanha prudente de oitenta dias com semente fixa, relógio virtual e atores reais. O relatório em `test-artifacts/balance-results.json` registrou cinco entregas, quatro funcionários de produção, cinco pesquisas, três capítulos concluídos e $3.513 em caixa, com a limpeza incluída na folha e sem erros. Essa amostra verifica a abertura e o primeiro projeto especial; não pretende provar o equilíbrio de todas as estratégias ou do fim de jogo.
 
 As verificações foram automatizadas em Chromium/Edge, com viewport móvel de 390 × 844 e eventos reais de toque do navegador. A instalação em um aparelho físico iOS/Android não foi validada nesta máquina. O mapa das mecânicas está em `docs/MECHANICS.md`.
+
+
+## Organização da pasta
+
+- `assets/` e `icons/`: imagens utilizadas pelo jogo, originais de arte, catálogos e prompts para edição.
+- `docs/`: documentação do projeto; `docs/benchmarks/` preserva as medições históricas de desempenho.
+- `tests/`: scripts de verificação. Capturas e relatórios novos são gerados em `test-artifacts/`, ignorada pelo Git.
+- `scripts/`: ferramentas para montar os atlas.
+- `dist-web/`: saída gerada por `npm run build`, ignorada pelo Git. Pode ser apagada e criada novamente antes da publicação.
+- `node_modules/`: dependências locais dos testes e ferramentas, reinstaláveis com `npm ci`.
+- `publication-repo/`: clone Git existente do repositório conectado à publicação. Mantido com seu histórico e remoto; não é a versão atual do jogo nem uma dependência de execução.
+
+A raiz guarda os módulos atuais do jogo, a página de entrada e as configurações de execução e publicação. Os números nos nomes dos módulos indicam camadas usadas juntas: um número menor não significa que o arquivo possa ser excluído. Prints e ZIPs de entregas anteriores foram removidos na limpeza; os arquivos de fonte e os originais de arte foram mantidos.
