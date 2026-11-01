@@ -1,5 +1,7 @@
 # Regressão do DevCorp — 31/10/2026
 
+**Complemento em 01/11/2026:** um relato posterior revelou que o teste de celular não completava a colocação de móveis após fechar o catálogo. A correção e o novo teste de colocação real estão em `docs/CORRECAO_CONSTRUCAO_MOBILE.md`. O resultado abaixo registra os cenários efetivamente exercitados na rodada original, não cobre essa lacuna descoberta depois.
+
 Resultado consolidado após correções e repetição das suítes afetadas: **19 de 19 suítes aprovadas, 135 verificações registradas**. As verificações agrupam múltiplas asserções; não representam uma contagem de todos os bugs possíveis.
 
 ## História validada

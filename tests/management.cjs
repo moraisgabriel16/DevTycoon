@@ -44,7 +44,7 @@ let browser;const pass=s=>{passed.push(s);console.log('✓ '+s)};
   }
   await phone.setViewportSize({width:390,height:844});await phone.waitForTimeout(100);await phone.evaluate(()=>{tsStep=2;titleRender()});await phone.screenshot({path:artifact('devcorp-settings-mobile-v32.png')});
   pass('Central, limpeza e três categorias de opções funcionam por toque em 320px, 390px e paisagem');
-  await page.evaluate(async()=>{await navigator.serviceWorker.ready});await page.waitForFunction(async()=>{const c=await caches.open('devcorp-v40-3');return!!await c.match('./management-v32.js')});await context.setOffline(true);await page.reload();await page.waitForFunction(()=>window.DevCorp32&&Art28.loaded&&window.DevCorpBoot?.ready);assert.equal(await page.evaluate(()=>V19.desk1_0.getContext('2d').getImageData(32,35,1,1).data[3]>0),true);await context.setOffline(false);
+  await page.evaluate(async()=>{await navigator.serviceWorker.ready});await page.waitForFunction(async()=>{const c=await caches.open('devcorp-v40-4');return!!await c.match('./management-v32.js')});await context.setOffline(true);await page.reload();await page.waitForFunction(()=>window.DevCorp32&&Art28.loaded&&window.DevCorpBoot?.ready);assert.equal(await page.evaluate(()=>V19.desk1_0.getContext('2d').getImageData(32,35,1,1).data[3]>0),true);await context.setOffline(false);
   assert.deepEqual(errors,[]);pass('DevCorp, configurações e sprite restaurado carregam offline sem erros JavaScript');
   fs.writeFileSync(artifact('management-results.json'),JSON.stringify({date:new Date().toISOString(),passed,starter,migration,rewards},null,2));
 })().catch(e=>{console.error(e);process.exitCode=1}).finally(async()=>{await browser?.close();server.kill()});

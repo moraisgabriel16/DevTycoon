@@ -2,6 +2,17 @@
 #mobileBackdrop41[hidden]{display:none!important}
 #mobileBackdrop41{position:fixed;inset:0;background:#13282199;z-index:18;border:0;border-radius:0}
 .coach-expand41{display:none}
+#placementBar41[hidden]{display:none!important}
+#placementBar41{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(80px + env(safe-area-inset-bottom,0px));z-index:24;width:min(520px,calc(100vw - 16px));padding:11px 12px;background:#eee7d2;border:2px solid #586e52;box-shadow:0 3px 15px #12231b55;color:#30473a}
+.placement-head41{display:flex;gap:10px;align-items:center;justify-content:space-between}.placement-head41 b{font-size:14px;line-height:1.35}
+body.game28 #placementBar41 button{min-height:44px;font-size:13px;padding:7px 11px;touch-action:manipulation}
+body.game28 #placementChoose41{font-size:12px;flex-shrink:0}
+#placementStatus41{font-size:13px;line-height:1.45;margin:8px 0 10px}
+.placement-actions41{display:flex;gap:8px}.placement-actions41 button{flex:1}
+body.game28 #placementConfirm41{background:#405f48;color:#fff1cc;border-color:#304937;font-weight:700;transition:none}
+body.game28 #placementConfirm41:disabled{background:#dad5bd;color:#7c806b;border-color:#b5b296}
+#placementBar41.invalid41{border-color:#a3613f}#placementBar41.invalid41 #placementStatus41{color:#875134}
+body.placing41 #stage .ov.tl{display:none!important}
 @media(max-width:899px),(max-width:1000px) and (max-height:500px){
  html{scroll-padding-bottom:85px}body.game28{overflow:hidden;-webkit-text-size-adjust:100%}
  body.game28 button{touch-action:manipulation}
@@ -84,6 +95,10 @@
  body.game28 #exteriorView .ext-footer{padding-bottom:calc(10px + env(safe-area-inset-bottom,0px))}
 }
 @media(max-width:1000px) and (max-height:500px) and (orientation:landscape){
+ #placementBar41{width:224px;right:7px;left:auto;transform:none;bottom:calc(78px + env(safe-area-inset-bottom,0px));padding:9px}
+ #placementBar41 .placement-head41{flex-wrap:wrap;gap:3px}
+ body.game28 #placementBar41 button{font-size:12px;padding:5px}
+ body.placing41 .story-coach35{visibility:hidden}
  body.game28 .game-header28{height:55px;display:flex;padding:5px 10px;gap:8px}
  body.game28 .game-brand28{min-width:0;flex:1}.game-company28{display:none}
  body.game28 .game-header-actions28{display:flex;width:auto;grid-template-columns:none}

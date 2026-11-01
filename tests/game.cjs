@@ -72,7 +72,7 @@ function passed(name){results.push(name);console.log('✓ '+name)}
   await phone.locator('#extClose').click();await phone.evaluate(()=>loadSlot(2));await phone.waitForTimeout(200);await phone.screenshot({path:artifact('game-mobile.png'),fullPage:true});
   passed('Tela de celular sem rolagem horizontal; toque posiciona item e texto é tratado como texto');
   await page.evaluate(async()=>{await navigator.serviceWorker.ready;if(!navigator.serviceWorker.controller)await new Promise(resolve=>navigator.serviceWorker.addEventListener('controllerchange',resolve,{once:true}));});
-  await page.waitForFunction(async()=>{const c=await caches.open('devcorp-v40-3');return !!(await c.match('./studio-v29.css'))});
+  await page.waitForFunction(async()=>{const c=await caches.open('devcorp-v40-4');return !!(await c.match('./studio-v29.css'))});
   await context.setOffline(true);await page.reload();await page.waitForFunction(()=>typeof openExterior==='function'&&window.DevCorpBoot?.ready);await page.evaluate(()=>{tsHide();openExterior()});
   assert.equal(await page.locator('#exteriorView').isVisible(),true);await context.setOffline(false);passed('Reabertura offline pelo Service Worker com campanha preservada');
   assert.deepEqual(errors,[]);passed('Nenhum erro JavaScript nos fluxos testados');
