@@ -82,7 +82,7 @@
   };
   function refresh(){if(floorSimulation)return;Engine38.scope(()=>{ensure();updateBadge();renderMission()});pump()}
   const beforeUI=ui;ui=function(){const result=beforeUI();if(!floorSimulation)refresh();return result};
-  const beforeTitle=titleRender;titleRender=function(){const result=beforeTitle();if(ts.style.display==='flex'){toast.hidden=true;const version=ts.querySelector('.titleFoot23 small');if(version)version.textContent='V39'}return result};
+  const beforeTitle=titleRender;titleRender=function(){const result=beforeTitle();if(ts.style.display==='flex'){toast.hidden=true;const version=ts.querySelector('.titleFoot23 small');if(version)version.textContent='V40'}return result};
   document.addEventListener('keydown',e=>{if(e.defaultPrevented||e.repeat||e.ctrlKey||e.metaKey||e.altKey||e.target.closest('input,textarea,select,button,a,summary,[contenteditable=true]')||blocked())return;const key=e.key.toLowerCase();const actions={' ':()=>spd(sp?0:1),'1':()=>spd(1),'3':()=>spd(3),c:()=>route('ct'),b:()=>route('bd'),t:()=>route('tm'),m:()=>route('district'),j:()=>route('journey'),'?':()=>Story35.open('guide')};if(actions[key]){e.preventDefault();actions[key]();Studio28.refresh();refresh()}});
   for(const[id,label]of [['b0','Pausar · Espaço'],['b1','Velocidade normal · 1'],['b3','Velocidade rápida · 3']])$(id)?.setAttribute('title',label);
   // A pinch changes camera zoom; releasing a gesture must not enter a building.

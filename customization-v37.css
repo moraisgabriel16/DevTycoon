@@ -26,7 +26,7 @@ body.game28 #exteriorView .ext-slot-grid37 button{text-align:left;font-size:10px
 body.game28 #exteriorView .ext-style-preview37{display:flex;gap:5px;min-height:24px!important}
 .ext-style-preview37 i{display:block;width:24px;height:18px;border:1px solid #0002}
 body.game28 #personalView button:focus-visible,body.game28 #exteriorView button:focus-visible{outline:2px solid #335e68;outline-offset:2px}
-@media(max-width:760px){body.game28 #personalView .wardrobe-slot37{grid-template-columns:34px minmax(60px,1fr) auto auto}.ext-history37 button{min-height:44px!important}body.game28 #exteriorView .ext-options{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:899px){body.game28 #personalView .wardrobe-slot37{grid-template-columns:34px minmax(60px,1fr) auto auto}.ext-history37 button{min-height:44px!important}body.game28 #exteriorView .ext-options{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 body.game28 #personalView #roomCategories33{background:transparent;border:0;padding:0}
 body.game28 #personalView #personalTabs.avatar-focused37{display:none}

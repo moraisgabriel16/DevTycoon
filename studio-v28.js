@@ -8,7 +8,10 @@
   const header=text('header','game-header28');header.id='gameHeader28';
   header.innerHTML=`<div class="game-brand28"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M3 5h34v27H3z" fill="#252e32" stroke="#d9b76e" stroke-width="2"/><path d="M3 12h34M10 8h1m3 0h1m3 0h1" stroke="#d9b76e" stroke-width="2"/><path d="m10 18 5 4-5 4m10 0h8" stroke="#e9dfc6" stroke-width="2" fill="none"/><path d="M15 33h10v3H15z" fill="#d9b76e"/></svg><div><b>DEV<span>CORP</span></b><small>ESTÚDIO DE JOGOS & TECNOLOGIA</small></div></div><div class="game-company28"><strong id="companyName28"></strong><small id="companyAddress28"></small></div><div class="game-metrics28"><div><small>Caixa</small><b id="cash28"></b></div><div><small>Calendário</small><b id="day28"></b></div><div><small>Equipe</small><b id="staff28"></b></div><div><small>Reputação</small><b id="rep28"></b></div></div><div class="game-header-actions28"><span class="game-save28" id="saveState28">Salvo</span><button id="journey28" title="Central da empresa">Central</button><button id="menu28" aria-label="Abrir menu">☰</button></div>`;
   document.body.insertBefore(header,document.body.firstChild);$('journey28').onclick=()=>DevJourney27.open();$('menu28').onclick=()=>showTitle();
-  const centralButton=$('commandEntry27');centralButton.textContent='Central';$('journey28').replaceWith(centralButton);
+  const centralButton=$('commandEntry27');centralButton.textContent='Minha empresa';centralButton.title='Visão geral do caixa, da equipe e dos próximos objetivos';centralButton.setAttribute('aria-label','Visão geral da empresa');$('journey28').replaceWith(centralButton);
+  for(const[id,label]of [['b0','Pausar o jogo · Espaço'],['b1','Ritmo normal · tecla 1'],['b3','Acelerar o jogo · tecla 3'],['wkb','Alternar folga de fim de semana'],['mb','Alternar som']]){const button=$(id);if(button){button.title=label;button.setAttribute('aria-label',label)}}
+  for(const button of document.querySelectorAll('#stage .ov.br button'))button.setAttribute('aria-label',button.title||'Controle da câmera');
+  for(const [selector,label] of [['#cash28','Dinheiro disponível para a empresa'],['#day28','Dia e dia da semana'],['#staff28','Pessoas contratadas'],['#rep28','Confiança que a empresa constrói com entregas']])$(selector)?.parentElement?.setAttribute('title',label);
   const exteriorButton=$('exteriorEntry');exteriorButton.innerHTML='<svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m4 13 9-9 3 3-9 9-4 1Z"/><path d="m11 6 3 3"/></svg>';exteriorButton.title='Personalizar exterior';exteriorButton.setAttribute('aria-label','Personalizar exterior');$('menu28').before(exteriorButton);
   const layout=text('div','game-layout28');layout.id='gameLayout28';header.after(layout);
   layout.append($('dock'),$('mainc'),$('side'));
@@ -35,7 +38,7 @@
   const capacityBase=CAPV;CAPV=function(){const content=capacityBase();return content?'<details class="capacity-details28" '+(detailState.capacity?'open':'')+' ontoggle="Studio28.setDetail(\'capacity\',this.open)"><summary>Capacidade da equipe <span>'+new Set(companyStaff().filter(e=>!RO[e.role]?.pm).map(e=>e.role)).size+' especialidades</span></summary>'+content+'</details>':''};
   const qualityBase=TDC;TDC=function(){const risk=Math.round(bugRisk(r=>companyStaff().filter(e=>e.role===r).length)*100);return '<details class="capacity-details28" '+(detailState.quality||G.td>=60?'open':'')+' ontoggle="Studio28.setDetail(\'quality\',this.open)"><summary>Qualidade das entregas <span>'+risk+'% de risco de bugs</span></summary>'+qualityBase()+'</details>'};
   function resize(){
-    const r=arena.getBoundingClientRect();for(const [canvas,ratio]of [[cv,1.5],[worldCanvas,4/3]]){const extra=innerWidth<=760?1.45:1,width=Math.max(1,canvas===worldCanvas?Math.max(r.width,r.height*ratio):Math.min(r.width*extra,r.height*ratio));canvas.style.width=width+'px';canvas.style.height=width/ratio+'px';}
+    const r=arena.getBoundingClientRect(),phone=innerWidth<900||(innerWidth<=1000&&innerHeight<=500);for(const [canvas,ratio]of [[cv,1.5],[worldCanvas,4/3]]){const width=Math.max(1,phone?Math.min(r.width,r.height*ratio):(canvas===worldCanvas?Math.max(r.width,r.height*ratio):Math.min(r.width,r.height*ratio)));canvas.style.width=width+'px';canvas.style.height=width/ratio+'px';}
   }
   new ResizeObserver(resize).observe(arena);addEventListener('resize',resize);
   function animateTransition(label,action){
@@ -62,7 +65,7 @@
   }
   function drawPortrait(e,w=32,h=42,bust=false){const c=document.createElement('canvas');c.width=w;c.height=h;const g=c.getContext('2d'),im=personCanvas23(employeeAppearance(e),bust?4:0);if(im){g.imageSmoothingEnabled=false;g.drawImage(im,0,0,w,h)}return c}
   function selectEmployee(id){
-    const e=companyStaff().find(e=>e.id===Number(id));if(!e)return false;G.sel=e.id;profileFull=false;if(innerWidth<=760&&shOpen)shClose();
+    const e=companyStaff().find(e=>e.id===Number(id));if(!e)return false;G.sel=e.id;profileFull=false;if(innerWidth<900&&shOpen)shClose();
     if(NPCLife28.active(e)){if(currentView!=='outside')setView('outside');}
     else if(e.floor!==G.floor){pendingSelection={id:e.id,floor:e.floor};setView('inside',false);requestFloor(e.floor);}
     renderFocus();renderCrew(true);return true;
@@ -104,7 +107,7 @@
   }
   function renderUtilities(){
     if(tab!=='ut'||$('pn').dataset.utility28)return;const panel=$('pn');panel.dataset.utility28='1';panel.replaceChildren();panel.append(text('p',null,'Planeje os próximos passos da sua empresa.'));const grid=text('div','utilities28');
-    for(const[label,action,key]of [['◈ Jornada e pesquisa',()=>DevJourney27.open()],['🚀 Produtos',()=>openBusiness('products')],['▥ Departamentos',()=>openBusiness('departments')],['♧ Vida no escritório',()=>openOffice()],['💹 Finanças',()=>tabOpen('fn'),'fn'],['🏅 Metas',()=>tabOpen('ac')],['⚙ Automação',()=>tabOpen('au'),'au'],['💾 Suas empresas',()=>openSlots()]]){const b=button(label,()=>{if(innerWidth<=760)shClose();action()});if(key&&$('tb_'+key).hidden){b.disabled=true;b.title='Disponível conforme a progressão da empresa.';}grid.append(b)}panel.append(grid);
+    for(const[label,action,key]of [['◈ Jornada e pesquisa',()=>DevJourney27.open()],['🚀 Produtos',()=>openBusiness('products')],['▥ Departamentos',()=>openBusiness('departments')],['♧ Vida no escritório',()=>openOffice()],['💹 Finanças',()=>tabOpen('fn'),'fn'],['🏅 Progresso',()=>tabOpen('ac')],['⚙ Rotinas',()=>tabOpen('au'),'au'],['💾 Suas empresas',()=>openSlots()]]){const b=button(label,()=>{if(innerWidth<900)shClose();action()});if(key&&$('tb_'+key).hidden){b.disabled=true;b.title='Disponível conforme a progressão da empresa.';}grid.append(b)}panel.append(grid);
   }
   function refresh(){
     if(rendering||floorSimulation)return;rendering=true;try{

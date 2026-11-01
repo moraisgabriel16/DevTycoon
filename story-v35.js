@@ -100,7 +100,9 @@
   }
   function refresh(){
     const s=ensure(),unread=s.entries.filter(e=>!s.read.includes(e.id)),latest=unread.at(-1),steps=firstSteps(),message=steps|| (latest?STORIES[latest.id]:hint()),key=[message.title,unread.length,s.coachHidden,G.tut,ts.style.display,wl.style.display].join('|');
+    document.body.classList.toggle('first-run40',!!steps);
     coach.hidden=!G.tut||ts.style.display==='flex'||wl.style.display==='flex'||s.coachHidden;
+    coach.setAttribute('aria-live',steps?'polite':'off');
     entry.textContent='História e ajuda'+(unread.length?' · '+unread.length:'');
     coach.dataset.moment=latest&&!steps?'new':'hint';coach.dataset.onboarding=steps?'true':'false';if(key===signature)return;signature=key;coach.replaceChildren();coach.append(portrait(message.person));
     const copy=node('div',undefined,'story-copy35');copy.append(node('small',steps?'PRIMEIROS PASSOS · '+steps.step+' DE 3':message.person+' / '+(latest?'NOVO MOMENTO':'PRÓXIMO PASSO')),node('strong',message.title),node('p',message.text));

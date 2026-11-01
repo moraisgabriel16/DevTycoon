@@ -17,13 +17,13 @@ function passed(name){results.push(name);console.log('✓ '+name)}
   for(const size of [192,512]){
     await iconPage.setViewportSize({width:size,height:size});
     await iconPage.setContent('<style>html,body{margin:0;width:100%;height:100%;overflow:hidden}svg{display:block;width:100%;height:100%}</style>'+fs.readFileSync(path.join(root,'icons/icon.svg'),'utf8'));
-    await iconPage.screenshot({path:path.join(root,`icons/icon-${size}.png`),omitBackground:true});
+    await iconPage.screenshot({path:artifact(`icon-check-${size}.png`),omitBackground:true});
   }
   await iconPage.close();
   const context=await browser.newContext({viewport:{width:1440,height:1000}}),page=await context.newPage(),errors=[];
   page.on('pageerror',error=>errors.push(error.message));
-  await page.goto(base);await page.waitForFunction(()=>typeof openExterior==='function'&&v23Ready&&v21Ready&&v19Ready);
-  await page.locator('#startPlay30').click();await page.evaluate(()=>{wl.style.display='none';spd(0)});await page.locator('#exteriorEntry').click();
+  await page.goto(base);await page.waitForFunction(()=>typeof openExterior==='function'&&window.DevCorpBoot?.ready&&v23Ready&&v21Ready&&v19Ready);
+  await page.locator('#startPlay30').click();await page.evaluate(()=>{wl.style.display='none';spd(0)});await page.locator('#customizeEntry33').click();await page.locator('#personalView .custom-nav33').getByRole('button',{name:'Exterior',exact:true}).click();
   await page.waitForSelector('#exteriorView:not([hidden])');
   const before=await page.evaluate(()=>({money:G.money,day:G.day}));
   await page.waitForTimeout(400);assert.equal(await page.evaluate(()=>paused()),true);
@@ -33,17 +33,17 @@ function passed(name){results.push(name);console.log('✓ '+name)}
   assert.equal(await page.evaluate(()=>G.exteriors.buildings[0].sign),'Minha Aurora');
   assert.deepEqual(await page.evaluate(()=>({money:G.money,day:G.day})),before);
   passed('Editor pausa a empresa e aplica alterações sem cobrar dinheiro');
-  await page.reload();await page.waitForFunction(()=>typeof openExterior==='function');
+  await page.reload();await page.waitForFunction(()=>typeof openExterior==='function'&&window.DevCorpBoot?.ready);
   await page.evaluate(()=>{tsHide();openExterior()});
   await page.getByRole('button',{name:'Identidade',exact:true}).click();assert.equal(await page.locator('#extSign').inputValue(),'Minha Aurora');
-  await page.locator('#extSign').fill('Não salvar');await page.getByRole('button',{name:'Descartar prévia',exact:true}).click();await page.locator('#extClose').click();await page.locator('#exteriorEntry').click();
+  await page.locator('#extSign').fill('Não salvar');await page.getByRole('button',{name:'Descartar prévia',exact:true}).click();await page.locator('#extClose').click();await page.locator('#customizeEntry33').click();await page.locator('#personalView .custom-nav33').getByRole('button',{name:'Exterior',exact:true}).click();
   assert.equal(await page.locator('#extSign').inputValue(),'Minha Aurora');
   passed('Personalização persiste após recarregar e descarta prévias não aplicadas');
   await page.locator('#extBuilding').selectOption('5');assert.equal(await page.locator('#extSave').isDisabled(),true);
   assert.equal(await page.evaluate(()=>G.exteriors.buildings[5]),undefined);
   passed('Prédios futuros permitem prévia sem alterar a campanha');
   await page.locator('#extClose').click();
-  await page.evaluate(()=>loadSlot(2));await page.locator('#exteriorEntry').click();
+  await page.evaluate(()=>loadSlot(2));await page.locator('#customizeEntry33').click();await page.locator('#personalView .custom-nav33').getByRole('button',{name:'Exterior',exact:true}).click();
   assert.equal(await page.locator('#extBuilding').inputValue(),'4');
   await page.getByRole('button',{name:'Identidade',exact:true}).click();await page.locator('#extSign').fill('Aurora Campus');
   await page.getByRole('button',{name:'Cobertura',exact:true}).click();
@@ -52,13 +52,13 @@ function passed(name){results.push(name);console.log('✓ '+name)}
   assert.equal(await page.evaluate(()=>G.exteriors.buildings[4].roof),'terrace');
   await page.locator('#extDay').click();await page.screenshot({path:artifact('exterior-desktop.png')});
   const download=page.waitForEvent('download');await page.locator('#extExport').click();assert.ok((await download).suggestedFilename().endsWith('.png'));
-  await page.locator('#extClose').click();await page.evaluate(()=>loadSlot(0));await page.locator('#exteriorEntry').click();
+  await page.locator('#extClose').click();await page.evaluate(()=>loadSlot(0));await page.locator('#customizeEntry33').click();await page.locator('#personalView .custom-nav33').getByRole('button',{name:'Exterior',exact:true}).click();
   await page.getByRole('button',{name:'Identidade',exact:true}).click();assert.equal(await page.locator('#extSign').inputValue(),'Minha Aurora');
   passed('Slots independentes, quatro coberturas e exportação de foto PNG');
   await page.locator('#extClose').click();await page.evaluate(()=>{const c=G.off.find(o=>o.easy)||G.off[0];accept(c.id);for(let i=0;i<5;i++)tick();save()});
   assert.ok(await page.evaluate(()=>G.day>=6&&G.emps.length>0));passed('Simulação original: aceitar contrato e avançar dias');
   const mobile=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,deviceScaleFactor:2});
-  const phone=await mobile.newPage();phone.on('pageerror',e=>errors.push(e.message));await phone.goto(base);await phone.waitForFunction(()=>typeof openExterior==='function');
+  const phone=await mobile.newPage();phone.on('pageerror',e=>errors.push(e.message));await phone.goto(base);await phone.waitForFunction(()=>typeof openExterior==='function'&&window.DevCorpBoot?.ready);
   await phone.evaluate(()=>{tsHide();openExterior()});
   await phone.getByRole('button',{name:'Jardim',exact:true}).click();
   await phone.locator('#exteriorPanel').getByRole('button',{name:/Fonte/}).click();
@@ -72,8 +72,8 @@ function passed(name){results.push(name);console.log('✓ '+name)}
   await phone.locator('#extClose').click();await phone.evaluate(()=>loadSlot(2));await phone.waitForTimeout(200);await phone.screenshot({path:artifact('game-mobile.png'),fullPage:true});
   passed('Tela de celular sem rolagem horizontal; toque posiciona item e texto é tratado como texto');
   await page.evaluate(async()=>{await navigator.serviceWorker.ready;if(!navigator.serviceWorker.controller)await new Promise(resolve=>navigator.serviceWorker.addEventListener('controllerchange',resolve,{once:true}));});
-  await page.waitForFunction(async()=>{const c=await caches.open('devcorp-v39-1');return !!(await c.match('./studio-v29.css'))});
-  await context.setOffline(true);await page.reload();await page.waitForFunction(()=>typeof openExterior==='function');await page.evaluate(()=>{tsHide();openExterior()});
+  await page.waitForFunction(async()=>{const c=await caches.open('devcorp-v40-3');return !!(await c.match('./studio-v29.css'))});
+  await context.setOffline(true);await page.reload();await page.waitForFunction(()=>typeof openExterior==='function'&&window.DevCorpBoot?.ready);await page.evaluate(()=>{tsHide();openExterior()});
   assert.equal(await page.locator('#exteriorView').isVisible(),true);await context.setOffline(false);passed('Reabertura offline pelo Service Worker com campanha preservada');
   assert.deepEqual(errors,[]);passed('Nenhum erro JavaScript nos fluxos testados');
   fs.writeFileSync(artifact('results.json'),JSON.stringify({date:new Date().toISOString(),passed:results},null,2));
